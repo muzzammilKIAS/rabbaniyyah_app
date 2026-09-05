@@ -24,7 +24,7 @@ jobs:
         with:
           channel: stable
       - run: flutter pub get
-      - run: flutter build web --base-href /rabbaniyyah_app/ --web-renderer html
+      - run: flutter build web --release --base-href /rabbaniyyah_app/
       - uses: actions/upload-pages-artifact@v4
         with:
           path: build/web
