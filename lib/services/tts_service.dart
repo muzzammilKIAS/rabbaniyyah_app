@@ -62,6 +62,62 @@ class TtsService with ChangeNotifier {
     'السَّمِيعُ': 'assets/audio/tts/vocab_5.mp3',
     'الْبَصِيرُ': 'assets/audio/tts/vocab_6.mp3',
     'الْعَزِيزُ': 'assets/audio/tts/vocab_7.mp3',
+
+    // الدرس الرابع — الطهارة: الوضوء والغسل. No لفظ الجلالة appears in any
+    // of these lines, so plain TTS is safe here.
+    'الطَّهَارَةُ شَرْطٌ مِنْ شُرُوطِ الصَّلَاةِ. نَتَوَضَّأُ قَبْلَ كُلِّ صَلَاةٍ.': 'assets/audio/tts_dars14/reading_0.mp3',
+    'أَوَّلاً، نَنْوِي الوُضُوءَ فِي قَلْبِنَا.': 'assets/audio/tts_dars14/reading_1.mp3',
+    'ثُمَّ نَغْسِلُ الوَجْهَ ثَلَاثَ مَرَّاتٍ.': 'assets/audio/tts_dars14/reading_2.mp3',
+    'بَعْدَ ذَلِكَ نَغْسِلُ اليَدَيْنِ إِلَى المِرْفَقَيْنِ.': 'assets/audio/tts_dars14/reading_3.mp3',
+    'ثُمَّ نَمْسَحُ الرَّأْسَ بِالمَاءِ.': 'assets/audio/tts_dars14/reading_4.mp3',
+    'أَخِيراً نَغْسِلُ الرِّجْلَيْنِ إِلَى الكَعْبَيْنِ.': 'assets/audio/tts_dars14/reading_5.mp3',
+    'هَذَا هُوَ الوُضُوءُ. أَمَّا الغُسْلُ فَهُوَ غَسْلُ جَمِيعِ الجَسَدِ بِالمَاءِ. نَغْتَسِلُ بَعْدَ الجَنَابَةِ.':
+        'assets/audio/tts_dars14/reading_6.mp3',
+    // الدرس الثاني — الإيمان بالملائكة والكتب والرسل. Reading line 5 names
+    // لفظ الجلالة twice mid-sentence (genitive case, no matching reciter
+    // clip) — deliberately absent from this map; see Dars112.readingNoAudio.
+    'اَلْمَلَائِكَةُ خَلْقٌ مِنْ نُورٍ.': 'assets/audio/tts_dars12/reading_0.mp3',
+    'جِبْرِيلُ مَلَكٌ، مُوَكَّلٌ بِالْوَحْيِ.': 'assets/audio/tts_dars12/reading_1.mp3',
+    'مِيكَائِيلُ مَلَكٌ، مُوَكَّلٌ بِالْمَطَرِ وَالرِّزْقِ.': 'assets/audio/tts_dars12/reading_2.mp3',
+    'إِسْرَافِيلُ مَلَكٌ، مُوَكَّلٌ بِنَفْخِ الصُّورِ.': 'assets/audio/tts_dars12/reading_3.mp3',
+    'عَزْرَائِيلُ مَلَكٌ، مُوَكَّلٌ بِقَبْضِ الْأَرْوَاحِ.': 'assets/audio/tts_dars12/reading_4.mp3',
+    'اَلتَّوْرَاةُ كِتَابُ مُوسَى، وَالْإِنْجِيلُ كِتَابُ عِيسَى، وَالزَّبُورُ كِتَابُ دَاوُودَ.': 'assets/audio/tts_dars12/reading_6.mp3',
+    'اَلرَّسُولُ بَشَرٌ، وَمُحَمَّدٌ خَاتَمُ الرُّسُلِ.': 'assets/audio/tts_dars12/reading_7.mp3',
+    'مَلَكٌ / مَلَائِكَةٌ': 'assets/audio/tts_dars12/vocab_0.mp3',
+    'كِتَابٌ / كُتُبٌ': 'assets/audio/tts_dars12/vocab_1.mp3',
+    'رَسُولٌ / رُسُلٌ': 'assets/audio/tts_dars12/vocab_2.mp3',
+    'نَبِيٌّ / أَنْبِيَاءُ': 'assets/audio/tts_dars12/vocab_3.mp3',
+    'اَلْوَحْيُ': 'assets/audio/tts_dars12/vocab_4.mp3',
+    'مُوَكَّلٌ بِـ': 'assets/audio/tts_dars12/vocab_5.mp3',
+    'خَاتَمٌ': 'assets/audio/tts_dars12/vocab_6.mp3',
+    'نُورٌ': 'assets/audio/tts_dars12/vocab_7.mp3',
+    'بَشَرٌ': 'assets/audio/tts_dars12/vocab_8.mp3',
+
+    // الدرس الثالث — الإيمان باليوم الآخر والقضاء والقدر. Reading lines 2,
+    // 5 and 6 name لفظ الجلالة mid-sentence — absent here on purpose; see
+    // Dars113.readingNoAudio.
+    'كُلُّ إِنْسَانٍ يَمُوتُ، ثُمَّ يُبْعَثُ يَوْمَ الْقِيَامَةِ.': 'assets/audio/tts_dars13/reading_0.mp3',
+    'اَلْيَوْمُ الآخِرُ يَوْمُ الْبَعْثِ وَالْحِسَابِ.': 'assets/audio/tts_dars13/reading_1.mp3',
+    'مَنْ عَمِلَ خَيْرًا دَخَلَ الْجَنَّةَ، وَمَنْ عَمِلَ شَرًّا اسْتَحَقَّ النَّارَ.': 'assets/audio/tts_dars13/reading_3.mp3',
+    'نَحْنُ نُؤْمِنُ بِالْقَدَرِ، خَيْرِهِ وَشَرِّهِ.': 'assets/audio/tts_dars13/reading_4.mp3',
+    'هَذَا هُوَ مَعْنَى الْإِيمَانِ بِالْيَوْمِ الآخِرِ وَالْقَضَاءِ وَالْقَدَرِ.': 'assets/audio/tts_dars13/reading_7.mp3',
+    'اَلْيَوْمُ الآخِرُ': 'assets/audio/tts_dars13/vocab_0.mp3',
+    'اَلْمَوْتُ': 'assets/audio/tts_dars13/vocab_1.mp3',
+    'اَلْبَعْثُ': 'assets/audio/tts_dars13/vocab_2.mp3',
+    'اَلْحِسَابُ': 'assets/audio/tts_dars13/vocab_3.mp3',
+    'اَلْجَنَّةُ': 'assets/audio/tts_dars13/vocab_4.mp3',
+    'اَلنَّارُ': 'assets/audio/tts_dars13/vocab_5.mp3',
+    'اَلْقَدَرُ': 'assets/audio/tts_dars13/vocab_6.mp3',
+    'خَيْرٌ وَشَرٌّ': 'assets/audio/tts_dars13/vocab_7.mp3',
+
+    'الطَّهَارَةُ': 'assets/audio/tts_dars14/vocab_0.mp3',
+    'الْوُضُوءُ': 'assets/audio/tts_dars14/vocab_1.mp3',
+    'الْغُسْلُ': 'assets/audio/tts_dars14/vocab_2.mp3',
+    'نَغْسِلُ': 'assets/audio/tts_dars14/vocab_3.mp3',
+    'نَمْسَحُ': 'assets/audio/tts_dars14/vocab_4.mp3',
+    'أَوَّلاً': 'assets/audio/tts_dars14/vocab_5.mp3',
+    'ثُمَّ': 'assets/audio/tts_dars14/vocab_6.mp3',
+    'أَخِيراً': 'assets/audio/tts_dars14/vocab_7.mp3',
   };
 
   Future<void> init() async {

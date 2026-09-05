@@ -6,6 +6,20 @@ import '../utils/arabic_text.dart';
 import '../widgets/atmosphere.dart';
 import '../widgets/common.dart';
 import 'dars_1_1_screen.dart';
+import 'dars_1_2_screen.dart';
+import 'dars_1_3_screen.dart';
+import 'dars_1_4_screen.dart';
+
+/// Maps each lesson to its own screen by lesson number (LessonRef.n),
+/// not by list position.
+Widget _screenForLesson(int n) {
+  return switch (n) {
+    2 => const Dars112Screen(),
+    3 => const Dars113Screen(),
+    4 => const Dars114Screen(),
+    _ => const Dars111Screen(),
+  };
+}
 
 class Semester1Screen extends StatefulWidget {
   const Semester1Screen({super.key});
@@ -236,7 +250,7 @@ class _LessonRowState extends State<_LessonRow> {
           child: InkWell(
             onTap: lesson.enabled
                 ? () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const Dars111Screen()),
+                      MaterialPageRoute(builder: (_) => _screenForLesson(lesson.n)),
                     )
                 : null,
             child: Padding(
