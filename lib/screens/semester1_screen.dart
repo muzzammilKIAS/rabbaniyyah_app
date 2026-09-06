@@ -102,7 +102,7 @@ class _Semester1ScreenState extends State<Semester1Screen> with SingleTickerProv
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'كتاب في رحاب اللغة العربية الربانية ١',
+                                    'اللغة العربية الربانية ١',
                                     style: TextStyle(
                                       fontFamily: AppTheme.uiFont,
                                       fontWeight: FontWeight.w800,
