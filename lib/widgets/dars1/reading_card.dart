@@ -135,7 +135,7 @@ class _ReadingCardState extends State<ReadingCard> {
                 const SizedBox(width: 6),
                 Flexible(
                   child: Text(
-                    'مفعل: صوت Microsoft Edge الطبيعي (ar-EG-Shakir Neural)',
+                    'مفعل: صوت Microsoft Edge الطبيعي (ar-SA-Hamed Neural)',
                     style: TextStyle(
                       fontFamily: AppTheme.uiFont,
                       fontSize: 11.5,

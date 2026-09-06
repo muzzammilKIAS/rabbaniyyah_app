@@ -80,21 +80,24 @@ class _VocabCard12State extends State<VocabCard12> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          SpeakButton(
-                            size: 26,
-                            speaking: _speaking == i,
-                            onTap: () async {
-                              if (_speaking == i) {
-                                await tts.stop();
-                                if (mounted) setState(() => _speaking = null);
-                                return;
-                              }
-                              if (!tts.ready) return;
-                              setState(() => _speaking = i);
-                              await tts.speak(Dars1112.vocab[i].word);
-                              if (mounted && _speaking == i) setState(() => _speaking = null);
-                            },
-                          ),
+                          if (Dars1112.vocabNoAudio.contains(i))
+                            const SizedBox(width: 26)
+                          else
+                            SpeakButton(
+                              size: 26,
+                              speaking: _speaking == i,
+                              onTap: () async {
+                                if (_speaking == i) {
+                                  await tts.stop();
+                                  if (mounted) setState(() => _speaking = null);
+                                  return;
+                                }
+                                if (!tts.ready) return;
+                                setState(() => _speaking = i);
+                                await tts.speak(Dars1112.vocab[i].word);
+                                if (mounted && _speaking == i) setState(() => _speaking = null);
+                              },
+                            ),
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(

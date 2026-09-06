@@ -30,6 +30,7 @@ class _ReadingCard8State extends State<ReadingCard8> {
   }
 
   Future<void> _speakLine(int i) async {
+    if (Dars118.readingNoAudio.contains(i)) return;
     if (_speakingLine == i) return _stopEverything();
     final tts = context.read<AppState>().tts;
     if (_playingAll) await _stopEverything();
@@ -48,6 +49,7 @@ class _ReadingCard8State extends State<ReadingCard8> {
     setState(() => _playingAll = true);
     for (var i = 0; i < Dars118.readingLines.length; i++) {
       if (!mounted || _cancelAll) return;
+      if (Dars118.readingNoAudio.contains(i)) continue;
       setState(() => _speakingLine = i);
       await app.tts.speak(Dars118.readingLines[i]);
     }
@@ -127,7 +129,10 @@ class _ReadingCard8State extends State<ReadingCard8> {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  SpeakButton(onTap: () => _speakLine(i), size: 32, speaking: _speakingLine == i),
+                  if (Dars118.readingNoAudio.contains(i))
+                    const SizedBox(width: 32)
+                  else
+                    SpeakButton(onTap: () => _speakLine(i), size: 32, speaking: _speakingLine == i),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(

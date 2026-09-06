@@ -767,6 +767,10 @@ class Dars117 {
     'نَتَعَلَّمُ مِنَ الرَّسُولِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ هَذِهِ الصِّفَاتِ الْحَسَنَةَ.',
   ];
 
+  // Line 6 names لفظ الجلالة mid-sentence — no reciter clip fits here, so it
+  // is excluded from TTS entirely rather than mispronounced (see TtsService).
+  static const readingNoAudio = {6};
+
   static const hadithText = 'عَلَيْكُمْ بِالصِّدْقِ، فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ';
   static const hadithNarrator = 'عَنْ عَبْدِ اللهِ بْنِ مَسْعُودٍ رَضِيَ اللهُ عَنْهُ، قَالَ رَسُولُ اللهِ ﷺ:';
   static const hadithSource = 'أَخْرَجَهُ الْبُخَارِيُّ وَمُسْلِمٌ';
@@ -883,6 +887,11 @@ class Dars118 {
     'لَا أَعْصِي اللهَ، وَلَا أَكْذِبُ عَلَى النَّبِيِّ.',
     'هَذَا هُوَ حُبِّي لِلَّهِ وَرَسُولِهِ.',
   ];
+
+  // Every line names لفظ الجلالة (or the contracted "لِلَّهِ") mid-sentence —
+  // no reciter clip fits any of these, so all are excluded from TTS (see
+  // TtsService).
+  static const readingNoAudio = {0, 1, 2, 3, 4, 5};
 
   static const hadithText = 'لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ وَالنَّاسِ أَجْمَعِينَ';
   static const hadithNarrator = 'عَنْ أَنَسِ بْنِ مَالِكٍ رَضِيَ اللهُ عَنْهُ، قَالَ رَسُولُ اللهِ ﷺ:';
@@ -1112,6 +1121,10 @@ class Dars1110 {
     'نَزَلَ عَلَيْهِ الْوَحْيُ لِأَوَّلِ مَرَّةٍ.',
     'هَذِهِ بِدَايَةُ الرِّسَالَةِ.',
   ];
+
+  // Lines 0 and 3 name لفظ الجلالة mid-sentence — no reciter clip fits
+  // either, so they are excluded from TTS (see TtsService).
+  static const readingNoAudio = {0, 3};
 
   static const hadithText =
       'إِنَّكَ لَتَصِلُ الرَّحِمَ، وَتَحْمِلُ الْكَلَّ، وَتَكْسِبُ الْمَعْدُومَ، وَتَقْرِي الضَّيْفَ، وَتُعِينُ عَلَى نَوَائِبِ الْحَقِّ';
@@ -1359,6 +1372,10 @@ class Dars1112 {
     'هَؤُلَاءِ الْخُلَفَاءُ الرَّاشِدُونَ قُدْوَتُنَا فِي الْقِيَادَةِ وَالْإِخْلَاصِ.',
   ];
 
+  // Lines 0, 5 and 6 name لفظ الجلالة mid-sentence — no reciter clip fits
+  // any of these, so they are excluded from TTS (see TtsService).
+  static const readingNoAudio = {0, 5, 6};
+
   static const hadithText = 'خَيْرُ النَّاسِ قَرْنِي، ثُمَّ الَّذِينَ يَلُونَهُمْ';
   static const hadithNarrator = 'عَنْ عَبْدِ اللهِ بْنِ مَسْعُودٍ رَضِيَ اللهُ عَنْهُ، قَالَ رَسُولُ اللهِ ﷺ:';
   static const hadithSource = 'أَخْرَجَهُ الْبُخَارِيُّ وَمُسْلِمٌ';
@@ -1377,6 +1394,11 @@ class Dars1112 {
     VocabItem('حَكَمَ', 'Memerintah'),
     VocabItem('اُسْتُشْهِدَ', 'Syahid'),
   ];
+
+  // Entry 4 is the honorific formula "عَلِيٌّ كَرَّمَ اللهُ وَجْهَهُ", which
+  // names لفظ الجلالة mid-phrase with no reciter clip to match — excluded
+  // from TTS (see TtsService).
+  static const vocabNoAudio = {4};
 
   static const ruleIntro = 'نَكْتُبُ تَرْجَمَةً مُخْتَصَرَةً بِتَرْتِيبِ: الِاسْمُ + اللَّقَبُ + الصِّفَةُ + الْإِسْهَامُ (بِفِعْلٍ مَاضٍ):';
   static const ruleFormula = 'اِسْمٌ + لَقَبٌ + صِفَةٌ + إِسْهَامٌ';

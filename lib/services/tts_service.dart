@@ -8,9 +8,10 @@ import '../utils/arabic_text.dart';
 
 /// Reads lesson text aloud using high-quality Microsoft Edge Arabic Natural voices.
 ///
-/// Pre-rendered 24kHz studio MP3 assets synthesized with Microsoft Edge's
-/// `ar-EG-ShakirNeural` engine ensure pristine natural voice across all browsers
-/// (including Chrome on Web) and offline platforms, with seamless system voice fallback.
+/// Pre-rendered MP3 assets synthesized with Microsoft Edge's `ar-SA-HamedNeural`
+/// (Hamed, Saudi Arabia) engine ensure a pristine, standard-Fuṣḥā natural voice
+/// across all browsers (including Chrome on Web) and offline platforms, with
+/// seamless live system/browser voice fallback for any text not pre-rendered.
 class TtsService with ChangeNotifier {
   final FlutterTts _systemTts = FlutterTts();
   final AudioPlayer _player = AudioPlayer();
@@ -22,8 +23,9 @@ class TtsService with ChangeNotifier {
   bool get isSpeaking => _speaking;
   bool get isEdgeNeural => true;
 
-  String get activeVoiceName => 'Microsoft Shakir (Neural - Edge Natural)';
+  String get activeVoiceName => 'Microsoft Hamed (Neural - Edge Natural, KSA)';
 
+  static const String voiceHamed = 'ar-SA-HamedNeural';
   static const String voiceShakir = 'ar-EG-ShakirNeural';
   static const String voiceZariyah = 'ar-SA-ZariyahNeural';
 
@@ -165,7 +167,18 @@ class TtsService with ChangeNotifier {
         final raw = await _systemTts.getVoices;
         final voices = _parseVoices(raw);
         if (voices.isNotEmpty) {
-          // 1. Prioritize Microsoft Shakir Online (Natural)
+          // 1. Prioritize Microsoft Hamed Online (Natural, ar-SA — matches
+          // the pre-rendered asset voice and standard Saudi Fuṣḥā diction).
+          final hamed = voices.firstWhere(
+            (v) {
+              final name = (v['name'] ?? '').toLowerCase();
+              return name.contains('natural') && name.contains('hamed');
+            },
+            orElse: () => const {},
+          );
+          if (hamed.isNotEmpty) return hamed;
+
+          // 2. Prioritize Microsoft Shakir Online (Natural)
           final shakir = voices.firstWhere(
             (v) {
               final name = (v['name'] ?? '').toLowerCase();
@@ -175,7 +188,7 @@ class TtsService with ChangeNotifier {
           );
           if (shakir.isNotEmpty) return shakir;
 
-          // 2. Prioritize Microsoft Zariyah Online (Natural)
+          // 3. Prioritize Microsoft Zariyah Online (Natural)
           final zariyah = voices.firstWhere(
             (v) {
               final name = (v['name'] ?? '').toLowerCase();
@@ -185,7 +198,7 @@ class TtsService with ChangeNotifier {
           );
           if (zariyah.isNotEmpty) return zariyah;
 
-          // 3. Any Microsoft Natural Arabic voice
+          // 4. Any Microsoft Natural Arabic voice
           final anyNaturalArabic = voices.firstWhere(
             (v) {
               final name = (v['name'] ?? '').toLowerCase();
@@ -197,7 +210,7 @@ class TtsService with ChangeNotifier {
           );
           if (anyNaturalArabic.isNotEmpty) return anyNaturalArabic;
 
-          // 4. Any Microsoft Arabic voice
+          // 5. Any Microsoft Arabic voice
           final anyMicrosoftArabic = voices.firstWhere(
             (v) {
               final name = (v['name'] ?? '').toLowerCase();
@@ -209,7 +222,7 @@ class TtsService with ChangeNotifier {
           );
           if (anyMicrosoftArabic.isNotEmpty) return anyMicrosoftArabic;
 
-          // 5. Any Google Arabic / Neural voice
+          // 6. Any Google Arabic / Neural voice
           final googleArabic = voices.firstWhere(
             (v) {
               final name = (v['name'] ?? '').toLowerCase();
@@ -221,7 +234,7 @@ class TtsService with ChangeNotifier {
           );
           if (googleArabic.isNotEmpty) return googleArabic;
 
-          // 6. Arabic Saudi Arabia
+          // 7. Arabic Saudi Arabia
           final saVoice = voices.firstWhere(
             (v) {
               final loc = (v['locale'] ?? '').toLowerCase();
@@ -231,7 +244,7 @@ class TtsService with ChangeNotifier {
           );
           if (saVoice.isNotEmpty) return saVoice;
 
-          // 7. Any Arabic voice
+          // 8. Any Arabic voice
           final anyArabic = voices.firstWhere(
             (v) => (v['locale'] ?? '').toLowerCase().startsWith('ar'),
             orElse: () => const {},
@@ -267,6 +280,17 @@ class TtsService with ChangeNotifier {
       // 1. First priority: Pre-rendered high-fidelity Microsoft Edge Arabic Natural audio
       final playedAsset = await _playPreRenderedAsset(text);
       if (playedAsset) return;
+
+      // Safety net: never let the live system/neural voice read لفظ الجلالة
+      // (or the contracted "لِلَّهِ"). Those voices render the lām light,
+      // but the divine name requires تفخيم (taghlīẓ al-lām) — if the text
+      // wasn't resolved to a reciter clip above, refuse rather than
+      // mispronounce it.
+      final skeleton = stripTashkeel(text);
+      if (skeleton.contains('الله') || skeleton.contains('لله')) {
+        debugPrint('TtsService: refusing to synthesize "$text" — contains لفظ الجلالة with no matching reciter clip.');
+        return;
+      }
 
       // 2. Browser/system natural voice fallback
       if (_selectedVoice != null) {
