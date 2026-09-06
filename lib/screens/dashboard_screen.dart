@@ -133,6 +133,8 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
                                         .toList(),
                                   ),
                           ),
+                          const SizedBox(height: 28),
+                          Staggered(controller: _entrance, start: 0.34, end: 0.9, child: const _CopyrightFooter()),
                         ],
                       ),
                     ),
@@ -142,6 +144,59 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _CopyrightFooter extends StatelessWidget {
+  const _CopyrightFooter();
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.colors;
+    final year = DateTime.now().year;
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Column(
+        children: [
+          Container(
+            width: 40,
+            height: 1,
+            color: c.border,
+            margin: const EdgeInsets.only(bottom: 14),
+          ),
+          Text(
+            'روحيدي هابيل  |  محمد أبا الخير  |  أحمد مزمل نجيب  |  سعيد رمضان شكري  |  محمد إخوان يوسف',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: AppTheme.uiFont,
+              fontSize: 11.5,
+              fontWeight: FontWeight.w600,
+              color: c.textMuted,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'كلية الدراسات الإسلامية واللغة العربية — كياس',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: AppTheme.uiFont,
+              fontSize: 11,
+              color: c.textMuted,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            '© $year جميع الحقوق محفوظة',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: AppTheme.uiFont,
+              fontSize: 10.5,
+              color: c.textMuted.withValues(alpha: 0.75),
+            ),
+          ),
+        ],
       ),
     );
   }
