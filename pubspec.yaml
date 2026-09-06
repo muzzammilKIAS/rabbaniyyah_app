@@ -36,6 +36,14 @@ flutter:
     - assets/audio/tts_dars12/
     - assets/audio/tts_dars13/
     - assets/audio/tts_dars14/
+    - assets/audio/tts_dars15/
+    - assets/audio/tts_dars16/
+    - assets/audio/tts_dars17/
+    - assets/audio/tts_dars18/
+    - assets/audio/tts_dars19/
+    - assets/audio/tts_dars110/
+    - assets/audio/tts_dars111/
+    - assets/audio/tts_dars112/
     - assets/audio/quran/
 
   fonts:
