@@ -13,6 +13,10 @@ const Map<String, String> _lessonKeys = {
   '112': 'rabbaniyyah_s1_u1_d2_state',
   '113': 'rabbaniyyah_s1_u1_d3_state',
   '114': 'rabbaniyyah_s1_u2_d4_state',
+  '115': 'rabbaniyyah_s1_u2_d5_state',
+  '116': 'rabbaniyyah_s1_u2_d6_state',
+  '117': 'rabbaniyyah_s1_u3_d7_state',
+  '118': 'rabbaniyyah_s1_u3_d8_state',
 };
 
 /// Central app state: the global "baris" (tashkeel) visibility toggle, the
@@ -134,6 +138,38 @@ class AppState extends ChangeNotifier {
   void dars114SetSelfCheck(int index, bool value) => _lessonSetSelfCheck('114', index, value);
   double dars114Progress(int totalItems) => _lessonProgress('114', totalItems);
   Future<void> resetDars114() => _resetLesson('114');
+
+  // الدرس الخامس — الصلاة المفروضة
+  T dars115Get<T>(String key, T fallback) => _lessonGet('115', key, fallback);
+  void dars115Set(String key, dynamic value) => _lessonSet('115', key, value);
+  Map<String, bool> dars115SelfChecks() => _lessonSelfChecks('115');
+  void dars115SetSelfCheck(int index, bool value) => _lessonSetSelfCheck('115', index, value);
+  double dars115Progress(int totalItems) => _lessonProgress('115', totalItems);
+  Future<void> resetDars115() => _resetLesson('115');
+
+  // الدرس السادس — صيام رمضان
+  T dars116Get<T>(String key, T fallback) => _lessonGet('116', key, fallback);
+  void dars116Set(String key, dynamic value) => _lessonSet('116', key, value);
+  Map<String, bool> dars116SelfChecks() => _lessonSelfChecks('116');
+  void dars116SetSelfCheck(int index, bool value) => _lessonSetSelfCheck('116', index, value);
+  double dars116Progress(int totalItems) => _lessonProgress('116', totalItems);
+  Future<void> resetDars116() => _resetLesson('116');
+
+  // الدرس السابع — صفات الرسول
+  T dars117Get<T>(String key, T fallback) => _lessonGet('117', key, fallback);
+  void dars117Set(String key, dynamic value) => _lessonSet('117', key, value);
+  Map<String, bool> dars117SelfChecks() => _lessonSelfChecks('117');
+  void dars117SetSelfCheck(int index, bool value) => _lessonSetSelfCheck('117', index, value);
+  double dars117Progress(int totalItems) => _lessonProgress('117', totalItems);
+  Future<void> resetDars117() => _resetLesson('117');
+
+  // الدرس الثامن — الأخلاق مع الله ورسوله
+  T dars118Get<T>(String key, T fallback) => _lessonGet('118', key, fallback);
+  void dars118Set(String key, dynamic value) => _lessonSet('118', key, value);
+  Map<String, bool> dars118SelfChecks() => _lessonSelfChecks('118');
+  void dars118SetSelfCheck(int index, bool value) => _lessonSetSelfCheck('118', index, value);
+  double dars118Progress(int totalItems) => _lessonProgress('118', totalItems);
+  Future<void> resetDars118() => _resetLesson('118');
 
   @override
   void dispose() {
