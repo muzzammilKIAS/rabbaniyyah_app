@@ -13,6 +13,10 @@ import 'dars_1_5_screen.dart';
 import 'dars_1_6_screen.dart';
 import 'dars_1_7_screen.dart';
 import 'dars_1_8_screen.dart';
+import 'dars_1_9_screen.dart';
+import 'dars_1_10_screen.dart';
+import 'dars_1_11_screen.dart';
+import 'dars_1_12_screen.dart';
 
 /// Maps each lesson to its own screen by lesson number (LessonRef.n),
 /// not by list position.
@@ -25,6 +29,10 @@ Widget _screenForLesson(int n) {
     6 => const Dars116Screen(),
     7 => const Dars117Screen(),
     8 => const Dars118Screen(),
+    9 => const Dars119Screen(),
+    10 => const Dars1110Screen(),
+    11 => const Dars1111Screen(),
+    12 => const Dars1112Screen(),
     _ => const Dars111Screen(),
   };
 }

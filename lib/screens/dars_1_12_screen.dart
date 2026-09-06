@@ -5,25 +5,24 @@ import '../state/app_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/common.dart';
-import '../widgets/dars_1_5/analyze_card.dart';
-import '../widgets/dars_1_5/reading_card.dart';
-import '../widgets/dars_1_5/reflection_exit_card.dart';
-import '../widgets/dars_1_5/rule_card.dart';
-import '../widgets/dars_1_5/speaking_card.dart';
-import '../widgets/dars_1_5/think_write_card.dart';
-import '../widgets/dars_1_5/vocab_card.dart';
+import '../widgets/dars_1_12/analyze_card.dart';
+import '../widgets/dars_1_12/reading_card.dart';
+import '../widgets/dars_1_12/reflection_exit_card.dart';
+import '../widgets/dars_1_12/rule_card.dart';
+import '../widgets/dars_1_12/speaking_card.dart';
+import '../widgets/dars_1_12/think_write_card.dart';
+import '../widgets/dars_1_12/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
-import '../widgets/dars1/topic_intro_video.dart';
 import '../widgets/atmosphere.dart';
 
-class Dars115Screen extends StatefulWidget {
-  const Dars115Screen({super.key});
+class Dars1112Screen extends StatefulWidget {
+  const Dars1112Screen({super.key});
 
   @override
-  State<Dars115Screen> createState() => _Dars115ScreenState();
+  State<Dars1112Screen> createState() => _Dars1112ScreenState();
 }
 
-class _Dars115ScreenState extends State<Dars115Screen> {
+class _Dars1112ScreenState extends State<Dars1112Screen> {
   final _readingKey = GlobalKey();
   final _vocabKey = GlobalKey();
   final _speakingKey = GlobalKey();
@@ -41,7 +40,7 @@ class _Dars115ScreenState extends State<Dars115Screen> {
     LessonStepItem(icon: Icons.forum_outlined, label: 'أتكلم', sectionKey: _speakingKey),
     LessonStepItem(icon: Icons.edit_note_outlined, label: 'أفكر وأكتب', sectionKey: _thinkKey),
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
-    LessonStepItem(icon: Icons.favorite_border, label: 'الفقه والحياة', sectionKey: _reflectionKey),
+    LessonStepItem(icon: Icons.favorite_border, label: 'السيرة والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
   ];
 
@@ -93,7 +92,7 @@ class _Dars115ScreenState extends State<Dars115Screen> {
   Widget build(BuildContext context) {
     final c = context.colors;
     final app = context.watch<AppState>();
-    final progress = app.dars115Progress(Dars115.selfAssessItems.length);
+    final progress = app.dars1112Progress(Dars1112.selfAssessItems.length);
 
     return Directionality(
       textDirection: TextDirection.rtl,
@@ -107,9 +106,9 @@ class _Dars115ScreenState extends State<Dars115Screen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('الفصل الأول ‹ الوحدة الثانية: الفقه',
+                Text('الفصل الأول ‹ الوحدة الرابعة: السيرة',
                     style: TextStyle(fontSize: 11, color: c.textMuted, fontWeight: FontWeight.normal)),
-                const Text('الدرس الخامس — الصلاة المفروضة', style: TextStyle(fontSize: 17)),
+                const Text('الدرس الثاني عشر — الصحابة المختارون وإسهاماتهم', style: TextStyle(fontSize: 17)),
               ],
             ),
           ),
@@ -139,7 +138,7 @@ class _Dars115ScreenState extends State<Dars115Screen> {
                   ),
                 );
                 if (ok == true) {
-                  await appState.resetDars115();
+                  await appState.resetDars1112();
                 }
               },
             ),
@@ -190,59 +189,58 @@ class _Dars115ScreenState extends State<Dars115Screen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              _Hero5(),
-                              const TopicIntroVideo(assetPath: 'assets/video/topik5.mp4'),
+                              _Hero12(),
                               KeyedSubtree(
                                 key: _readingKey,
                                 child: Column(children: [
                                   const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
-                                  const ReadingCard5(),
+                                  const ReadingCard12(),
                                 ]),
                               ),
                               KeyedSubtree(
                                 key: _vocabKey,
                                 child: Column(children: [
                                   const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
-                                  const VocabCard5(),
-                                  const RuleCard5(),
+                                  const VocabCard12(),
+                                  const RuleCard12(),
                                 ]),
                               ),
                               KeyedSubtree(
                                 key: _speakingKey,
                                 child: Column(children: [
                                   const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
-                                  const SpeakingCard5(),
+                                  const SpeakingCard12(),
                                 ]),
                               ),
                               KeyedSubtree(
                                 key: _thinkKey,
                                 child: Column(children: [
                                   const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
-                                  const ThinkWriteCard5(),
+                                  const ThinkWriteCard12(),
                                 ]),
                               ),
                               KeyedSubtree(
                                 key: _analyzeKey,
                                 child: Column(children: [
                                   const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
-                                  const AnalyzeCard5(),
+                                  const AnalyzeCard12(),
                                 ]),
                               ),
                               KeyedSubtree(
                                 key: _reflectionKey,
                                 child: Column(children: [
-                                  StitchDivider('الفقه والحياة', icon: Icons.favorite_border),
-                                  const ReflectionCard5(),
+                                  StitchDivider('السيرة والحياة', icon: Icons.favorite_border),
+                                  const ReflectionCard12(),
                                 ]),
                               ),
                               KeyedSubtree(
                                 key: _closingKey,
                                 child: Column(children: [
                                   const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
-                                  const ExitTicketCard5(),
-                                  const SelfAssessCard5(),
+                                  const ExitTicketCard12(),
+                                  const SelfAssessCard12(),
                                   const SizedBox(height: 12),
-                                  const DictionaryCard5(),
+                                  const DictionaryCard12(),
                                 ]),
                               ),
                               const SizedBox(height: 28),
@@ -264,7 +262,7 @@ class _Dars115ScreenState extends State<Dars115Screen> {
                                         Icon(Icons.auto_awesome_rounded, color: c.gold, size: 22),
                                         const SizedBox(width: 8),
                                         Text(
-                                          'بحمد الله وتوفيقه تم الدرس الخامس',
+                                          'بحمد الله وتوفيقه تم الدرس الثاني عشر',
                                           style: TextStyle(fontFamily: AppTheme.uiFont, fontWeight: FontWeight.bold, fontSize: 18, color: c.accent),
                                         ),
                                       ],
@@ -285,7 +283,7 @@ class _Dars115ScreenState extends State<Dars115Screen> {
                                           onPressed: () => CelebrationDialog.show(
                                             context,
                                             title: 'أَحْسَنْتَ! 🎉',
-                                            message: 'أَتْمَمْتَ الدَّرْسَ الْخَامِسَ: الصَّلَاةُ المَفْرُوضَةُ',
+                                            message: 'أَتْمَمْتَ الدَّرْسَ الثَّانِيَ عَشَرَ: الصَّحَابَةُ الْمُخْتَارُونَ وَإِسْهَامَاتُهُمْ',
                                           ),
                                           icon: const Icon(Icons.military_tech_rounded, size: 18),
                                           label: const Text('عرض وسام الإنجاز 🏆'),
@@ -320,7 +318,7 @@ class _Dars115ScreenState extends State<Dars115Screen> {
   }
 }
 
-class _Hero5 extends StatelessWidget {
+class _Hero12 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
@@ -346,9 +344,9 @@ class _Hero5 extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('🕌', style: const TextStyle(fontSize: 13)),
+                    Text('📜', style: const TextStyle(fontSize: 13)),
                     const SizedBox(width: 6),
-                    Text('الوحدة الثانية: الفقه',
+                    Text('الوحدة الرابعة: السيرة',
                         style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 12, color: c.accent, fontWeight: FontWeight.w700)),
                   ],
                 ),
@@ -370,13 +368,13 @@ class _Hero5 extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 14),
-          Text('الصَّلَاةُ المَفْرُوضَةُ: الأَوْقَاتُ، الأَرْكَانُ، وَالشُّرُوطُ',
+          Text('الصَّحَابَةُ الْمُخْتَارُونَ وَإِسْهَامَاتُهُمْ',
               style: TextStyle(fontFamily: AppTheme.arabicFont, fontWeight: FontWeight.w800, fontSize: 30, color: c.accent)),
           const SizedBox(height: 6),
           Text('فِي نِهَايَةِ الدَّرْسِ، أَسْتَطِيعُ إِنْ شَاءَ اللهُ أَنْ:',
               style: TextStyle(fontFamily: AppTheme.instructionFont, fontSize: 17, color: c.gold)),
           const SizedBox(height: 14),
-          for (final o in Dars115.objectives)
+          for (final o in Dars1112.objectives)
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: Container(
