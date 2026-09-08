@@ -68,6 +68,10 @@ class _ReadingCard8State extends State<ReadingCard8> {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
+    // Every reading line in this lesson names لفظ الجلالة mid-sentence, so
+    // all of them are in readingNoAudio and there is nothing to play — omit
+    // the button rather than show one that flickers and plays nothing.
+    final hasPlayableLines = Dars118.readingNoAudio.length < Dars118.readingLines.length;
     return SectionCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,24 +79,25 @@ class _ReadingCard8State extends State<ReadingCard8> {
           Row(
             children: [
               const Expanded(child: CardHeading('🎧 اِقْرَأِ النَّصَّ بِصَوْتٍ مُرْتَفِعٍ مَعَ زَمِيلِكَ')),
-              ElevatedButton.icon(
-                onPressed: _playAll,
-                icon: Icon(
-                  _playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  size: 18,
-                  color: Colors.white,
+              if (hasPlayableLines)
+                ElevatedButton.icon(
+                  onPressed: _playAll,
+                  icon: Icon(
+                    _playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                    size: 18,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    _playingAll ? 'إيقاف' : 'استمع للنص كاملاً',
+                    style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _playingAll ? c.danger : c.accent,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
+                  ),
                 ),
-                label: Text(
-                  _playingAll ? 'إيقاف' : 'استمع للنص كاملاً',
-                  style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: _playingAll ? c.danger : c.accent,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
-                ),
-              ),
             ],
           ),
           const SizedBox(height: 16),

@@ -13,6 +13,7 @@ import '../widgets/dars_1_7/speaking_card.dart';
 import '../widgets/dars_1_7/think_write_card.dart';
 import '../widgets/dars_1_7/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
+import '../widgets/dars1/topic_intro_video.dart';
 import '../widgets/atmosphere.dart';
 
 class Dars117Screen extends StatefulWidget {
@@ -190,6 +191,7 @@ class _Dars117ScreenState extends State<Dars117Screen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               _Hero7(),
+                              const TopicIntroVideo(assetPath: 'assets/video/topik7.mp4'),
                               KeyedSubtree(
                                 key: _readingKey,
                                 child: Column(children: [
