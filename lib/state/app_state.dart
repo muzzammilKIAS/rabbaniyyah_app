@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../services/quran_audio_service.dart';
 import '../services/storage_service.dart';
@@ -43,6 +45,15 @@ class AppState extends ChangeNotifier {
 
   final Map<String, Map<String, dynamic>> _lessons = {};
 
+  // Every text field, dropdown and checkbox across the twelve lessons
+  // writes through _lessonSet, which used to jsonEncode + persist the
+  // whole lesson blob on every single keystroke — visible typing lag on
+  // longer free-text answers. Debounce the actual disk write per lesson
+  // (the in-memory update + notifyListeners still happen immediately, so
+  // the UI stays responsive) and flush on dispose so nothing is lost.
+  static const _saveDebounce = Duration(milliseconds: 500);
+  final Map<String, Timer> _saveTimers = {};
+
   void load() {
     _tashkeelOn = _storage.getBool(_navPrefix, true);
     _themeMode = _themeModeFromString(_storage.getString(_themeModeKey, 'system'));
@@ -80,8 +91,22 @@ class AppState extends ChangeNotifier {
 
   void _lessonSet(String id, String key, dynamic value) {
     _lessons[id]![key] = value;
-    _storage.writeBlob(_lessonKeys[id]!, _lessons[id]!);
     notifyListeners();
+    _saveTimers[id]?.cancel();
+    _saveTimers[id] = Timer(_saveDebounce, () {
+      _saveTimers.remove(id);
+      _storage.writeBlob(_lessonKeys[id]!, _lessons[id]!);
+    });
+  }
+
+  /// Persists any lesson whose debounced write hasn't fired yet — call this
+  /// before the app might be torn down (e.g. on lifecycle pause) so a
+  /// student who types then immediately closes the tab doesn't lose it.
+  void flushPendingSaves() {
+    for (final id in _saveTimers.keys.toList()) {
+      _saveTimers.remove(id)?.cancel();
+      _storage.writeBlob(_lessonKeys[id]!, _lessons[id]!);
+    }
   }
 
   Map<String, bool> _lessonSelfChecks(String id) {
@@ -106,6 +131,7 @@ class AppState extends ChangeNotifier {
   }
 
   Future<void> _resetLesson(String id) async {
+    _saveTimers.remove(id)?.cancel();
     _lessons[id] = {};
     await _storage.clearBlob(_lessonKeys[id]!);
     notifyListeners();
@@ -209,6 +235,7 @@ class AppState extends ChangeNotifier {
 
   @override
   void dispose() {
+    flushPendingSaves();
     tts.removeListener(notifyListeners);
     super.dispose();
   }

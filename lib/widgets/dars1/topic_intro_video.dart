@@ -16,17 +16,28 @@ class TopicIntroVideo extends StatefulWidget {
 }
 
 class _TopicIntroVideoState extends State<TopicIntroVideo> {
-  late final VideoPlayerController _controller;
+  // Not created until the student actually taps play — a lesson screen is
+  // opened far more often than its video is watched, and eagerly buffering
+  // a multi-megabyte file on every visit is exactly the kind of unasked-for
+  // network/CPU work that makes the app feel heavy while merely browsing.
+  VideoPlayerController? _controller;
   bool _ready = false;
+  bool _loading = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = VideoPlayerController.asset(widget.assetPath)
-      ..initialize().then((_) {
-        if (mounted) setState(() => _ready = true);
-      })
-      ..addListener(_onTick);
+  Future<VideoPlayerController?> _ensureController() async {
+    final existing = _controller;
+    if (existing != null) return existing;
+    setState(() => _loading = true);
+    final c = VideoPlayerController.asset(widget.assetPath);
+    _controller = c;
+    c.addListener(_onTick);
+    await c.initialize();
+    if (!mounted) return c;
+    setState(() {
+      _ready = true;
+      _loading = false;
+    });
+    return c;
   }
 
   void _onTick() {
@@ -35,16 +46,20 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
 
   @override
   void dispose() {
-    _controller.removeListener(_onTick);
-    _controller.dispose();
+    _controller?.removeListener(_onTick);
+    _controller?.dispose();
     super.dispose();
   }
 
-  void _togglePlay() {
-    _controller.value.isPlaying ? _controller.pause() : _controller.play();
+  Future<void> _togglePlay() async {
+    final c = await _ensureController();
+    if (c == null || !mounted) return;
+    c.value.isPlaying ? c.pause() : c.play();
   }
 
-  void _openProjectorMode() {
+  Future<void> _openProjectorMode() async {
+    final c = await _ensureController();
+    if (c == null || !mounted) return;
     Navigator.of(context, rootNavigator: true).push(
       PageRouteBuilder(
         opaque: true,
@@ -52,7 +67,7 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
         transitionDuration: const Duration(milliseconds: 220),
         pageBuilder: (_, anim, _) => FadeTransition(
           opacity: anim,
-          child: _ProjectorVideoView(controller: _controller, fmt: _fmt),
+          child: _ProjectorVideoView(controller: c, fmt: _fmt),
         ),
       ),
     );
@@ -67,9 +82,10 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    final playing = _ready && _controller.value.isPlaying;
-    final position = _ready ? _controller.value.position : Duration.zero;
-    final duration = _ready ? _controller.value.duration : Duration.zero;
+    final controller = _controller;
+    final playing = _ready && controller!.value.isPlaying;
+    final position = _ready ? controller!.value.position : Duration.zero;
+    final duration = _ready ? controller!.value.duration : Duration.zero;
 
     return SectionCard(
       child: Column(
@@ -81,40 +97,45 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: AspectRatio(
-              aspectRatio: _ready ? _controller.value.aspectRatio : 16 / 9,
+              aspectRatio: _ready ? controller!.value.aspectRatio : 16 / 9,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   if (_ready)
-                    VideoPlayer(_controller)
+                    VideoPlayer(controller!)
                   else
                     Container(
                       color: c.surface2,
-                      child: Center(child: CircularProgressIndicator(color: c.accent)),
+                      child: Center(
+                        child: _loading
+                            ? CircularProgressIndicator(color: c.accent)
+                            : Icon(Icons.movie_creation_outlined, size: 40, color: c.textMuted),
+                      ),
                     ),
-                  if (_ready)
-                    GestureDetector(
-                      behavior: HitTestBehavior.opaque,
-                      onTap: _togglePlay,
-                      child: AnimatedOpacity(
-                        opacity: playing ? 0 : 1,
-                        duration: const Duration(milliseconds: 200),
-                        child: Container(
-                          color: Colors.black.withValues(alpha: 0.25),
-                          child: Center(
-                            child: Container(
-                              width: 64,
-                              height: 64,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white.withValues(alpha: 0.92),
-                              ),
-                              child: Icon(Icons.play_arrow_rounded, size: 36, color: c.accent),
-                            ),
-                          ),
+                  GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: _loading ? null : _togglePlay,
+                    child: AnimatedOpacity(
+                      opacity: playing ? 0 : 1,
+                      duration: const Duration(milliseconds: 200),
+                      child: Container(
+                        color: Colors.black.withValues(alpha: 0.25),
+                        child: Center(
+                          child: _loading
+                              ? const SizedBox.shrink()
+                              : Container(
+                                  width: 64,
+                                  height: 64,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white.withValues(alpha: 0.92),
+                                  ),
+                                  child: Icon(Icons.play_arrow_rounded, size: 36, color: c.accent),
+                                ),
                         ),
                       ),
                     ),
+                  ),
                 ],
               ),
             ),
@@ -142,7 +163,7 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
                           .clamp(0, duration.inMilliseconds == 0 ? 1 : duration.inMilliseconds)
                           .toDouble(),
                       max: duration.inMilliseconds == 0 ? 1 : duration.inMilliseconds.toDouble(),
-                      onChanged: (v) => _controller.seekTo(Duration(milliseconds: v.round())),
+                      onChanged: (v) => controller!.seekTo(Duration(milliseconds: v.round())),
                     ),
                   ),
                 ),

@@ -28,8 +28,37 @@ Future<void> main() async {
   );
 }
 
-class RabbaniyyahApp extends StatelessWidget {
+class RabbaniyyahApp extends StatefulWidget {
   const RabbaniyyahApp({super.key});
+
+  @override
+  State<RabbaniyyahApp> createState() => _RabbaniyyahAppState();
+}
+
+class _RabbaniyyahAppState extends State<RabbaniyyahApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // A browser tab switch or close fires "hidden"/"paused" rather than a
+    // widget dispose, so this is the only reliable place to flush any
+    // debounced-but-not-yet-written lesson answers before they'd be lost.
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.hidden ||
+        state == AppLifecycleState.detached) {
+      context.read<AppState>().flushPendingSaves();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
