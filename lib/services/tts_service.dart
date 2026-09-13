@@ -128,7 +128,7 @@ class TtsService with ChangeNotifier {
     'مِنَ الشُّرُوطِ: الطَّهَارَةُ، وَدُخُولُ الْوَقْتِ، وَاسْتِقْبَالُ الْقِبْلَةِ.': 'assets/audio/tts_dars15/reading_3.mp3',
     'قُمْ، وَاسْتَقْبِلِ الْقِبْلَةَ، وَكَبِّرْ.': 'assets/audio/tts_dars15/reading_4.mp3',
     'اِقْرَأِ الْفَاتِحَةَ، ثُمَّ ارْكَعْ.': 'assets/audio/tts_dars15/reading_5.mp3',
-    'اُرْفَعْ رَأْسَكَ، ثُمَّ اسْجُدْ.': 'assets/audio/tts_dars15/reading_6.mp3',
+    'اِرْفَعْ رَأْسَكَ، ثُمَّ اسْجُدْ.': 'assets/audio/tts_dars15/reading_6.mp3',
     'صَلِّ فِي وَقْتِهَا، وَلَا تُؤَخِّرْهَا.': 'assets/audio/tts_dars15/reading_7.mp3',
     'وَقْتٌ / أَوْقَاتٌ': 'assets/audio/tts_dars15/vocab_0.mp3',
     'الفَجْرُ': 'assets/audio/tts_dars15/vocab_1.mp3',
