@@ -142,6 +142,7 @@ class _Dars119ScreenState extends State<Dars119Screen> {
                 }
               },
             ),
+            const FullscreenToggleButton(),
             const ThemeToggleButton(),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 4),

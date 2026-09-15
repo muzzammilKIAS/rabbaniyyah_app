@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../utils/arabic_text.dart';
+import '../utils/fullscreen.dart' as fullscreen;
 
 /// Arabic text that respects the global "baris" (tashkeel) toggle — shows
 /// [text] as authored when the toggle is on, or with diacritics stripped
@@ -322,6 +325,56 @@ class ThemeToggleButton extends StatelessWidget {
       tooltip: tooltip,
       icon: Icon(icon, size: 20),
       onPressed: () => context.read<AppState>().cycleThemeMode(),
+    );
+  }
+}
+
+/// Toggles real browser fullscreen (hides the address bar/tabs) — "وضع
+/// العارض" for showing a lesson on a classroom projector without any
+/// browser chrome distracting the students. No-op on non-web platforms,
+/// where there is no browser chrome to hide.
+class FullscreenToggleButton extends StatefulWidget {
+  const FullscreenToggleButton({super.key});
+
+  @override
+  State<FullscreenToggleButton> createState() => _FullscreenToggleButtonState();
+}
+
+class _FullscreenToggleButtonState extends State<FullscreenToggleButton> {
+  late bool _isFullscreen = fullscreen.isFullscreen;
+  StreamSubscription<bool>? _sub;
+
+  @override
+  void initState() {
+    super.initState();
+    // Keeps the icon in sync when the student exits via Esc or the
+    // browser's own fullscreen control, not just via this button.
+    _sub = fullscreen.fullscreenChanges.listen((v) {
+      if (mounted) setState(() => _isFullscreen = v);
+    });
+  }
+
+  @override
+  void dispose() {
+    _sub?.cancel();
+    super.dispose();
+  }
+
+  Future<void> _toggle() async {
+    if (_isFullscreen) {
+      await fullscreen.exitFullscreen();
+    } else {
+      await fullscreen.enterFullscreen();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!fullscreen.isFullscreenSupported) return const SizedBox.shrink();
+    return IconButton(
+      tooltip: _isFullscreen ? 'الخروج من وضع العارض' : 'وضع العارض (ملء الشاشة)',
+      icon: Icon(_isFullscreen ? Icons.fullscreen_exit_rounded : Icons.fullscreen_rounded, size: 20),
+      onPressed: _toggle,
     );
   }
 }

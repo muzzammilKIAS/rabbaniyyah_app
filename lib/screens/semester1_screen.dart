@@ -68,7 +68,7 @@ class _Semester1ScreenState extends State<Semester1Screen> with SingleTickerProv
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: const Text('الفصل الدراسي الأول'),
-          actions: const [ThemeToggleButton()],
+          actions: const [FullscreenToggleButton(), ThemeToggleButton()],
         ),
         body: PageBackdrop(
           child: SafeArea(

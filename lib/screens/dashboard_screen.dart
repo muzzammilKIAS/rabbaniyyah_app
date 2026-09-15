@@ -284,6 +284,15 @@ class _TopNavBar extends StatelessWidget {
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(left: 8),
+            decoration: BoxDecoration(
+              color: c.surface2,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: c.border),
+            ),
+            child: const FullscreenToggleButton(),
+          ),
+          Container(
             decoration: BoxDecoration(
               color: c.surface2,
               borderRadius: BorderRadius.circular(10),
