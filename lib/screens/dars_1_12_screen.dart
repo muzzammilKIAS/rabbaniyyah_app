@@ -14,6 +14,7 @@ import '../widgets/dars_1_12/think_write_card.dart';
 import '../widgets/dars_1_12/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
 import '../widgets/atmosphere.dart';
+import '../widgets/projector_mode.dart';
 
 class Dars1112Screen extends StatefulWidget {
   const Dars1112Screen({super.key});
@@ -42,6 +43,74 @@ class _Dars1112ScreenState extends State<Dars1112Screen> {
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
     LessonStepItem(icon: Icons.favorite_border, label: 'السيرة والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
+  ];
+
+  late final _slides = [
+    ProjectorSlide(
+      label: 'الدرس الثاني عشر — الصحابة المختارون وإسهاماتهم',
+      icon: Icons.auto_stories_rounded,
+      child: _Hero12(),
+    ),
+    ProjectorSlide(
+      label: 'أقرأ وأفهم',
+      icon: Icons.menu_book_outlined,
+      child: Column(children: [
+        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
+        const ReadingCard12(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'كلمات وقاعدة',
+      icon: Icons.view_list_outlined,
+      child: Column(children: [
+        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
+        const VocabCard12(),
+        const RuleCard12(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أتكلم',
+      icon: Icons.forum_outlined,
+      child: Column(children: [
+        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
+        const SpeakingCard12(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أفكر وأكتب',
+      icon: Icons.edit_note_outlined,
+      child: Column(children: [
+        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
+        const ThinkWriteCard12(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أحلل وأطبق',
+      icon: Icons.groups_outlined,
+      child: Column(children: [
+        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
+        const AnalyzeCard12(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'السيرة والحياة',
+      icon: Icons.favorite_border,
+      child: Column(children: [
+        const StitchDivider('السيرة والحياة', icon: Icons.favorite_border),
+        const ReflectionCard12(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الخاتمة',
+      icon: Icons.flag_outlined,
+      child: Column(children: [
+        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
+        const ExitTicketCard12(),
+        const SelfAssessCard12(),
+        const SizedBox(height: 12),
+        const DictionaryCard12(),
+      ]),
+    ),
   ];
 
   @override
@@ -141,6 +210,16 @@ class _Dars1112ScreenState extends State<Dars1112Screen> {
                   await appState.resetDars1112();
                 }
               },
+            ),
+            IconButton(
+              tooltip: 'العرض التقديمي (وضع الفصل)',
+              icon: const Icon(Icons.co_present_rounded, size: 20),
+              onPressed: () => ProjectorModeView.open(
+                context,
+                lessonTitle: 'الدرس الثاني عشر — الصحابة المختارون وإسهاماتهم',
+                slides: _slides,
+                initialIndex: _active + 1,
+              ),
             ),
             const FullscreenToggleButton(),
             const ThemeToggleButton(),

@@ -15,6 +15,7 @@ import '../widgets/dars_1_8/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
 import '../widgets/dars1/topic_intro_video.dart';
 import '../widgets/atmosphere.dart';
+import '../widgets/projector_mode.dart';
 
 class Dars118Screen extends StatefulWidget {
   const Dars118Screen({super.key});
@@ -43,6 +44,77 @@ class _Dars118ScreenState extends State<Dars118Screen> {
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
     LessonStepItem(icon: Icons.favorite_border, label: 'الأخلاق والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
+  ];
+
+  late final _slides = [
+    ProjectorSlide(
+      label: 'الدرس الثامن — الأخلاق مع الله ورسوله',
+      icon: Icons.auto_stories_rounded,
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        _Hero8(),
+        const TopicIntroVideo(assetPath: 'assets/video/topik8.mp4'),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أقرأ وأفهم',
+      icon: Icons.menu_book_outlined,
+      child: Column(children: [
+        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
+        const ReadingCard8(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'كلمات وقاعدة',
+      icon: Icons.view_list_outlined,
+      child: Column(children: [
+        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
+        const VocabCard8(),
+        const RuleCard8(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أتكلم',
+      icon: Icons.forum_outlined,
+      child: Column(children: [
+        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
+        const SpeakingCard8(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أفكر وأكتب',
+      icon: Icons.edit_note_outlined,
+      child: Column(children: [
+        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
+        const ThinkWriteCard8(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أحلل وأطبق',
+      icon: Icons.groups_outlined,
+      child: Column(children: [
+        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
+        const AnalyzeCard8(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الأخلاق والحياة',
+      icon: Icons.favorite_border,
+      child: Column(children: [
+        const StitchDivider('الأخلاق والحياة', icon: Icons.favorite_border),
+        const ReflectionCard8(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الخاتمة',
+      icon: Icons.flag_outlined,
+      child: Column(children: [
+        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
+        const ExitTicketCard8(),
+        const SelfAssessCard8(),
+        const SizedBox(height: 12),
+        const DictionaryCard8(),
+      ]),
+    ),
   ];
 
   @override
@@ -142,6 +214,16 @@ class _Dars118ScreenState extends State<Dars118Screen> {
                   await appState.resetDars118();
                 }
               },
+            ),
+            IconButton(
+              tooltip: 'العرض التقديمي (وضع الفصل)',
+              icon: const Icon(Icons.co_present_rounded, size: 20),
+              onPressed: () => ProjectorModeView.open(
+                context,
+                lessonTitle: 'الدرس الثامن — الأخلاق مع الله ورسوله',
+                slides: _slides,
+                initialIndex: _active + 1,
+              ),
             ),
             const FullscreenToggleButton(),
             const ThemeToggleButton(),

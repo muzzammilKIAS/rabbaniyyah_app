@@ -14,6 +14,7 @@ import '../widgets/dars_1_9/think_write_card.dart';
 import '../widgets/dars_1_9/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
 import '../widgets/atmosphere.dart';
+import '../widgets/projector_mode.dart';
 
 class Dars119Screen extends StatefulWidget {
   const Dars119Screen({super.key});
@@ -42,6 +43,74 @@ class _Dars119ScreenState extends State<Dars119Screen> {
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
     LessonStepItem(icon: Icons.favorite_border, label: 'الأخلاق والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
+  ];
+
+  late final _slides = [
+    ProjectorSlide(
+      label: 'الدرس التاسع — الأخلاق في الأسرة والمجتمع',
+      icon: Icons.auto_stories_rounded,
+      child: _Hero9(),
+    ),
+    ProjectorSlide(
+      label: 'أقرأ وأفهم',
+      icon: Icons.menu_book_outlined,
+      child: Column(children: [
+        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
+        const ReadingCard9(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'كلمات وقاعدة',
+      icon: Icons.view_list_outlined,
+      child: Column(children: [
+        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
+        const VocabCard9(),
+        const RuleCard9(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أتكلم',
+      icon: Icons.forum_outlined,
+      child: Column(children: [
+        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
+        const SpeakingCard9(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أفكر وأكتب',
+      icon: Icons.edit_note_outlined,
+      child: Column(children: [
+        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
+        const ThinkWriteCard9(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أحلل وأطبق',
+      icon: Icons.groups_outlined,
+      child: Column(children: [
+        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
+        const AnalyzeCard9(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الأخلاق والحياة',
+      icon: Icons.favorite_border,
+      child: Column(children: [
+        const StitchDivider('الأخلاق والحياة', icon: Icons.favorite_border),
+        const ReflectionCard9(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الخاتمة',
+      icon: Icons.flag_outlined,
+      child: Column(children: [
+        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
+        const ExitTicketCard9(),
+        const SelfAssessCard9(),
+        const SizedBox(height: 12),
+        const DictionaryCard9(),
+      ]),
+    ),
   ];
 
   @override
@@ -141,6 +210,16 @@ class _Dars119ScreenState extends State<Dars119Screen> {
                   await appState.resetDars119();
                 }
               },
+            ),
+            IconButton(
+              tooltip: 'العرض التقديمي (وضع الفصل)',
+              icon: const Icon(Icons.co_present_rounded, size: 20),
+              onPressed: () => ProjectorModeView.open(
+                context,
+                lessonTitle: 'الدرس التاسع — الأخلاق في الأسرة والمجتمع',
+                slides: _slides,
+                initialIndex: _active + 1,
+              ),
             ),
             const FullscreenToggleButton(),
             const ThemeToggleButton(),

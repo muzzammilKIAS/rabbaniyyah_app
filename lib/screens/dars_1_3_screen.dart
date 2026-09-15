@@ -15,6 +15,7 @@ import '../widgets/dars_1_3/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
 import '../widgets/dars1/topic_intro_video.dart';
 import '../widgets/atmosphere.dart';
+import '../widgets/projector_mode.dart';
 
 class Dars113Screen extends StatefulWidget {
   const Dars113Screen({super.key});
@@ -43,6 +44,77 @@ class _Dars113ScreenState extends State<Dars113Screen> {
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
     LessonStepItem(icon: Icons.favorite_border, label: 'العقيدة والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
+  ];
+
+  late final _slides = [
+    ProjectorSlide(
+      label: 'الدرس الثالث — الإيمان باليوم الآخر والقضاء والقدر',
+      icon: Icons.auto_stories_rounded,
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        _Hero3(),
+        const TopicIntroVideo(assetPath: 'assets/video/topik3.mp4'),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أقرأ وأفهم',
+      icon: Icons.menu_book_outlined,
+      child: Column(children: [
+        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
+        const ReadingCard3(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'كلمات وقاعدة',
+      icon: Icons.view_list_outlined,
+      child: Column(children: [
+        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
+        const VocabCard3(),
+        const RuleCard3(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أتكلم',
+      icon: Icons.forum_outlined,
+      child: Column(children: [
+        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
+        const SpeakingCard3(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أفكر وأكتب',
+      icon: Icons.edit_note_outlined,
+      child: Column(children: [
+        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
+        const ThinkWriteCard3(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أحلل وأطبق',
+      icon: Icons.groups_outlined,
+      child: Column(children: [
+        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
+        const AnalyzeCard3(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'العقيدة والحياة',
+      icon: Icons.favorite_border,
+      child: Column(children: [
+        const StitchDivider('العقيدة والحياة', icon: Icons.favorite_border),
+        const ReflectionCard3(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الخاتمة',
+      icon: Icons.flag_outlined,
+      child: Column(children: [
+        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
+        const ExitTicketCard3(),
+        const SelfAssessCard3(),
+        const SizedBox(height: 12),
+        const DictionaryCard3(),
+      ]),
+    ),
   ];
 
   @override
@@ -142,6 +214,16 @@ class _Dars113ScreenState extends State<Dars113Screen> {
                   await appState.resetDars113();
                 }
               },
+            ),
+            IconButton(
+              tooltip: 'العرض التقديمي (وضع الفصل)',
+              icon: const Icon(Icons.co_present_rounded, size: 20),
+              onPressed: () => ProjectorModeView.open(
+                context,
+                lessonTitle: 'الدرس الثالث — الإيمان باليوم الآخر والقضاء والقدر',
+                slides: _slides,
+                initialIndex: _active + 1,
+              ),
             ),
             const FullscreenToggleButton(),
             const ThemeToggleButton(),

@@ -15,6 +15,7 @@ import '../widgets/dars_1_4/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
 import '../widgets/dars1/topic_intro_video.dart';
 import '../widgets/atmosphere.dart';
+import '../widgets/projector_mode.dart';
 
 class Dars114Screen extends StatefulWidget {
   const Dars114Screen({super.key});
@@ -43,6 +44,77 @@ class _Dars114ScreenState extends State<Dars114Screen> {
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
     LessonStepItem(icon: Icons.favorite_border, label: 'الفقه والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
+  ];
+
+  late final _slides = [
+    ProjectorSlide(
+      label: 'الدرس الرابع — الطهارة: الوضوء والغسل',
+      icon: Icons.auto_stories_rounded,
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        _Hero4(),
+        const TopicIntroVideo(assetPath: 'assets/video/topik4.mp4'),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أقرأ وأفهم',
+      icon: Icons.menu_book_outlined,
+      child: Column(children: [
+        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
+        const ReadingCard4(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'كلمات وقاعدة',
+      icon: Icons.view_list_outlined,
+      child: Column(children: [
+        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
+        const VocabCard4(),
+        const RuleCard4(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أتكلم',
+      icon: Icons.forum_outlined,
+      child: Column(children: [
+        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
+        const SpeakingCard4(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أفكر وأكتب',
+      icon: Icons.edit_note_outlined,
+      child: Column(children: [
+        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
+        const ThinkWriteCard4(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أحلل وأطبق',
+      icon: Icons.groups_outlined,
+      child: Column(children: [
+        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
+        const AnalyzeCard4(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الفقه والحياة',
+      icon: Icons.favorite_border,
+      child: Column(children: [
+        const StitchDivider('الفقه والحياة', icon: Icons.favorite_border),
+        const ReflectionCard4(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الخاتمة',
+      icon: Icons.flag_outlined,
+      child: Column(children: [
+        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
+        const ExitTicketCard4(),
+        const SelfAssessCard4(),
+        const SizedBox(height: 12),
+        const DictionaryCard4(),
+      ]),
+    ),
   ];
 
   @override
@@ -142,6 +214,16 @@ class _Dars114ScreenState extends State<Dars114Screen> {
                   await appState.resetDars114();
                 }
               },
+            ),
+            IconButton(
+              tooltip: 'العرض التقديمي (وضع الفصل)',
+              icon: const Icon(Icons.co_present_rounded, size: 20),
+              onPressed: () => ProjectorModeView.open(
+                context,
+                lessonTitle: 'الدرس الرابع — الطهارة: الوضوء والغسل',
+                slides: _slides,
+                initialIndex: _active + 1,
+              ),
             ),
             const FullscreenToggleButton(),
             const ThemeToggleButton(),

@@ -16,6 +16,7 @@ import '../widgets/dars1/vocab_card.dart';
 import '../widgets/dars1/writing_frames.dart';
 import '../widgets/dars1/celebration_dialog.dart';
 import '../widgets/atmosphere.dart';
+import '../widgets/projector_mode.dart';
 import '../utils/arabic_text.dart';
 
 class Dars111Screen extends StatefulWidget {
@@ -47,6 +48,82 @@ class _Dars111ScreenState extends State<Dars111Screen> {
     LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
     LessonStepItem(icon: Icons.favorite_border, label: 'الإيمان والحياة', sectionKey: _reflectionKey),
     LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
+  ];
+
+  late final _slides = [
+    ProjectorSlide(
+      label: 'الدرس الأول — الإيمان بالله',
+      icon: Icons.auto_stories_rounded,
+      child: Column(mainAxisSize: MainAxisSize.min, children: [_Hero(), const TopicIntroVideo()]),
+    ),
+    ProjectorSlide(
+      label: 'أقرأ وأفهم',
+      icon: Icons.menu_book_outlined,
+      child: Column(children: [
+        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
+        const ReadingCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'كلمات وقاعدة',
+      icon: Icons.view_list_outlined,
+      child: Column(children: [
+        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
+        const VocabCard(),
+        const RuleCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أتكلم',
+      icon: Icons.forum_outlined,
+      child: Column(children: [
+        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
+        const MatchingCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أفكر وأكتب',
+      icon: Icons.edit_note_outlined,
+      child: Column(children: [
+        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
+        const FillCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أكتب وأحول',
+      icon: Icons.swap_horiz_outlined,
+      child: Column(children: [
+        const StitchDivider('أكتب وأحول', icon: Icons.swap_horiz_outlined),
+        const TransformAndWordOrderCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'أحلل وأطبق',
+      icon: Icons.groups_outlined,
+      child: Column(children: [
+        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
+        const AnalyzeApplyCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الإيمان والحياة',
+      icon: Icons.favorite_border,
+      child: Column(children: [
+        const StitchDivider('الإيمان والحياة', icon: Icons.favorite_border),
+        const ReflectionCard(),
+      ]),
+    ),
+    ProjectorSlide(
+      label: 'الخاتمة',
+      icon: Icons.flag_outlined,
+      child: Column(children: [
+        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
+        const ExitTicketCard(),
+        const SelfAssessCard(),
+        const SizedBox(height: 12),
+        const DictionaryCard(),
+      ]),
+    ),
   ];
 
   @override
@@ -151,6 +228,16 @@ class _Dars111ScreenState extends State<Dars111Screen> {
                   await appState.resetDars111();
                 }
               },
+            ),
+            IconButton(
+              tooltip: 'العرض التقديمي (وضع الفصل)',
+              icon: const Icon(Icons.co_present_rounded, size: 20),
+              onPressed: () => ProjectorModeView.open(
+                context,
+                lessonTitle: 'الدرس الأول — الإيمان بالله',
+                slides: _slides,
+                initialIndex: _active + 1,
+              ),
             ),
             const FullscreenToggleButton(),
             const ThemeToggleButton(),
