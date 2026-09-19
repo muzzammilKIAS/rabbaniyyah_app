@@ -13,6 +13,7 @@ import '../widgets/dars_1_9/speaking_card.dart';
 import '../widgets/dars_1_9/think_write_card.dart';
 import '../widgets/dars_1_9/vocab_card.dart';
 import '../widgets/dars1/celebration_dialog.dart';
+import '../widgets/dars1/topic_intro_video.dart';
 import '../widgets/atmosphere.dart';
 import '../widgets/projector_mode.dart';
 
@@ -49,7 +50,10 @@ class _Dars119ScreenState extends State<Dars119Screen> {
     ProjectorSlide(
       label: 'الدرس التاسع — الأخلاق في الأسرة والمجتمع',
       icon: Icons.auto_stories_rounded,
-      child: _Hero9(),
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        _Hero9(),
+        const TopicIntroVideo(assetPath: 'assets/video/topik9.mp4'),
+      ]),
     ),
     ProjectorSlide(
       label: 'أقرأ وأفهم',
@@ -270,6 +274,7 @@ class _Dars119ScreenState extends State<Dars119Screen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               _Hero9(),
+                              const TopicIntroVideo(assetPath: 'assets/video/topik9.mp4'),
                               KeyedSubtree(
                                 key: _readingKey,
                                 child: Column(children: [
