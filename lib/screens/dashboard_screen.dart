@@ -7,6 +7,7 @@ import '../theme/app_theme.dart';
 import '../utils/arabic_text.dart';
 import '../widgets/atmosphere.dart';
 import '../widgets/common.dart';
+import '../widgets/game_banner.dart';
 import 'dars_1_1_screen.dart';
 import 'semester1_screen.dart';
 
@@ -82,6 +83,8 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
                           Staggered(controller: _entrance, start: 0.08, end: 0.55, child: const _HeroBanner()),
                           const SizedBox(height: 22),
                           Staggered(controller: _entrance, start: 0.16, end: 0.65, child: const _StatsRow()),
+                          const SizedBox(height: 18),
+                          Staggered(controller: _entrance, start: 0.2, end: 0.7, child: const GameBanner()),
                           const SizedBox(height: 24),
                           Staggered(
                             controller: _entrance,

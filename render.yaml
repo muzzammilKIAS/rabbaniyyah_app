@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rabbaniyyah-mountain
+    runtime: node
+    rootDir: rabbaniyyah-mountain
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run server
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+    healthCheckPath: /api/info
+    autoDeploy: true
