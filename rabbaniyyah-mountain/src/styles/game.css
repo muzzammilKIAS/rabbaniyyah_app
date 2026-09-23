@@ -222,6 +222,16 @@ body.screen-game { background: var(--forest-900); overflow: hidden; }
 .marker.is-offline { opacity: .45; }
 .fx-up { font: 800 26px var(--f-head); fill: #fff3c6; paint-order: stroke; stroke: #143f36; stroke-width: 6px; animation: rise 1.6s ease-out forwards; }
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } 20% { opacity: 1; } to { opacity: 0; transform: translateY(-50px); } }
+/* Mendaki: gerak ikut denai, nafas semasa menunggu, jejak kaki dan percikan tiba. */
+.marker.walking { transition: none; }
+.marker-avatar { transform-origin: 0 4px; }
+.marker:not(.walking) .marker-avatar { animation: idleBob 3.2s ease-in-out infinite; }
+@keyframes idleBob { 50% { transform: translateY(-3px) rotate(-1.5deg); } }
+.fx-step { fill: #5d4426; opacity: .45; animation: fade 1.5s ease-out forwards; }
+@keyframes fade { to { opacity: 0; } }
+.fx-spark { fill: var(--gold); transform-box: fill-box; transform-origin: center; animation: spark .95s ease-out forwards; }
+@keyframes spark { to { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(.3); } }
+@media (prefers-reduced-motion: reduce) { .marker:not(.walking) .marker-avatar { animation: none; } }
 .mountain.is-compact .station .t1 { font-size: 46px; stroke-width: 9px; } .mountain.is-compact .station .t2 { font-size: 40px; stroke-width: 9px; }
 .mountain.is-compact .step { r: 9; } .mountain.is-compact .fx-up { font-size: 60px; }
 .mountain.is-compact .marker-label text { font-size: 22px; }
@@ -565,3 +575,30 @@ body.player, body.solo { background: var(--paper); }
 
 @media (min-width: 721px) { .jm-node + .jm-node { margin-top: -56px; } .jm-base { margin-top: 10px; } }
 .stations.base-crowded .station.base text { display: none; }
+
+/* ============ Kesan "gempak": getaran, kilat, mata terbang, combo, banner, konfeti ============ */
+.fx-shake { animation: shakeS .45s ease-out; }
+.fx-shake-lg { animation: shakeL .7s ease-out; }
+@keyframes shakeS { 20% { transform: translate(-4px, 2px); } 40% { transform: translate(4px, -2px); } 60% { transform: translate(-3px, -1px); } 80% { transform: translate(2px, 1px); } }
+@keyframes shakeL { 15% { transform: translate(-9px, 4px) rotate(-.4deg); } 35% { transform: translate(9px, -5px) rotate(.4deg); } 55% { transform: translate(-7px, -3px) rotate(-.3deg); } 75% { transform: translate(5px, 3px); } }
+.fx-flash { position: fixed; inset: 0; pointer-events: none; z-index: 200; animation: flashOut .65s ease-out forwards; }
+.fx-flash.gold { background: radial-gradient(circle at 50% 55%, #ffe9a880 0%, #f3c86233 45%, transparent 72%); }
+.fx-flash.red { background: radial-gradient(circle at 50% 55%, #e0a08f66 0%, #c05a4726 45%, transparent 72%); }
+@keyframes flashOut { from { opacity: 1; } to { opacity: 0; } }
+.fx-float { position: fixed; transform: translate(-50%, -50%); pointer-events: none; z-index: 201; font: 800 30px var(--f-head); color: #fff3c6; text-shadow: 0 2px 0 #143f36, 0 6px 18px #0f2f2866; animation: floatUp 1.2s cubic-bezier(.2, .8, .3, 1) forwards; }
+.fx-float.bad { color: #ffd9cf; }
+@keyframes floatUp { 0% { opacity: 0; transform: translate(-50%, -30%) scale(.6); } 18% { opacity: 1; transform: translate(-50%, -60%) scale(1.15); } 100% { opacity: 0; transform: translate(-50%, -190%) scale(.95); } }
+.fx-combo { position: fixed; transform: translate(-50%, -50%); pointer-events: none; z-index: 201; font: 800 22px var(--f-head); letter-spacing: .5px; color: #fff; background: linear-gradient(135deg, #e2762c, #e2ae4c); padding: 9px 18px; border-radius: 99px; box-shadow: var(--shadow-lg); animation: comboPop 1.4s ease-out forwards; }
+@keyframes comboPop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.4) rotate(-6deg); } 20% { opacity: 1; transform: translate(-50%, -50%) scale(1.18) rotate(2deg); } 35% { transform: translate(-50%, -50%) scale(1) rotate(0); } 80% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -120%) scale(.9); } }
+.fx-banner { position: fixed; inset: 0; z-index: 202; display: grid; place-items: center; pointer-events: none; background: #0f2f2833; backdrop-filter: blur(3px); animation: bannerIn .32s ease-out; }
+.fx-banner.out { animation: bannerOut .3s ease-in forwards; }
+.fx-banner div { text-align: center; background: linear-gradient(135deg, var(--forest-800), var(--forest-600)); border: 3px solid var(--gold); border-radius: var(--r-lg); padding: 28px 44px; box-shadow: var(--shadow-lg); animation: bannerZoom .42s cubic-bezier(.2, 1.5, .4, 1); }
+.fx-banner strong { display: block; font: 800 clamp(26px, 5vw, 44px) var(--f-head); color: var(--gold); letter-spacing: 1px; }
+.fx-banner span { display: block; margin-top: 8px; font-size: 15px; color: #e6f0e8; }
+@keyframes bannerIn { from { opacity: 0; } }
+@keyframes bannerOut { to { opacity: 0; } }
+@keyframes bannerZoom { 0% { transform: scale(.5) rotate(-2deg); } 70% { transform: scale(1.06); } 100% { transform: scale(1); } }
+.fx-confetti { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 203; }
+.fx-confetti i { position: absolute; top: -24px; border-radius: 2px; animation: confettiFall linear forwards; }
+@keyframes confettiFall { 0% { opacity: 1; transform: translateY(0) rotate(0); } 100% { opacity: .9; transform: translateY(105vh) rotate(720deg); } }
+@media (prefers-reduced-motion: reduce) { .fx-shake, .fx-shake-lg { animation: none; } }

@@ -4,6 +4,7 @@ import { connect } from '../lib/net.js';
 import { avatarSVG, cleanAvatar } from '../../shared/avatar.js';
 import { avatarPicker } from '../components/avatar-picker.js';
 import { renderQuestion, renderFeedback } from '../components/question.js';
+import { sfx, shake, flash, floatScore, confetti, banner, combo, crossedCheckpoint } from '../lib/fx.js';
 
 const app = $('#app');
 const KEY = 'rmc-player';
@@ -132,11 +133,19 @@ function showQuestion(q) {
   state.q = renderQuestion($('#qwrap'), q, { remaining: q.remaining, onSubmit: answer => submit(q, answer) });
 }
 async function submit(q, answer) {
+  const before = state.me?.correct ?? 0;
   try {
     const res = await request('answer', { id: q.id, answer });
     state.me = { ...state.me, ...res.me }; state.pending = res.feedback;
     refresh();
-    renderFeedback($('#qwrap'), res.feedback, { answer, question: q, onNext: next });
+    const fb = res.feedback, card = $('#qwrap');
+    if (fb.correct) {
+      sfx.correct(fb.streak); shake(); flash('gold');
+      floatScore(`+${fmt(fb.score)}`, card); combo(fb.streak, card);
+    } else { sfx.wrong(); shake(); flash('red'); }
+    renderFeedback(card, fb, { answer, question: q, onNext: next });
+    const cp = fb.correct && !fb.finished ? crossedCheckpoint(before, state.me.correct, state.room.total) : null;
+    if (cp) banner(cp.title, cp.sub);
   } catch (e) { toast(e.message, 'error'); }
 }
 function showStoredFeedback(fb) {
@@ -159,8 +168,10 @@ function summary(me, r) {
 }
 function showFinished() {
   const r = state.room, me = state.me; if (!me) return;
+  const first = state.screen !== 'finished';
   state.screen = 'finished';
   const summit = me.correct === r.total;
+  if (first) { if (summit) { sfx.summit(); shake(2); confetti(110); } else { sfx.milestone(); confetti(45); } }
   shell(`${hud()}<section class="panel center finish">
     <div class="finish-scene ${summit ? 'summit' : ''}">${avatarSVG(me.avatar, { label: me.name })}</div>
     <p class="fb-ar" lang="ar" dir="rtl">${summit ? 'أَحْسَنْتَ! وَصَلْتَ إِلَى الْقِمَّةِ' : 'أَحْسَنْتَ!'}</p>

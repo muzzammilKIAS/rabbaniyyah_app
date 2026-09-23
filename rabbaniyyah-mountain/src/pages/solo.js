@@ -5,6 +5,7 @@ import { avatarSVG, cleanAvatar } from '../../shared/avatar.js';
 import { avatarPicker } from '../components/avatar-picker.js';
 import { renderQuestion, renderFeedback } from '../components/question.js';
 import { createMountain } from '../components/mountain.js';
+import { sfx, shake, flash, floatScore, confetti, banner, combo, crossedCheckpoint } from '../lib/fx.js';
 
 const app = $('#app');
 const PROGRESS = 'rmc-solo';
@@ -73,9 +74,18 @@ function play(levelId) {
     const shownAt = Date.now();
     view?.destroy();
     view = renderQuestion($('#qwrap'), q, { onSubmit: answer => {
+      const before = me.correct;
       const fb = recordAnswer(me, questions, q.id, answer, { elapsedMs: Date.now() - shownAt });
       updateSide();
-      renderFeedback($('#qwrap'), fb, { answer, question: q, onNext: () => me.finished ? finish() : ask() });
+      const card = $('#qwrap');
+      if (fb.correct) {
+        sfx.correct(fb.streak); shake(); flash('gold');
+        floatScore(`+${fmt(fb.score)}`, card);
+        combo(fb.streak, card);
+      } else { sfx.wrong(); shake(); flash('red'); }
+      renderFeedback(card, fb, { answer, question: q, onNext: () => me.finished ? finish() : ask() });
+      const cp = fb.correct && !me.finished ? crossedCheckpoint(before, me.correct, TOTAL) : null;
+      if (cp) banner(cp.title, cp.sub);
     } });
     $('#qwrap').scrollIntoView({ block: 'nearest' });
   };
@@ -101,6 +111,7 @@ function play(levelId) {
       ${acc < 60 ? '<p class="hint">Capai 60% untuk membuka level seterusnya.</p>' : ''}
       <div class="row-actions"><button class="btn btn-ghost" id="retry">↺ Ulang level</button>${next?.available && unlocked(next.id) ? `<button class="btn btn-gold" id="next">Level ${next.id} →</button>` : ''}<button class="btn btn-primary" id="map-btn">Peta ekspedisi</button></div>
     </section>`, 'screen-ended');
+    if (summit) { sfx.summit(); shake(2); confetti(110); } else { sfx.milestone(); confetti(45); }
     $('#retry').onclick = () => play(levelId);
     $('#map-btn').onclick = showMap;
     $('#next')?.addEventListener('click', () => play(next.id));

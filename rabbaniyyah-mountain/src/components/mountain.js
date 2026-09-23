@@ -148,11 +148,14 @@ export function createMountain(el, { total = 12, compact = false, me = null } = 
       if (!m) { m = makeMarker(p); markers.set(p.id, m); }
       const { x, y, scale, grouped } = pos.get(p.id);
       const shown = label(p.name, 16);
-      const s = m.state;
+      const s = m.state, station = clamp(p.correct, 0, total);
       if (s.x !== x || s.y !== y || s.scale !== scale) {
-        m.g.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
-        if (s.correct !== undefined && p.correct > s.correct) climbFx(points[clamp(p.correct, 0, total)], p.correct - s.correct, m.g);
-        Object.assign(s, { x, y, scale });
+        const climbed = s.correct !== undefined && p.correct > s.correct;
+        // Berjalan menyusuri denai hanya untuk pendaki tunggal; kumpulan besar terus berpindah supaya ringan.
+        const walked = climbed && !grouped && (me === p.id || players.length <= 12) && walk(m, s.station ?? station, station, { x, y, scale });
+        if (!walked) m.g.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+        if (climbed) climbFx(points[station], p.correct - s.correct, m.g, !walked);
+        Object.assign(s, { x, y, scale, station });
       }
       if (s.shown !== shown) { m.text.textContent = shown; const w = Math.max(40, shown.length * 9.6 + 24); m.rect.setAttribute('width', w); m.rect.setAttribute('x', -w / 2); s.shown = shown; }
       m.title.textContent = `${p.name} — ${fmt(p.altitude ?? 0)} m${p.finished ? ' · Selesai' : ''}`;
@@ -176,11 +179,65 @@ export function createMountain(el, { total = 12, compact = false, me = null } = 
     progressPath.style.strokeDashoffset = `${length * (1 - best / total)}`;
   }
 
+  const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const walking = new Set();
+
+  /** Gerak avatar mengikut lengkok denai, satu lonjakan bagi setiap soalan yang dijawab betul. */
+  function walk(m, from, to, target) {
+    if (calm() || walking.has(m) || to <= from) return false;
+    walking.add(m); m.g.classList.add('walking');
+    const steps = to - from, dur = Math.min(1700, 430 * steps);
+    const l0 = length * from / total, l1 = length * to / total;
+    const body = m.g.querySelector('.marker-body'), av = m.g.querySelector('.marker-avatar');
+    const t0 = performance.now();
+    let lastStep = -1;
+    const frame = now => {
+      const t = Math.min(1, (now - t0) / dur), e = t * t * (3 - 2 * t);
+      const len = l0 + (l1 - l0) * e, p = path.getPointAtLength(len), q = path.getPointAtLength(Math.min(length, len + 8));
+      m.g.style.transform = `translate(${p.x}px, ${p.y}px) scale(${target.scale})`;
+      const phase = e * steps, hop = Math.abs(Math.sin(phase * Math.PI));
+      body.style.transform = `translateY(${(-18 * hop).toFixed(2)}px) scale(${(1 + .07 * hop).toFixed(3)})`;
+      const dx = q.x - p.x, d = Math.hypot(dx, q.y - p.y) || 1;
+      av.style.transform = `rotate(${clamp(dx / d * 14, -14, 14).toFixed(1)}deg)`;
+      const step = Math.floor(phase);
+      if (step !== lastStep) { lastStep = step; footprint(p); }
+      if (t < 1) requestAnimationFrame(frame);
+      else {
+        walking.delete(m); m.g.classList.remove('walking');
+        body.style.transform = ''; av.style.transform = '';
+        m.g.style.transform = `translate(${target.x}px, ${target.y}px) scale(${target.scale})`;
+      }
+    };
+    requestAnimationFrame(frame);
+    return true;
+  }
+
+  function footprint(p) {
+    const e = document.createElementNS(NS, 'ellipse');
+    e.setAttribute('class', 'fx-step'); e.setAttribute('cx', p.x); e.setAttribute('cy', p.y + 3);
+    e.setAttribute('rx', 8); e.setAttribute('ry', 4);
+    fx.append(e); setTimeout(() => e.remove(), 1500);
+  }
+
+  function burst(pt) {
+    if (calm()) return;
+    for (let i = 0; i < 9; i++) {
+      const a = -Math.PI * (.12 + .76 * Math.random()), r = 42 + Math.random() * 52;
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('class', 'fx-spark'); c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y - 24);
+      c.setAttribute('r', (3 + Math.random() * 4).toFixed(1));
+      c.style.setProperty('--tx', `${(Math.cos(a) * r).toFixed(1)}px`);
+      c.style.setProperty('--ty', `${(Math.sin(a) * r).toFixed(1)}px`);
+      fx.append(c); setTimeout(() => c.remove(), 950);
+    }
+  }
+
   // Satu kesan "+m" bagi setiap stesen pada satu masa supaya tidak bertindan.
   const fxBusy = new Set();
-  function climbFx(pt, steps, g) {
-    g.classList.remove('climbing'); void g.getBBox(); g.classList.add('climbing');
+  function climbFx(pt, steps, g, hop = true) {
+    if (hop) { g.classList.remove('climbing'); void g.getBBox(); g.classList.add('climbing'); }
     const key = `${pt.x},${pt.y}`; if (fxBusy.has(key)) return; fxBusy.add(key); setTimeout(() => fxBusy.delete(key), 1600);
+    burst(pt);
     const t = document.createElementNS(NS, 'text');
     t.setAttribute('class', 'fx-up'); t.setAttribute('x', pt.x); t.setAttribute('y', pt.y - 110); t.setAttribute('text-anchor', 'middle');
     t.textContent = `+${fmt(Math.round(steps * SUMMIT_METRES / total))} m`;
