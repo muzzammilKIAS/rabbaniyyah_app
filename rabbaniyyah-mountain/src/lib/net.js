@@ -2,7 +2,7 @@ import { io } from 'socket.io-client';
 
 /** Sambungan Socket.IO dengan permintaan berasaskan janji dan status sambungan. */
 export function connect({ onStatus } = {}) {
-  const socket = io({ transports: ['websocket', 'polling'], reconnectionDelayMax: 4000 });
+  const socket = io({ transports: ['polling', 'websocket'], reconnectionDelayMax: 4000 });
   socket.on('connect', () => onStatus?.('online'));
   socket.on('disconnect', () => onStatus?.('offline'));
   socket.io.on('reconnect_attempt', () => onStatus?.('reconnecting'));
