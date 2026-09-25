@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../data/curriculum.dart';
+import '../data/lesson_catalog.dart';
 import '../state/app_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../utils/arabic_text.dart';
 import '../widgets/atmosphere.dart';
 import '../widgets/common.dart';
+import '../utils/lesson_router.dart';
 import '../widgets/game_banner.dart';
-import 'dars_1_1_screen.dart';
 import 'semester1_screen.dart';
 
 class _SemesterInfo {
@@ -103,11 +103,7 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
                                   )
                                 : const Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      _DailyQuoteCard(),
-                                      SizedBox(height: 22),
-                                      _SemesterSectionHeader(),
-                                    ],
+                                    children: [_DailyQuoteCard(), SizedBox(height: 22), _SemesterSectionHeader()],
                                   ),
                           ),
                           const SizedBox(height: 14),
@@ -119,20 +115,24 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
                                 ? Row(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: _semesters
-                                        .map((s) => Expanded(
-                                              child: Padding(
-                                                padding: const EdgeInsets.symmetric(horizontal: 6),
-                                                child: _SemesterCard(info: s),
-                                              ),
-                                            ))
+                                        .map(
+                                          (s) => Expanded(
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 6),
+                                              child: _SemesterCard(info: s),
+                                            ),
+                                          ),
+                                        )
                                         .toList(),
                                   )
                                 : Column(
                                     children: _semesters
-                                        .map((s) => Padding(
-                                              padding: const EdgeInsets.only(bottom: 14),
-                                              child: _SemesterCard(info: s),
-                                            ))
+                                        .map(
+                                          (s) => Padding(
+                                            padding: const EdgeInsets.only(bottom: 14),
+                                            child: _SemesterCard(info: s),
+                                          ),
+                                        )
                                         .toList(),
                                   ),
                           ),
@@ -163,12 +163,7 @@ class _CopyrightFooter extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8),
       child: Column(
         children: [
-          Container(
-            width: 40,
-            height: 1,
-            color: c.border,
-            margin: const EdgeInsets.only(bottom: 14),
-          ),
+          Container(width: 40, height: 1, color: c.border, margin: const EdgeInsets.only(bottom: 14)),
           Text(
             'روحيدي هابيل  |  محمد أبا الخير  |  أحمد مزمل نجيب  |  سعيد رمضان شكري  |  محمد إخوان يوسف',
             textAlign: TextAlign.center,
@@ -183,21 +178,76 @@ class _CopyrightFooter extends StatelessWidget {
           Text(
             'كلية الدراسات الإسلامية واللغة العربية — كياس',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: AppTheme.uiFont,
-              fontSize: 11,
-              color: c.textMuted,
-            ),
+            style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 11, color: c.textMuted),
           ),
           const SizedBox(height: 4),
           Text(
             '© $year جميع الحقوق محفوظة',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: AppTheme.uiFont,
-              fontSize: 10.5,
-              color: c.textMuted.withValues(alpha: 0.75),
+            style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 10.5, color: c.textMuted.withValues(alpha: 0.75)),
+          ),
+          const SizedBox(height: 12),
+          const _ProgressHousekeeping(),
+        ],
+      ),
+    );
+  }
+}
+
+/// Deliberately low-key: a storage notice (only when localStorage is
+/// blocked) and a small "reset all progress" link behind a confirmation.
+class _ProgressHousekeeping extends StatelessWidget {
+  const _ProgressHousekeeping();
+
+  Future<void> _confirm(BuildContext context) async {
+    final app = context.read<AppState>();
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Tetapkan semula semua kemajuan?'),
+        content: const Text(
+          'Semua jawapan, penilaian kendiri, markah latihan, XP, tanda selesai dan tanda ulang kaji '
+          'bagi 12 pelajaran akan dipadam daripada pelayar ini. Tindakan ini tidak boleh dibatalkan.',
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Batal')),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: TextButton.styleFrom(foregroundColor: ctx.colors.danger),
+            child: const Text('Ya, padam semua'),
+          ),
+        ],
+      ),
+    );
+    if (ok == true) {
+      await app.resetAllProgress();
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Kemajuan telah ditetapkan semula.')));
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.colors;
+    final persistent = context.select<AppState, bool>((s) => s.storageIsPersistent);
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Column(
+        children: [
+          if (!persistent)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Text(
+                'Storan pelayar disekat — kemajuan hanya disimpan untuk sesi ini.',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 11.5, color: c.accent2),
+              ),
             ),
+          TextButton.icon(
+            onPressed: () => _confirm(context),
+            icon: Icon(Icons.restart_alt_rounded, size: 15, color: c.textMuted),
+            label: Text('Tetapkan semula kemajuan', style: TextStyle(fontSize: 11.5, color: c.textMuted)),
           ),
         ],
       ),
@@ -217,9 +267,7 @@ class _TopNavBar extends StatelessWidget {
         color: c.surface.withValues(alpha: 0.88),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: c.border),
-        boxShadow: [
-          BoxShadow(color: c.cardShadow, blurRadius: 16, offset: const Offset(0, 4)),
-        ],
+        boxShadow: [BoxShadow(color: c.cardShadow, blurRadius: 16, offset: const Offset(0, 4))],
       ),
       child: Row(
         children: [
@@ -245,22 +293,23 @@ class _TopNavBar extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(
-                      'اللغة العربية الربانية',
-                      style: TextStyle(
-                        fontFamily: AppTheme.uiFont,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 16.5,
-                        color: c.text,
+                    Flexible(
+                      child: Text(
+                        'اللغة العربية الربانية',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: AppTheme.uiFont,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 16.5,
+                          color: c.text,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 8),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: c.accentSoft,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
+                      decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(6)),
                       child: Text(
                         'KIAS',
                         style: TextStyle(
@@ -275,11 +324,7 @@ class _TopNavBar extends StatelessWidget {
                 ),
                 Text(
                   'كلية السلطان إسماعيل فترا الجامعية الإسلامية العالمية — منصة التعلم التفاعلي',
-                  style: TextStyle(
-                    fontFamily: AppTheme.uiFont,
-                    fontSize: 11.5,
-                    color: c.textMuted,
-                  ),
+                  style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 11.5, color: c.textMuted),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -293,8 +338,24 @@ class _TopNavBar extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: c.border),
             ),
-            child: const FullscreenToggleButton(),
+            child: IconButton(
+              tooltip: 'Cari pelajaran atau perkataan',
+              icon: const Icon(Icons.search_rounded, size: 20),
+              onPressed: () => openSearch(context),
+            ),
           ),
+          // Projector fullscreen is a desktop/classroom tool — drop it on
+          // phones so the brand title keeps its room.
+          if (MediaQuery.sizeOf(context).width >= 480)
+            Container(
+              margin: const EdgeInsets.only(left: 8),
+              decoration: BoxDecoration(
+                color: c.surface2,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: c.border),
+              ),
+              child: const FullscreenToggleButton(),
+            ),
           Container(
             decoration: BoxDecoration(
               color: c.surface2,
@@ -315,8 +376,14 @@ class _HeroBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    final progress = context.watch<AppState>().dars111Progress(Dars111.selfAssessItems.length);
+    final app = context.watch<AppState>();
+    // Resume where the student left off; before any visit, lesson 1.
+    final resume = lessonByN(app.lastLesson ?? 1) ?? kLessons.first;
+    final progress = app.lessonProgress(resume.n);
     final percent = (progress * 100).round();
+    final resumeLabel = resume.n == 1
+        ? 'الدرس ١: الإيمان بالله'
+        : 'الدرس ${toArabicNumerals(resume.n)}: ${stripTashkeel(resume.title)}';
 
     return Container(
       decoration: BoxDecoration(
@@ -327,11 +394,7 @@ class _HeroBanner extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
-          BoxShadow(
-            color: c.heroGradientStart.withValues(alpha: 0.35),
-            blurRadius: 28,
-            offset: const Offset(0, 10),
-          ),
+          BoxShadow(color: c.heroGradientStart.withValues(alpha: 0.35), blurRadius: 28, offset: const Offset(0, 10)),
         ],
       ),
       child: ClipRRect(
@@ -341,18 +404,12 @@ class _HeroBanner extends StatelessWidget {
             Positioned(
               top: -30,
               left: -30,
-              child: GeometricCornerMotif(
-                color: c.gold.withValues(alpha: 0.15),
-                size: 160,
-              ),
+              child: GeometricCornerMotif(color: c.gold.withValues(alpha: 0.15), size: 160),
             ),
             Positioned(
               bottom: -40,
               right: 180,
-              child: GeometricCornerMotif(
-                color: Colors.white.withValues(alpha: 0.05),
-                size: 140,
-              ),
+              child: GeometricCornerMotif(color: Colors.white.withValues(alpha: 0.05), size: 140),
             ),
             Padding(
               padding: const EdgeInsets.all(28),
@@ -424,10 +481,7 @@ class _HeroBanner extends StatelessWidget {
                           children: [
                             Container(
                               padding: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: c.gold.withValues(alpha: 0.25),
-                              ),
+                              decoration: BoxDecoration(shape: BoxShape.circle, color: c.gold.withValues(alpha: 0.25)),
                               child: Icon(Icons.bookmark_rounded, size: 18, color: c.gold),
                             ),
                             const SizedBox(width: 10),
@@ -439,9 +493,11 @@ class _HeroBanner extends StatelessWidget {
                                     'الدرس الجاري',
                                     style: TextStyle(fontSize: 11, color: Colors.white.withValues(alpha: 0.7)),
                                   ),
-                                  const Text(
-                                    'الدرس ١: الإيمان بالله',
-                                    style: TextStyle(
+                                  Text(
+                                    resumeLabel,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.w800,
                                       fontSize: 15,
                                       color: Colors.white,
@@ -452,10 +508,7 @@ class _HeroBanner extends StatelessWidget {
                             ),
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                              decoration: BoxDecoration(
-                                color: c.gold,
-                                borderRadius: BorderRadius.circular(999),
-                              ),
+                              decoration: BoxDecoration(color: c.gold, borderRadius: BorderRadius.circular(999)),
                               child: Text(
                                 '٪$percent',
                                 style: const TextStyle(
@@ -481,11 +534,7 @@ class _HeroBanner extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(builder: (_) => const Dars111Screen()),
-                              );
-                            },
+                            onPressed: () => openLesson(context, resume.n),
                             icon: const Icon(Icons.play_circle_fill_rounded, size: 18),
                             label: const Text('واصل التعلم الآن'),
                             style: ElevatedButton.styleFrom(
@@ -513,11 +562,7 @@ class _HeroBanner extends StatelessWidget {
                   } else {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        content,
-                        const SizedBox(height: 20),
-                        resumeCard,
-                      ],
+                      children: [content, const SizedBox(height: 20), resumeCard],
                     );
                   }
                 },
@@ -536,8 +581,8 @@ class _StatsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    final progress = context.watch<AppState>().dars111Progress(Dars111.selfAssessItems.length);
-    final percent = (progress * 100).round();
+    final app = context.watch<AppState>();
+    final percent = (app.overallProgress * 100).round();
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -551,11 +596,12 @@ class _StatsRow extends StatelessWidget {
             subtitle: '١٢ درسا في الفصل الأول',
           ),
           _StatTile(
-            icon: Icons.spellcheck_rounded,
+            icon: Icons.bolt_rounded,
             iconColor: c.gold,
             bgColor: c.goldSoft,
-            title: '٨ مفردات متقنة',
-            subtitle: 'أسماء الله الحسنى والقواعد',
+            title: '${app.xp} XP',
+            subtitle:
+                'Latihan: ${app.totalExercisesDone} / ${app.totalExercises} · Selesai: ${app.completedCount} / ${kLessons.length}',
           ),
           _StatTile(
             icon: Icons.stars_rounded,
@@ -569,22 +615,16 @@ class _StatsRow extends StatelessWidget {
         if (wide) {
           return Row(
             children: items
-                .map((it) => Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 6),
-                        child: it,
-                      ),
-                    ))
+                .map(
+                  (it) => Expanded(
+                    child: Padding(padding: const EdgeInsets.symmetric(horizontal: 6), child: it),
+                  ),
+                )
                 .toList(),
           );
         } else {
           return Column(
-            children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: it,
-                    ))
-                .toList(),
+            children: items.map((it) => Padding(padding: const EdgeInsets.only(bottom: 10), child: it)).toList(),
           );
         }
       },
@@ -616,19 +656,14 @@ class _StatTile extends StatelessWidget {
         color: c.surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: c.border),
-        boxShadow: [
-          BoxShadow(color: c.cardShadow, blurRadius: 12, offset: const Offset(0, 3)),
-        ],
+        boxShadow: [BoxShadow(color: c.cardShadow, blurRadius: 12, offset: const Offset(0, 3))],
       ),
       child: Row(
         children: [
           Container(
             width: 44,
             height: 44,
-            decoration: BoxDecoration(
-              color: bgColor,
-              borderRadius: BorderRadius.circular(12),
-            ),
+            decoration: BoxDecoration(color: bgColor, borderRadius: BorderRadius.circular(12)),
             child: Icon(icon, color: iconColor, size: 22),
           ),
           const SizedBox(width: 14),
@@ -687,9 +722,9 @@ class _DailyQuoteCardState extends State<_DailyQuoteCard> {
     final ok = await quran.playAyah(surah: _surah, ayah: _ayah);
     if (mounted) setState(() => _playing = false);
     if (!ok && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('تعذّر تشغيل التلاوة — تحقّق من اتصالك بالإنترنت.')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('تعذّر تشغيل التلاوة — تحقّق من اتصالك بالإنترنت.')));
     }
   }
 
@@ -703,13 +738,7 @@ class _DailyQuoteCardState extends State<_DailyQuoteCard> {
         color: c.surface,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: c.goldBorder.withValues(alpha: 0.6)),
-        boxShadow: [
-          BoxShadow(
-            color: c.gold.withValues(alpha: 0.08),
-            blurRadius: 18,
-            offset: const Offset(0, 5),
-          ),
-        ],
+        boxShadow: [BoxShadow(color: c.gold.withValues(alpha: 0.08), blurRadius: 18, offset: const Offset(0, 5))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -719,10 +748,7 @@ class _DailyQuoteCardState extends State<_DailyQuoteCard> {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                decoration: BoxDecoration(
-                  color: c.goldSoft,
-                  borderRadius: BorderRadius.circular(999),
-                ),
+                decoration: BoxDecoration(color: c.goldSoft, borderRadius: BorderRadius.circular(999)),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -785,12 +811,7 @@ class _DailyQuoteCardState extends State<_DailyQuoteCard> {
           const SizedBox(height: 4),
           Text(
             '“Dan katakanlah: Wahai Tuhanku, tambahkanlah kepadaku ilmu pengetahuan.”',
-            style: TextStyle(
-              fontSize: 12.5,
-              fontStyle: FontStyle.italic,
-              color: c.textMuted,
-              height: 1.5,
-            ),
+            style: TextStyle(fontSize: 12.5, fontStyle: FontStyle.italic, color: c.textMuted, height: 1.5),
           ),
         ],
       ),
@@ -811,45 +832,31 @@ class _SemesterSectionHeader extends StatelessWidget {
         color: c.surface,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: c.border),
-        boxShadow: [
-          BoxShadow(color: c.cardShadow, blurRadius: 18, offset: const Offset(0, 5)),
-        ],
+        boxShadow: [BoxShadow(color: c.cardShadow, blurRadius: 18, offset: const Offset(0, 5))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        Row(
-          children: [
-            Container(
-              width: 4,
-              height: 22,
-              decoration: BoxDecoration(
-                color: c.accent,
-                borderRadius: BorderRadius.circular(2),
+          Row(
+            children: [
+              Container(
+                width: 4,
+                height: 22,
+                decoration: BoxDecoration(color: c.accent, borderRadius: BorderRadius.circular(2)),
               ),
-            ),
-            const SizedBox(width: 10),
-            Text(
-              'اللغة العربية الربانية ١ - ٣',
-              style: TextStyle(
-                fontFamily: AppTheme.uiFont,
-                fontWeight: FontWeight.w900,
-                fontSize: 20,
-                color: c.text,
+              const SizedBox(width: 10),
+              Text(
+                'اللغة العربية الربانية ١ - ٣',
+                style: TextStyle(fontFamily: AppTheme.uiFont, fontWeight: FontWeight.w900, fontSize: 20, color: c.text),
               ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 4),
-        Text(
-          'اختر الكتاب لمتابعة الفصول والوحدات والأنشطة التفاعلية.',
-          style: TextStyle(
-            fontFamily: AppTheme.uiFont,
-            fontSize: 13,
-            color: c.textMuted,
+            ],
           ),
-        ),
+          const SizedBox(height: 4),
+          Text(
+            'اختر الكتاب لمتابعة الفصول والوحدات والأنشطة التفاعلية.',
+            style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 13, color: c.textMuted),
+          ),
         ],
       ),
     );
@@ -871,9 +878,7 @@ class _SemesterCardState extends State<_SemesterCard> {
   Widget build(BuildContext context) {
     final c = context.colors;
     final info = widget.info;
-    final progress = info.n == 1
-        ? context.watch<AppState>().dars111Progress(Dars111.selfAssessItems.length)
-        : null;
+    final progress = info.n == 1 ? context.watch<AppState>().overallProgress : null;
 
     final isEnabled = info.enabled;
 
@@ -889,24 +894,18 @@ class _SemesterCardState extends State<_SemesterCard> {
           child: InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: isEnabled
-                ? () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const Semester1Screen()),
-                    )
+                ? () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const Semester1Screen()))
                 : null,
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: (_hover && isEnabled)
-                      ? c.accent
-                      : (isEnabled ? c.border : c.border.withValues(alpha: 0.6)),
+                  color: (_hover && isEnabled) ? c.accent : (isEnabled ? c.border : c.border.withValues(alpha: 0.6)),
                   width: (_hover && isEnabled) ? 1.6 : 1,
                 ),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: (_hover && isEnabled)
-                        ? c.accent.withValues(alpha: 0.16)
-                        : c.cardShadow,
+                    color: (_hover && isEnabled) ? c.accent.withValues(alpha: 0.16) : c.cardShadow,
                     blurRadius: (_hover && isEnabled) ? 20 : 12,
                     offset: Offset(0, (_hover && isEnabled) ? 8 : 4),
                   ),
@@ -920,9 +919,7 @@ class _SemesterCardState extends State<_SemesterCard> {
                       top: -24,
                       right: -24,
                       child: GeometricCornerMotif(
-                        color: isEnabled
-                            ? c.accent.withValues(alpha: 0.12)
-                            : Colors.grey.withValues(alpha: 0.08),
+                        color: isEnabled ? c.accent.withValues(alpha: 0.12) : Colors.grey.withValues(alpha: 0.08),
                         size: 96,
                       ),
                     ),
@@ -943,11 +940,7 @@ class _SemesterCardState extends State<_SemesterCard> {
                                   decoration: BoxDecoration(
                                     color: isEnabled ? c.accentSoft : c.surface2,
                                     borderRadius: BorderRadius.circular(14),
-                                    border: Border.all(
-                                      color: isEnabled
-                                          ? c.accent.withValues(alpha: 0.3)
-                                          : c.border,
-                                    ),
+                                    border: Border.all(color: isEnabled ? c.accent.withValues(alpha: 0.3) : c.border),
                                   ),
                                   child: Text(
                                     toArabicNumerals(info.n),
@@ -1000,11 +993,7 @@ class _SemesterCardState extends State<_SemesterCard> {
                             const SizedBox(height: 4),
                             Text(
                               info.meta,
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w600,
-                                color: c.gold,
-                              ),
+                              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: c.gold),
                             ),
                             const SizedBox(height: 6),
                             Text(
@@ -1019,8 +1008,10 @@ class _SemesterCardState extends State<_SemesterCard> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('التقدم في الفصل', style: TextStyle(fontSize: 11, color: c.textMuted)),
-                                  Text('٪${(progress * 100).round()}',
-                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: c.accent)),
+                                  Text(
+                                    '٪${(progress * 100).round()}',
+                                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: c.accent),
+                                  ),
                                 ],
                               ),
                               const SizedBox(height: 6),
@@ -1050,11 +1041,7 @@ class _SemesterCardState extends State<_SemesterCard> {
                                   ),
                                 ),
                                 const SizedBox(width: 4),
-                                Icon(
-                                  Icons.arrow_back_rounded,
-                                  size: 16,
-                                  color: isEnabled ? c.accent : c.textMuted,
-                                ),
+                                Icon(Icons.arrow_back_rounded, size: 16, color: isEnabled ? c.accent : c.textMuted),
                               ],
                             ),
                           ],
@@ -1071,4 +1058,3 @@ class _SemesterCardState extends State<_SemesterCard> {
     );
   }
 }
-

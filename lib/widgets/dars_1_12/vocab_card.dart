@@ -4,6 +4,7 @@ import '../../data/curriculum.dart';
 import '../../state/app_state.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
+import '../../services/tts_service.dart';
 import '../common.dart';
 
 class VocabCard12 extends StatefulWidget {
@@ -80,7 +81,7 @@ class _VocabCard12State extends State<VocabCard12> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          if (Dars1112.vocabNoAudio.contains(i))
+                          if (!TtsService.canSpeak(Dars1112.vocab[i].word))
                             const SizedBox(width: 26)
                           else
                             SpeakButton(

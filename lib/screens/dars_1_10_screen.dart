@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../data/curriculum.dart';
-import '../state/app_state.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
-import '../widgets/common.dart';
 import '../widgets/dars_1_10/analyze_card.dart';
 import '../widgets/dars_1_10/reading_card.dart';
 import '../widgets/dars_1_10/reflection_exit_card.dart';
@@ -12,388 +9,65 @@ import '../widgets/dars_1_10/rule_card.dart';
 import '../widgets/dars_1_10/speaking_card.dart';
 import '../widgets/dars_1_10/think_write_card.dart';
 import '../widgets/dars_1_10/vocab_card.dart';
-import '../widgets/dars1/celebration_dialog.dart';
-import '../widgets/atmosphere.dart';
-import '../widgets/projector_mode.dart';
+import '../widgets/lesson/lesson_shell.dart';
 
-class Dars1110Screen extends StatefulWidget {
+class Dars1110Screen extends StatelessWidget {
   const Dars1110Screen({super.key});
 
   @override
-  State<Dars1110Screen> createState() => _Dars1110ScreenState();
-}
-
-class _Dars1110ScreenState extends State<Dars1110Screen> {
-  final _readingKey = GlobalKey();
-  final _vocabKey = GlobalKey();
-  final _speakingKey = GlobalKey();
-  final _thinkKey = GlobalKey();
-  final _analyzeKey = GlobalKey();
-  final _reflectionKey = GlobalKey();
-  final _closingKey = GlobalKey();
-  int _active = 0;
-  final ScrollController _scrollController = ScrollController();
-  bool _isScrollingProgrammatically = false;
-
-  late final _steps = [
-    LessonStepItem(icon: Icons.menu_book_outlined, label: 'أقرأ وأفهم', sectionKey: _readingKey),
-    LessonStepItem(icon: Icons.view_list_outlined, label: 'كلمات وقاعدة', sectionKey: _vocabKey),
-    LessonStepItem(icon: Icons.forum_outlined, label: 'أتكلم', sectionKey: _speakingKey),
-    LessonStepItem(icon: Icons.edit_note_outlined, label: 'أفكر وأكتب', sectionKey: _thinkKey),
-    LessonStepItem(icon: Icons.groups_outlined, label: 'أحلل وأطبق', sectionKey: _analyzeKey),
-    LessonStepItem(icon: Icons.favorite_border, label: 'السيرة والحياة', sectionKey: _reflectionKey),
-    LessonStepItem(icon: Icons.flag_outlined, label: 'الخاتمة', sectionKey: _closingKey),
-  ];
-
-  late final _slides = [
-    ProjectorSlide(
-      label: 'الدرس العاشر — مولد النبي وحياته الأولى',
-      icon: Icons.auto_stories_rounded,
-      child: _Hero10(),
-    ),
-    ProjectorSlide(
-      label: 'أقرأ وأفهم',
-      icon: Icons.menu_book_outlined,
-      child: Column(children: [
-        const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
-        const ReadingCard10(),
-      ]),
-    ),
-    ProjectorSlide(
-      label: 'كلمات وقاعدة',
-      icon: Icons.view_list_outlined,
-      child: Column(children: [
-        const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
-        const VocabCard10(),
-        const RuleCard10(),
-      ]),
-    ),
-    ProjectorSlide(
-      label: 'أتكلم',
-      icon: Icons.forum_outlined,
-      child: Column(children: [
-        const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
-        const SpeakingCard10(),
-      ]),
-    ),
-    ProjectorSlide(
-      label: 'أفكر وأكتب',
-      icon: Icons.edit_note_outlined,
-      child: Column(children: [
-        const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
-        const ThinkWriteCard10(),
-      ]),
-    ),
-    ProjectorSlide(
-      label: 'أحلل وأطبق',
-      icon: Icons.groups_outlined,
-      child: Column(children: [
-        const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
-        const AnalyzeCard10(),
-      ]),
-    ),
-    ProjectorSlide(
-      label: 'السيرة والحياة',
-      icon: Icons.favorite_border,
-      child: Column(children: [
-        const StitchDivider('السيرة والحياة', icon: Icons.favorite_border),
-        const ReflectionCard10(),
-      ]),
-    ),
-    ProjectorSlide(
-      label: 'الخاتمة',
-      icon: Icons.flag_outlined,
-      child: Column(children: [
-        const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
-        const ExitTicketCard10(),
-        const SelfAssessCard10(),
-        const SizedBox(height: 12),
-        const DictionaryCard10(),
-      ]),
-    ),
-  ];
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  void _scrollToIndex(int i) {
-    setState(() => _active = i);
-    _isScrollingProgrammatically = true;
-    final ctx = _steps[i].sectionKey.currentContext;
-    if (ctx != null) {
-      Scrollable.ensureVisible(
-        ctx,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOutCubic,
-        alignment: 0.05,
-      ).then((_) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          if (mounted) _isScrollingProgrammatically = false;
-        });
-      });
-    } else {
-      _isScrollingProgrammatically = false;
-    }
-  }
-
-  bool _onScroll(ScrollNotification notification) {
-    if (_isScrollingProgrammatically) return false;
-    const band = 180.0;
-    var best = 0;
-    var bestTop = double.negativeInfinity;
-    for (var i = 0; i < _steps.length; i++) {
-      final box = _steps[i].sectionKey.currentContext?.findRenderObject() as RenderBox?;
-      if (box == null || !box.attached) continue;
-      final top = box.localToGlobal(Offset.zero).dy;
-      if (top <= band && top > bestTop) {
-        bestTop = top;
-        best = i;
-      }
-    }
-    if (best != _active) setState(() => _active = best);
-    return false;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final c = context.colors;
-    final app = context.watch<AppState>();
-    final progress = app.dars1110Progress(Dars1110.selfAssessItems.length);
-
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          titleSpacing: 0,
-          title: Padding(
-            padding: const EdgeInsets.only(right: 4),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('الفصل الأول ‹ الوحدة الرابعة: السيرة',
-                    style: TextStyle(fontSize: 11, color: c.textMuted, fontWeight: FontWeight.normal)),
-                const Text('الدرس العاشر — مولد النبي وحياته الأولى', style: TextStyle(fontSize: 17)),
-              ],
-            ),
-          ),
-          actions: [
-            IconButton(
-              tooltip: 'إظهار / إخفاء التشكيل',
-              onPressed: () => context.read<AppState>().toggleTashkeel(),
-              icon: Text(
-                app.tashkeelOn ? 'بَ' : 'ب',
-                style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 18, color: app.tashkeelOn ? c.accent : c.textMuted),
-              ),
-            ),
-            IconButton(
-              tooltip: 'إعادة ضبط التقدم',
-              icon: const Icon(Icons.restart_alt_rounded, size: 20),
-              onPressed: () async {
-                final appState = context.read<AppState>();
-                final ok = await showDialog<bool>(
-                  context: context,
-                  builder: (ctx) => AlertDialog(
-                    title: const Text('إعادة ضبط التقدم'),
-                    content: const Text('هل تريد إعادة ضبط كل التقدم في هذا الدرس؟'),
-                    actions: [
-                      TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('إلغاء')),
-                      TextButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('نعم')),
-                    ],
-                  ),
-                );
-                if (ok == true) {
-                  await appState.resetDars1110();
-                }
-              },
-            ),
-            IconButton(
-              tooltip: 'العرض التقديمي (وضع الفصل)',
-              icon: const Icon(Icons.co_present_rounded, size: 20),
-              onPressed: () => ProjectorModeView.open(
-                context,
-                lessonTitle: 'الدرس العاشر — مولد النبي وحياته الأولى',
-                slides: _slides,
-                initialIndex: _active + 1,
-              ),
-            ),
-            const FullscreenToggleButton(),
-            const ThemeToggleButton(),
-            Padding(
-              padding: const EdgeInsets.only(left: 12, right: 4),
-              child: SizedBox(
-                width: 36,
-                height: 36,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircularProgressIndicator(
-                      value: progress,
-                      strokeWidth: 3.5,
-                      backgroundColor: c.border,
-                      valueColor: AlwaysStoppedAnimation(c.accent),
-                    ),
-                    Text('${(progress * 100).round()}٪', style: TextStyle(fontSize: 9.5, color: c.accent)),
-                  ],
-                ),
-              ),
-            ),
-          ],
+    return LessonShell(
+      lesson: 10,
+      breadcrumb: 'الفصل الأول ‹ الوحدة الرابعة: السيرة',
+      title: 'الدرس العاشر — مولد النبي وحياته الأولى',
+      hero: _Hero10(),
+      sections: const [
+        LessonSection(
+          step: 'أقرأ وأفهم',
+          divider: 'أقرأ وأفهم',
+          icon: Icons.menu_book_outlined,
+          children: [ReadingCard10()],
         ),
-        body: PageBackdrop(
-          child: SafeArea(
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 880),
-                child: Column(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: c.surface.withValues(alpha: 0.96),
-                        border: Border(bottom: BorderSide(color: c.border.withValues(alpha: 0.6))),
-                      ),
-                      child: LessonStepRail(items: _steps, activeIndex: _active, onTapItem: _scrollToIndex),
-                    ),
-                    Expanded(
-                      child: NotificationListener<ScrollNotification>(
-                        onNotification: _onScroll,
-                        child: SingleChildScrollView(
-                          controller: _scrollController,
-                          padding: const EdgeInsets.fromLTRB(16, 12, 16, 48),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              _Hero10(),
-                              KeyedSubtree(
-                                key: _readingKey,
-                                child: Column(children: [
-                                  const StitchDivider('أقرأ وأفهم', icon: Icons.menu_book_outlined),
-                                  const ReadingCard10(),
-                                ]),
-                              ),
-                              KeyedSubtree(
-                                key: _vocabKey,
-                                child: Column(children: [
-                                  const StitchDivider('جدول الكلمات والقاعدة', icon: Icons.view_list_outlined),
-                                  const VocabCard10(),
-                                  const RuleCard10(),
-                                ]),
-                              ),
-                              KeyedSubtree(
-                                key: _speakingKey,
-                                child: Column(children: [
-                                  const StitchDivider('أتكلم باللغة العربية', icon: Icons.forum_outlined),
-                                  const SpeakingCard10(),
-                                ]),
-                              ),
-                              KeyedSubtree(
-                                key: _thinkKey,
-                                child: Column(children: [
-                                  const StitchDivider('أفكر وأكتب', icon: Icons.edit_note_outlined),
-                                  const ThinkWriteCard10(),
-                                ]),
-                              ),
-                              KeyedSubtree(
-                                key: _analyzeKey,
-                                child: Column(children: [
-                                  const StitchDivider('أحلل وأطبق', icon: Icons.groups_outlined),
-                                  const AnalyzeCard10(),
-                                ]),
-                              ),
-                              KeyedSubtree(
-                                key: _reflectionKey,
-                                child: Column(children: [
-                                  StitchDivider('السيرة والحياة', icon: Icons.favorite_border),
-                                  const ReflectionCard10(),
-                                ]),
-                              ),
-                              KeyedSubtree(
-                                key: _closingKey,
-                                child: Column(children: [
-                                  const StitchDivider('الخاتمة', icon: Icons.flag_outlined),
-                                  const ExitTicketCard10(),
-                                  const SelfAssessCard10(),
-                                  const SizedBox(height: 12),
-                                  const DictionaryCard10(),
-                                ]),
-                              ),
-                              const SizedBox(height: 28),
-                              Container(
-                                padding: const EdgeInsets.all(22),
-                                decoration: BoxDecoration(
-                                  color: c.surface,
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(color: c.goldBorder),
-                                  boxShadow: [
-                                    BoxShadow(color: c.cardShadow, blurRadius: 16, offset: const Offset(0, 4)),
-                                  ],
-                                ),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.auto_awesome_rounded, color: c.gold, size: 22),
-                                        const SizedBox(width: 8),
-                                        Text(
-                                          'بحمد الله وتوفيقه تم الدرس العاشر',
-                                          style: TextStyle(fontFamily: AppTheme.uiFont, fontWeight: FontWeight.bold, fontSize: 18, color: c.accent),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 6),
-                                    Text(
-                                      'تأكد من مراجعة كلمات القاموس وإكمال التقييم الذاتي أعلاه.',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 13, color: c.textMuted),
-                                    ),
-                                    const SizedBox(height: 16),
-                                    Wrap(
-                                      spacing: 12,
-                                      runSpacing: 10,
-                                      alignment: WrapAlignment.center,
-                                      children: [
-                                        ElevatedButton.icon(
-                                          onPressed: () => CelebrationDialog.show(
-                                            context,
-                                            title: 'أَحْسَنْتَ! 🎉',
-                                            message: 'أَتْمَمْتَ الدَّرْسَ الْعَاشِرَ: مَوْلِدُ النَّبِيِّ وَحَيَاتُهُ الْأُولَى',
-                                          ),
-                                          icon: const Icon(Icons.military_tech_rounded, size: 18),
-                                          label: const Text('عرض وسام الإنجاز 🏆'),
-                                        ),
-                                        OutlinedButton.icon(
-                                          onPressed: () => Navigator.of(context).pop(),
-                                          icon: const Icon(Icons.home_rounded, size: 18),
-                                          label: const Text('الرجوع إلى القائمة'),
-                                          style: OutlinedButton.styleFrom(
-                                            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+        LessonSection(
+          step: 'كلمات وقاعدة',
+          divider: 'جدول الكلمات والقاعدة',
+          icon: Icons.view_list_outlined,
+          children: [VocabCard10(), RuleCard10()],
         ),
-      ),
+        LessonSection(
+          step: 'أتكلم',
+          divider: 'أتكلم باللغة العربية',
+          icon: Icons.forum_outlined,
+          children: [SpeakingCard10()],
+        ),
+        LessonSection(
+          step: 'أفكر وأكتب',
+          divider: 'أفكر وأكتب',
+          icon: Icons.edit_note_outlined,
+          children: [ThinkWriteCard10()],
+        ),
+        LessonSection(
+          step: 'أحلل وأطبق',
+          divider: 'أحلل وأطبق',
+          icon: Icons.groups_outlined,
+          children: [AnalyzeCard10()],
+        ),
+        LessonSection(
+          step: 'السيرة والحياة',
+          divider: 'السيرة والحياة',
+          icon: Icons.favorite_border,
+          children: [ReflectionCard10()],
+        ),
+        LessonSection(
+          step: 'الخاتمة',
+          divider: 'الخاتمة',
+          icon: Icons.flag_outlined,
+          children: [ExitTicketCard10(), SelfAssessCard10(), SizedBox(height: 12), DictionaryCard10()],
+        ),
+      ],
+      closingTitle: 'بحمد الله وتوفيقه تم الدرس العاشر',
+      celebrationTitle: 'أَحْسَنْتَ! 🎉',
+      celebrationMessage: 'أَتْمَمْتَ الدَّرْسَ الْعَاشِرَ: مَوْلِدُ النَّبِيِّ وَحَيَاتُهُ الْأُولَى',
     );
   }
 }
@@ -409,50 +83,79 @@ class _Hero10 extends StatelessWidget {
         color: c.surface,
         borderRadius: BorderRadius.circular(22),
         border: Border.all(color: c.border),
-        boxShadow: [
-          BoxShadow(color: c.cardShadow, blurRadius: 16, offset: const Offset(0, 4)),
-        ],
+        boxShadow: [BoxShadow(color: c.cardShadow, blurRadius: 16, offset: const Offset(0, 4))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(999)),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('📜', style: const TextStyle(fontSize: 13)),
-                    const SizedBox(width: 6),
-                    Text('الوحدة الرابعة: السيرة',
-                        style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 12, color: c.accent, fontWeight: FontWeight.w700)),
-                  ],
+          // Wrap (not Row + Spacer): on a narrow phone the goal chip drops
+          // under the unit chip instead of colliding with it.
+          SizedBox(
+            width: double.infinity,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(999)),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('📜', style: const TextStyle(fontSize: 13)),
+                      const SizedBox(width: 6),
+                      Text(
+                        'الوحدة الرابعة: السيرة',
+                        style: TextStyle(
+                          fontFamily: AppTheme.uiFont,
+                          fontSize: 12,
+                          color: c.accent,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(color: c.goldSoft, borderRadius: BorderRadius.circular(999)),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('🎯', style: TextStyle(fontSize: 11.5)),
-                    const SizedBox(width: 6),
-                    Text('أهداف التعلم',
-                        style: TextStyle(fontFamily: AppTheme.uiFont, fontSize: 11.5, color: c.gold, fontWeight: FontWeight.w800)),
-                  ],
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(color: c.goldSoft, borderRadius: BorderRadius.circular(999)),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('🎯', style: TextStyle(fontSize: 11.5)),
+                      const SizedBox(width: 6),
+                      Text(
+                        'أهداف التعلم',
+                        style: TextStyle(
+                          fontFamily: AppTheme.uiFont,
+                          fontSize: 11.5,
+                          color: c.gold,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           const SizedBox(height: 14),
-          Text('مَوْلِدُ النَّبِيِّ وَحَيَاتُهُ الأُولَى',
-              style: TextStyle(fontFamily: AppTheme.arabicFont, fontWeight: FontWeight.w800, fontSize: 30, color: c.accent)),
+          Text(
+            'مَوْلِدُ النَّبِيِّ وَحَيَاتُهُ الأُولَى',
+            style: TextStyle(
+              fontFamily: AppTheme.arabicFont,
+              fontWeight: FontWeight.w800,
+              fontSize: 30,
+              color: c.accent,
+            ),
+          ),
           const SizedBox(height: 6),
-          Text('فِي نِهَايَةِ الدَّرْسِ، أَسْتَطِيعُ إِنْ شَاءَ اللهُ أَنْ:',
-              style: TextStyle(fontFamily: AppTheme.instructionFont, fontSize: 17, color: c.gold)),
+          Text(
+            'فِي نِهَايَةِ الدَّرْسِ، أَسْتَطِيعُ إِنْ شَاءَ اللهُ أَنْ:',
+            style: TextStyle(fontFamily: AppTheme.instructionFont, fontSize: 17, color: c.gold),
+          ),
           const SizedBox(height: 14),
           for (final o in Dars1110.objectives)
             Padding(
@@ -470,8 +173,15 @@ class _Hero10 extends StatelessWidget {
                     Text(o.$1, style: const TextStyle(fontSize: 17)),
                     const SizedBox(width: 10),
                     Expanded(
-                      child: Text(o.$2,
-                          style: TextStyle(fontFamily: AppTheme.instructionFont, fontSize: 16.5, height: 1.6, color: c.text)),
+                      child: Text(
+                        o.$2,
+                        style: TextStyle(
+                          fontFamily: AppTheme.instructionFont,
+                          fontSize: 16.5,
+                          height: 1.6,
+                          color: c.text,
+                        ),
+                      ),
                     ),
                   ],
                 ),

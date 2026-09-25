@@ -237,7 +237,7 @@ class LessonStepItem {
 /// stack of same-looking dividers with one scannable row. Tapping a chip
 /// scrolls its section into view; [activeIndex] highlights whichever
 /// section currently sits at the top of the viewport.
-class LessonStepRail extends StatelessWidget {
+class LessonStepRail extends StatefulWidget {
   const LessonStepRail({
     super.key,
     required this.items,
@@ -249,61 +249,104 @@ class LessonStepRail extends StatelessWidget {
   final ValueChanged<int>? onTapItem;
 
   @override
+  State<LessonStepRail> createState() => _LessonStepRailState();
+}
+
+class _LessonStepRailState extends State<LessonStepRail> {
+  final _chipKeys = <int, GlobalKey>{};
+
+  GlobalKey _keyFor(int i) => _chipKeys.putIfAbsent(i, GlobalKey.new);
+
+  @override
+  void didUpdateWidget(covariant LessonStepRail old) {
+    super.didUpdateWidget(old);
+    // Keep the highlighted chip on screen — on a phone the rail is wider
+    // than the viewport, so without this the active step scrolls out of view.
+    if (old.activeIndex != widget.activeIndex) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final ctx = _chipKeys[widget.activeIndex]?.currentContext;
+        if (ctx != null && mounted) {
+          Scrollable.ensureVisible(
+            ctx,
+            alignment: 0.5,
+            duration: (MediaQuery.maybeDisableAnimationsOf(context) ?? false)
+                ? Duration.zero
+                : const Duration(milliseconds: 250),
+          );
+        }
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final c = context.colors;
+    final items = widget.items;
     return SizedBox(
       height: 42,
-      child: ListView.separated(
+      child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        itemCount: items.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 8),
-        itemBuilder: (context, i) {
-          final item = items[i];
-          final active = i == activeIndex;
-          return Material(
-            color: Colors.transparent,
-            child: InkWell(
-              borderRadius: BorderRadius.circular(999),
-              onTap: () {
-                onTapItem?.call(i);
-                final ctx = item.sectionKey.currentContext;
-                if (ctx != null) {
-                  Scrollable.ensureVisible(
-                    ctx,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOutCubic,
-                    alignment: 0.05,
-                  );
-                }
-              },
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                decoration: BoxDecoration(
-                  color: active ? c.accent : c.surface,
-                  border: Border.all(color: active ? c.accent : c.border),
-                  borderRadius: BorderRadius.circular(999),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(item.icon, size: 15, color: active ? c.surface : c.textMuted),
-                    const SizedBox(width: 6),
-                    Text(
-                      stripTashkeel(item.label),
-                      style: TextStyle(
-                        fontFamily: AppTheme.uiFont,
-                        fontSize: 12.5,
-                        fontWeight: FontWeight.w600,
-                        color: active ? c.surface : c.textMuted,
+        child: Row(
+          children: [
+            for (var i = 0; i < items.length; i++) ...[
+              if (i > 0) const SizedBox(width: 8),
+              Builder(
+                key: _keyFor(i),
+                builder: (context) {
+                  final item = items[i];
+                  final active = i == widget.activeIndex;
+                  return Semantics(
+                    button: true,
+                    selected: active,
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(999),
+                        onTap: () {
+                          widget.onTapItem?.call(i);
+                          final ctx = item.sectionKey.currentContext;
+                          if (ctx != null) {
+                            Scrollable.ensureVisible(
+                              ctx,
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeInOutCubic,
+                              alignment: 0.05,
+                            );
+                          }
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: active ? c.accent : c.surface,
+                            border: Border.all(color: active ? c.accent : c.border),
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(item.icon, size: 15, color: active ? c.surface : c.textMuted),
+                              const SizedBox(width: 6),
+                              Text(
+                                stripTashkeel(item.label),
+                                style: TextStyle(
+                                  fontFamily: AppTheme.uiFont,
+                                  fontSize: 12.5,
+                                  fontWeight: FontWeight.w600,
+                                  color: active ? c.surface : c.textMuted,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  );
+                },
               ),
-            ),
-          );
-        },
+            ],
+          ],
+        ),
       ),
     );
   }

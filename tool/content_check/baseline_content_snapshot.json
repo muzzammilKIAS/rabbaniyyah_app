@@ -1,0 +1,6265 @@
+{
+ "curriculum_sha256": "e22a76ae56462cef36669f2ab48e00167ea75fdc6b2b71ba8925b9a379842664",
+ "strings": [
+  {
+   "text": "الوحدة الأولى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "العقيدة",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "🕋",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الإِيمَانُ بِاللهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الإِيمَانُ بِالْمَلَائِكَةِ وَالْكُتُبِ وَالرُّسُلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الإِيمَانُ بِالْيَوْمِ الآخِرِ وَالْقَضَاءِ وَالْقَدَرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الوحدة الثانية",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الفقه",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "🕌",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الطَّهَارَةُ: الوُضُوءُ وَالغُسْلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّلَاةُ المَفْرُوضَةُ: الأَوْقَاتُ، الأَرْكَانُ، وَالشُّرُوطُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صِيَامُ رَمَضَانَ: الشُّرُوطُ، الأَرْكَانُ، وَالمُبْطِلَاتُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الوحدة الثالثة",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الأخلاق",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "🌙",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الوحدة الرابعة",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "السيرة",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "📜",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَوْلِدُ النَّبِيِّ وَحَيَاتُهُ الأُولَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِسْرَاءُ وَالْمِعْرَاجُ وَالْهِجْرَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّحَابَةُ الْمُخْتَارُونَ وَإِسْهَامَاتُهُمْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "📢",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ستة أسماء من أسماء الله الحسنى بشكل صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملا عن الله تعالى من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب جملة بسيطة: الله + خبر.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعبر عن إيماني بالله في جملة قصيرة.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللَّهُ هُوَ الإِلَهُ الحَقُّ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ وَاحِدٌ أَحَدٌ، لَيْسَ كَمِثْلِهِ شَيْءٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ الرَّحْمَنُ الرَّحِيمُ، يَرْحَمُ عِبَادَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ الْعَلِيمُ الْخَبِيرُ، يَعْلَمُ كُلَّ شَيْءٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ السَّمِيعُ الْبَصِيرُ، يَسْمَعُ وَيَرَى.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ الْعَزِيزُ الْحَكِيمُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَالَ تَعَالَى ﴿فَاطِرُ ٱلسَّمَاوَاتِ وَٱلْأَرْضِ ۚ جَعَلَ لَكُم مِّنْ أَنفُسِكُمْ ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَزْوَاجًا وَمِنَ ٱلْأَنْعَامِ أَزْوَاجًا يَذْرَؤُكُمْ فِيهِ ۚ لَيْسَ كَمِثْلِهِ شَيْءٌ ۖ ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَهُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ﴾",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سورة الشورى، الآية ١١",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللَّهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Allah – Nama Zat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرَّحْمَنُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Pemurah",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرَّحِيمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Penyayang",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْعَلِيمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Mengetahui",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْخَبِيرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Mendalam Ilmu-Nya",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "السَّمِيعُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Mendengar",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْبَصِيرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Melihat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْعَزِيزُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Maha Perkasa",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْجُمْلَةُ الاِسْمِيَّةُ = الْمُبْتَدَأُ + الْخَبَرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "المبتدأ هو الاسم الذي يوضع ليُخبر عنه (يسند إليه)، مثل: اللهُ رَحِيمٌ. ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "(اللهُ: مبتدأ أُخبر عنه بأنه \"رَحِيمٌ\").",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الخبر هو ما يخبر به عن المبتدأ ليتمم معنى الجملة، مثل: اللهُ رَحِيمٌ. ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "(رَحِيمٌ: اسم مرفوع خبر للمبتدأ \"اللهُ\").",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الإِلَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَرْحَمُ جَمِيعَ النَّاسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَسْمَعُ كُلَّ دُعَاءٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللَّهُ هُوَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الحَقُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَعْلَمُ مَا فِي القُلُوبِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَرْحَمُ عِبَادَهُ المُؤْمِنِينَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلِيمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سَمِيعٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَصِيرٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَزِيزٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَكِيمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْحَكِيمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَرْحَمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عِبَادَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللَّهُ الرَّحِيمُ يَرْحَمُ عِبَادَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "شَيْءٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كُلَّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَعْلَمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللَّهُ الْعَلِيمُ يَعْلَمُ كُلَّ شَيْءٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ستة أسماء من أسماء الله الحسنى بشكل صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ النص الأساسي وأفهم معانيه. 📖",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب جملة بسيطة: الله + خبر. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أفرق بين الاسم بـ\"الـ\" وبدون \"الـ\". 💡",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أذكر معنى ثلاثة أسماء من أسماء الله. 🌟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعبر عن إيماني بالله في جملة قصيرة. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ستة أفعال وكلمات ترتيب متعلقة بالوضوء نطقاً صحيحاً.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الطهارة: الوضوء والغسل من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب ثلاث جمل باستخدام كلمات الترتيب: أولاً، ثم، بعد ذلك، أخيراً.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أشرح الفرق بين الوضوء والغسل شفوياً باللغة العربية.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الطَّهَارَةُ شَرْطٌ مِنْ شُرُوطِ الصَّلَاةِ. نَتَوَضَّأُ قَبْلَ كُلِّ صَلَاةٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَوَّلاً، نَنْوِي الوُضُوءَ فِي قَلْبِنَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ نَغْسِلُ الوَجْهَ ثَلَاثَ مَرَّاتٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ ذَلِكَ نَغْسِلُ اليَدَيْنِ إِلَى المِرْفَقَيْنِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ نَمْسَحُ الرَّأْسَ بِالمَاءِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخِيراً نَغْسِلُ الرِّجْلَيْنِ إِلَى الكَعْبَيْنِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذَا هُوَ الوُضُوءُ. أَمَّا الغُسْلُ فَهُوَ غَسْلُ جَمِيعِ الجَسَدِ بِالمَاءِ. نَغْتَسِلُ بَعْدَ الجَنَابَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تُقْبَلُ صَلَاةٌ بِغَيْرِ طَهُورٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَنْ عَبْدِ اللهِ بْنِ عُمَرَ رَضِيَ اللهُ عَنْهُمَا، قَالَ رَسُولُ اللهِ ﷺ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخْرَجَهُ مُسْلِمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الطَّهَارَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kebersihan / Bersuci",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْوُضُوءُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Wuduk",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْغُسْلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Mandi Wajib",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kita membasuh",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَمْسَحُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kita menyapu",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَوَّلاً",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Pertama / Mula-mula",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kemudian",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخِيراً",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Akhir sekali",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُرَتِّبُ خُطُوَاتِ الوُضُوءِ بِاسْتِخْدَامِ كَلِمَاتِ التَّرْتِيبِ، ثُمَّ نَذْكُرُ الجُمْلَةَ بَعْدَهَا مُبَاشَرَةً:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَلِمَةُ التَّرْتِيبِ + الجُمْلَةُ = جُمْلَةُ التَّرْتِيبِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: أَوَّلاً نَغْسِلُ الوَجْهَ. ثُمَّ نَغْسِلُ اليَدَيْنِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَلِمَةُ التَّرْتِيبِ تَأْتِي فِي بِدَايَةِ الجُمْلَةِ، وَالجُمْلَةُ تَأْتِي بَعْدَهَا مُبَاشَرَةً.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَوَّلاً نَغْسِلُ الوَجْهَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ نَغْسِلُ اليَدَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ ذَلِكَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ ذَلِكَ نَمْسَحُ الرَّأْسَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخِيراً نَغْسِلُ الرِّجْلَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا هِيَ الخُطْوَةُ الأُولَى فِي الوُضُوءِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نَفْعَلُ بَعْدَ النِّيَّةِ وَغَسْلِ الوَجْهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ مَاذَا نَفْعَلُ بَعْدَ غَسْلِ اليَدَيْنِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَمَاذَا نَفْعَلُ أَخِيراً؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ب",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ج",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "د",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ اليَدَيْنِ إِلَى المِرْفَقَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ الرِّجْلَيْنِ إِلَى الكَعْبَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَوَّلاً نَنْوِي، ثُمَّ نَغْسِلُ الوَجْهَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَمْسَحُ بِالرَّأْسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَوَّلاً نَنْوِي، ثُمَّ نَغْسِلُ الوَجْهَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ مَاذَا نَفْعَلُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ نَغْسِلُ اليَدَيْنِ إِلَى المِرْفَقَيْنِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَبَعْدَ ذَلِكَ مَاذَا نَفْعَلُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ ذَلِكَ نَمْسَحُ بِالرَّأْسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَنْوِي الوُضُوءَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ الوَجْهَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ اليَدَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ الرِّجْلَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ الوَجْهَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَمْسَحُ الرَّأْسَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَغْسِلُ الرِّجْلَيْنِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ الجَنَابَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الجَسَدَ كُلَّهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا نَغْسِلُهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الوَجْهُ، اليَدَانِ، الرَّأْسُ، الرِّجْلَانِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الجَسَدُ كُلُّهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَتَى نَفْعَلُهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَبْلَ كُلِّ صَلَاةٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَرْكَانُهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النِّيَّةُ، غَسْلُ أَعْضَاءٍ مُعَيَّنَةٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النِّيَّةُ، تَعْمِيمُ المَاءِ عَلَى الجَسَدِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا نُحَافِظُ عَلَى الطَّهَارَةِ كُلَّ يَوْمٍ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الطَّهَارَةُ شَرْطٌ لِصِحَّةِ الصَّلَاةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ستة أفعال وكلمات ترتيب متعلقة بالوضوء نطقاً صحيحاً. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب ثلاث جمل باستخدام كلمات الترتيب. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أشرح الفرق بين الوضوء والغسل شفوياً. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أربعة أسماء من الملائكة وأربعة أسماء من الكتب والرسل بنطق سليم.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الملائكة والكتب والرسل من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب ثلاث جمل باستخدام تركيب: اسم + خبر.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أستخدم عبارات حوار للتعبير عن إيماني بالملائكة والكتب والرسل.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمَلَائِكَةُ خَلْقٌ مِنْ نُورٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جِبْرِيلُ مَلَكٌ، مُوَكَّلٌ بِالْوَحْيِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِيكَائِيلُ مَلَكٌ، مُوَكَّلٌ بِالْمَطَرِ وَالرِّزْقِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِسْرَافِيلُ مَلَكٌ، مُوَكَّلٌ بِنَفْخِ الصُّورِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَزْرَائِيلُ مَلَكٌ، مُوَكَّلٌ بِقَبْضِ الْأَرْوَاحِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْقُرْآنُ كِتَابُ اللهِ، وَمُحَمَّدٌ رَسُولُ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلتَّوْرَاةُ كِتَابُ مُوسَى، وَالْإِنْجِيلُ كِتَابُ عِيسَى، وَالزَّبُورُ كِتَابُ دَاوُودَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلرَّسُولُ بَشَرٌ، وَمُحَمَّدٌ خَاتَمُ الرُّسُلِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ءَامَنَ ٱلرَّسُولُ بِمَاۤ أُنزِلَ إِلَیۡهِ مِن رَّبِّهِۦ وَٱلۡمُؤۡمِنُونَۚ كُلٌّ ءَامَنَ بِٱللَّهِ ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَمَلَـٰۤىِٕكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَیۡنَ أَحَدࣲ مِّن رُّسُلِهِۦۚ وَقَالُوا۟ سَمِعۡنَا ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَأَطَعۡنَاۖ غُفۡرَانَكَ رَبَّنَا وَإِلَیۡكَ ٱلۡمَصِیرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سورة البقرة، الآية ٢٨٥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَلَكٌ / مَلَائِكَةٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Malaikat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كِتَابٌ / كُتُبٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kitab / Buku",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَسُولٌ / رُسُلٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Rasul / Utusan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَبِيٌّ / أَنْبِيَاءُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Nabi",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْوَحْيُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Wahyu",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُوَكَّلٌ بِـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Ditugaskan dengan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَاتَمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Penutup / Terakhir",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُورٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Cahaya",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَشَرٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Manusia",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الإِسْنَادُ الْمُبَسَّطُ = اسْمٌ + (خَبَرٌ)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي الدرس الْأَوَّلِ تَعَلَّمْنَا: الْمُبْتَدَأُ + الْخَبَرُ، وَكَانَ الْمُبْتَدَأُ دَائِمًا لَفْظَ الْجَلَالَةِ \"اللهُ\". ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي هَذَا الدرس، الْمُبْتَدَأُ اسْمٌ عَلَمٌ (مَلَكٌ أَوْ رَسُولٌ أَوْ كِتَابٌ)، وَالْخَبَرُ يُخْبِرُ عَنْهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثْلُ: جِبْرِيلُ مَلَكٌ. (جِبْرِيلُ: مُبْتَدَأٌ. مَلَكٌ: خَبَرٌ لِلْمُبْتَدَأِ \"جِبْرِيلُ\").",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جِبْرِيلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَلَكٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَسُولٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقُرْآنُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كِتَابُ اللهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عِيسَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَبِيٌّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ جِبْرِيلُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ مُحَمَّدٌ ﷺ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا الْقُرْآنُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِمَّ خُلِقَتِ الْمَلَائِكَةُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ مُوَكَّلٌ بِقَبْضِ الْأَرْوَاحِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ رَسُولٌ، خَاتَمُ الرُّسُلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خُلِقَتْ مِنْ نُورٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ مَلَكٌ، مُوَكَّلٌ بِالْوَحْيِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَزْرَائِيلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ كِتَابُ اللهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقُرْآنُ كِتَابُ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلِ الرَّسُولُ مَلَكٌ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا، الرَّسُولُ بَشَرٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِيكَائِيلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِسْرَافِيلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمَطَرُ وَالرِّزْقُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْوَحْيُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَفْخُ الصُّورِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَبْضُ الْأَرْوَاحِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُوسَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "دَاوُودُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّوْرَاةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الزَّبُورُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِنْجِيلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كِتَابٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَاتَمُ الرُّسُلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "، مُوَكَّلٌ بِالْوَحْيِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "، وَهُوَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرَّسُولُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "، وَلَيْسَ مَلَكًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالْوَحْيِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُوَكَّلٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جِبْرِيلُ مَلَكٌ مُوَكَّلٌ بِالْوَحْيِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كِتَابُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَاتَمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرُّسُلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ خَاتَمُ الرُّسُلِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ ﷺ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا أَرْسَلَ اللهُ الرُّسُلَ إِلَى النَّاسِ؟ اُذْكُرْ ثَلَاثَةَ أَسْبَابٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الدَّعْوَةِ إِلَى تَوْحِيدِ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أربعة أسماء من الملائكة وأربعة أسماء من الكتب والرسل بنطق سليم. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب ثلاث جمل باستخدام تركيب: اسم + خبر. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أستخدم عبارات حوار للتعبير عن إيماني بالملائكة والكتب والرسل. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أفرق شفهياً بين صفات الملائكة وصفات الرسل. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ست كلمات متعلقة باليوم الآخر والقدر بمعنًى صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن اليوم الآخر والقضاء والقدر من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب ثلاثة أحداث من أحداث اليوم الآخر.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعبر عن الرضا بقضاء الله شفهياً في جملة قصيرة باستخدام تركيب السبب (لأن).",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كُلُّ إِنْسَانٍ يَمُوتُ، ثُمَّ يُبْعَثُ يَوْمَ الْقِيَامَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْيَوْمُ الآخِرُ يَوْمُ الْبَعْثِ وَالْحِسَابِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي ذَلِكَ الْيَوْمِ، يُحَاسِبُ اللهُ كُلَّ إِنْسَانٍ عَلَى عَمَلِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ خَيْرًا دَخَلَ الْجَنَّةَ، وَمَنْ عَمِلَ شَرًّا اسْتَحَقَّ النَّارَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَحْنُ نُؤْمِنُ بِالْقَدَرِ، خَيْرِهِ وَشَرِّهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْقَدَرُ تَقْدِيرُ اللهِ لِكُلِّ شَيْءٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمُؤْمِنُ يَرْضَى بِقَضَاءِ اللهِ، وَيَعْمَلُ وَيَجْتَهِدُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذَا هُوَ مَعْنَى الْإِيمَانِ بِالْيَوْمِ الآخِرِ وَالْقَضَاءِ وَالْقَدَرِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فَمَن یَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَیۡرࣰا یَرَهُۥ ۝٧ وَمَن یَعۡمَلۡ مِثۡقَالَ ذَرَّةࣲ شَرࣰّا یَرَهُۥ ۝٨",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سورة الزلزلة، الآيتان ٧-٨",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْيَوْمُ الآخِرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Hari Akhirat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمَوْتُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kematian",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْبَعْثُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kebangkitan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْحِسَابُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Perhitungan Amalan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْجَنَّةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Syurga",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلنَّارُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Neraka",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْقَدَرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Takdir / Ketetapan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَيْرٌ وَشَرٌّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kebaikan dan Keburukan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْلُوبُ الاِسْتِفْهَامِ وَالْجَوَابِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي هَذَا الدَّرْسِ نَتَعَلَّمُ نَمَطَيْنِ مِنَ السُّؤَالِ، مُخْتَلِفَيْنِ عَنْ تَرْكِيبِ (اسْمٌ + خَبَرٌ) الَّذِي تَعَلَّمْنَاهُ ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي الدَّرْسَيْنِ الْأَوَّلِ وَالثَّانِي:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّمَطُ الأَوَّلُ: هَلْ...؟ ← الْجَوَابُ: نَعَمْ / لَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّمَطُ الثَّانِي: مَاذَا...؟ ← الْجَوَابُ: مَعْلُومَةٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ (نَعَمْ / لَا)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تُؤْمِنُ بِالْقَدَرِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أُؤْمِنُ بِالْقَدَرِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تَرْضَى بِقَضَاءِ اللهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أَرْضَى بِقَضَاءِ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا (مَعْلُومَةٌ)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا يَحْدُثُ فِي الْيَوْمِ الآخِرِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يُبْعَثُ النَّاسُ وَيُحَاسَبُونَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا بَعْدَ الْمَوْتِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْبَعْثُ ثُمَّ الْحِسَابُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تُؤْمِنُ بِالْيَوْمِ الآخِرِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا يَحْدُثُ بَعْدَ الْمَوْتِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ يَدْخُلُ الْجَنَّةَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نُسَمِّي يَوْمَ الْحِسَابِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أَرْضَى بِقَضَاءِ اللهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أُؤْمِنُ بِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُسَمِّيهِ الْيَوْمَ الآخِرَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ خَيْرًا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يُبْعَثُ النَّاسُ وَيُحَاسَبُونَ عَلَى أَعْمَالِهِمْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تَرْضَى بِقَدَرِ اللهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أَرْضَى بِقَدَرِ اللهِ، وَأَعْمَلُ وَأَجْتَهِدُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ خَيْرًا يَدْخُلُ الْجَنَّةَ بِإِذْنِ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ خَيْرًا دَخَلَهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ شَرًّا اسْتَحَقَّهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَوْمُ حِسَابِ الْأَعْمَالِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَقْدِيرُ اللهِ لِكُلِّ شَيْءٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْبَعْثُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْحِسَابُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْجَنَّةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّارُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقَدَرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ الْمَوْتِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": ".",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَوْمَ الْقِيَامَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلنَّاسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ خَيْرًا دَخَلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ شَرًّا دَخَلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُؤْمِنُ بِـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَيْرِهِ وَشَرِّهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمَوْتِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْبَعْثُ بَعْدَ الْمَوْتِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالْقَدَرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُؤْمِنُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَحْنُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَحْنُ نُؤْمِنُ بِالْقَدَرِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْجَنَّةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَيْرًا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَمِلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "دَخَلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ عَمِلَ خَيْرًا دَخَلَ الْجَنَّةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تُؤْمِنُ بِالْقَدَرِ خَيْرِهِ وَشَرِّهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا تَرْضَى بِقَضَاءِ اللهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا نَرْضَى بِقَضَاءِ اللهِ عِنْدَ الْمُصِيبَةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللهُ أَعْلَمُ بِمَصْلَحَتِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ست كلمات متعلقة باليوم الآخر والقدر بمعنًى صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني ثلاث تفاعلات لسانية باستخدام أسلوب السؤال والجواب (هل وماذا). ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعدد ثلاثة أحداث من أحداث اليوم الآخر وأشرح معنى الإيمان بالقضاء والقدر. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعبر عن الرضا بقضاء الله شفهياً في جملة قصيرة باستخدام تركيب السبب (لأن). 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أسماء أوقات الصلاة المفروضة الخمس بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الصلاة المفروضة من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أستخدم خمسة أفعال أمر متعلقة بالصلاة استخداماً صحيحاً.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني ثلاث جمل باستخدام فعل الأمر متعلقة بأركان الصلاة وكيفيتها.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلصَّلَاةُ رُكْنٌ مِنْ أَرْكَانِ الْإِسْلَامِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلصَّلَاةِ الْمَفْرُوضَةِ خَمْسَةُ أَوْقَاتٍ: الْفَجْرُ، وَالظُّهْرُ، وَالْعَصْرُ، وَالْمَغْرِبُ، وَالْعِشَاءُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلصَّلَاةِ أَرْكَانٌ وَشُرُوطٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِنَ الشُّرُوطِ: الطَّهَارَةُ، وَدُخُولُ الْوَقْتِ، وَاسْتِقْبَالُ الْقِبْلَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قُمْ، وَاسْتَقْبِلِ الْقِبْلَةَ، وَكَبِّرْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِقْرَأِ الْفَاتِحَةَ، ثُمَّ ارْكَعْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِرْفَعْ رَأْسَكَ، ثُمَّ اسْجُدْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صَلِّ فِي وَقْتِهَا، وَلَا تُؤَخِّرْهَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّلَاةُ عَلَى وَقْتِهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَنِ ابْنِ مَسْعُودٍ رَضِيَ اللهُ عَنْهُ، سُئِلَ رَسُولُ اللهِ ﷺ: أَيُّ الْعَمَلِ أَحَبُّ إِلَى اللهِ؟ قَالَ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخْرَجَهُ الْبُخَارِيُّ وَمُسْلِمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَقْتٌ / أَوْقَاتٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Waktu / Waktu-waktu",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الفَجْرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Solat Subuh",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الظُّهْرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Solat Zohor",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "العَصْرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Solat Asar",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "المَغْرِبُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Solat Maghrib",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "العِشَاءُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Solat Isyak",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رُكْنٌ / أَرْكَانٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Rukun / Rukun-rukun",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "شَرْطٌ / شُرُوطٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Syarat / Syarat-syarat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِعْلُ الْأَمْرِ هُوَ صِيغَةٌ نَسْتَخْدِمُهَا لِنَطْلُبَ مِنْ شَخْصٍ أَنْ يَفْعَلَ شَيْئًا. نُكَوِّنُهُ مِنَ الْفِعْلِ الْمُضَارِعِ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الفِعْلُ المُضَارِعُ ← فِعْلُ الْأَمْرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: يَسْجُدُ ← اُسْجُدْ لِلَّهِ رَبِّكَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِعْلُ الْأَمْرِ يُطْلَبُ بِهِ الْفِعْلُ مُبَاشَرَةً، بِلَا فَاعِلٍ ظَاهِرٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اُسْجُدْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَسْجُدُ ← سَجَدَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اُسْجُدْ لِلَّهِ رَبِّكَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِرْكَعْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَرْكَعُ ← رَكَعَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِرْكَعْ ثُمَّ اعْتَدِلْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قُمْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَقُومُ ← قَامَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قُمْ إِلَى الصَّلَاةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صَلِّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يُصَلِّي ← صَلَّى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صَلِّ فِي وَقْتِهَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا هُوَ أَوَّلُ وَقْتٍ مِنْ أَوْقَاتِ الصَّلَاةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نَفْعَلُ بَعْدَ الرُّكُوعِ وَالِاعْتِدَالِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلِ الطَّهَارَةُ شَرْطٌ أَمْ رُكْنٌ فِي الصَّلَاةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَتَى وَقْتُ صَلَاةِ الْعِشَاءِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نَفْعَلُ بَعْدَ التَّكْبِيرِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَسْجُدُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هِيَ شَرْطٌ، لَيْسَتْ رُكْنًا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ غُرُوبِ الشَّفَقِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَقْرَأُ الْفَاتِحَةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ الْفَجْرُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نَفْعَلُ فِي بِدَايَةِ الصَّلَاةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تُصَلِّي فِي وَقْتِهَا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أُصَلِّي فِي وَقْتِهَا وَلَا أُؤَخِّرُهَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِلَى الصَّلَاةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ اعْتَدِلْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلَّهِ رَبِّكَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي وَقْتِهَا وَلَا تُؤَخِّرْهَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقِبْلَةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْتَقْبِلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قُمْ وَاسْتَقْبِلِ الْقِبْلَةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْفَاتِحَةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِقْرَأِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِقْرَأِ الْفَاتِحَةَ ثُمَّ ارْكَعْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَقْتِهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رُكْنٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "شَرْطٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَصِحُّ الصَّلَاةُ بِدُونِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَجِبُ تَحْقِيقُهُ قَبْلَ الدُّخُولِ فِي الصَّلَاةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَقْتُ الصَّلَاةِ بَعْدَ الظُّهْرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَقْتُ الصَّلَاةِ قَبْلَ شُرُوقِ الشَّمْسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَرْكَانُ الصَّلَاةِ وَشُرُوطُهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "شُرُوطُ الصَّلَاةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَرْكَانُ الصَّلَاةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "دُخُولُ الْوَقْتِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْتِقْبَالُ الْقِبْلَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سَتْرُ الْعَوْرَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَكْبِيرَةُ الْإِحْرَامِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقِيَامُ مَعَ الْقُدْرَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قِرَاءَةُ الْفَاتِحَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرُّكُوعُ وَالسُّجُودُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَصِحُّ الصَّلَاةُ بِدُونِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِأَنَّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا نُحَافِظُ عَلَى الصَّلَاةِ فِي أَوْقَاتِهَا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّلَاةُ عَلَى وَقْتِهَا أَحَبُّ الْأَعْمَالِ إِلَى اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أسماء أوقات الصلاة المفروضة الخمس بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أستخدم خمسة أفعال أمر متعلقة بالصلاة استخداماً صحيحاً. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني ثلاث جمل باستخدام فعل الأمر متعلقة بأركان الصلاة وكيفيتها. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ست كلمات متعلقة بالصيام بمعنًى صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الصيام من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل نهي وإباحة باستخدام (لا + فعل مضارع) متعلقة بمبطلات الصيام.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أمثل حواراً قصيراً أسأل فيه عن حكم فقهي متعلق بالصيام.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلصِّيَامُ رُكْنٌ مِنْ أَرْكَانِ الْإِسْلَامِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَصُومُ فِي شَهْرِ رَمَضَانَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلصِّيَامِ شُرُوطٌ وَأَرْكَانٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَوَّلًا نَنْوِي الصِّيَامَ قَبْلَ الْفَجْرِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَأْكُلْ وَلَا تَشْرَبْ مِنَ الْفَجْرِ إِلَى الْمَغْرِبِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا يَجُوزُ الْأَكْلُ عَمْدًا فِي نَهَارِ رَمَضَانَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُفْطِرُ عِنْدَ غُرُوبِ الشَّمْسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذَا هُوَ الصِّيَامُ الصَّحِيحُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ نَسِيَ وَهُوَ صَائِمٌ فَأَكَلَ أَوْ شَرِبَ، فَلْيُتِمَّ صَوْمَهُ، فَإِنَّمَا أَطْعَمَهُ اللهُ وَسَقَاهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللهُ عَنْهُ، قَالَ رَسُولُ اللهِ ﷺ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصِّيَامُ / الصَّوْمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Puasa",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النِّيَّةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Niat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِمْسَاكُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Menahan diri",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِفْطَارُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Berbuka Puasa",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُبْطِلٌ / مُبْطِلَاتٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Perkara Membatalkan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَجُوزُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Dibenarkan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَسْتَخْدِمُ (لَا + فِعْلٌ مُضَارِعٌ مَجْزُومٌ) لِلنَّهْيِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا + فِعْلٌ مُضَارِعٌ مَجْزُومٌ = نَهْيٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: لَا تَأْكُلْ فِي نَهَارِ رَمَضَانَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَرْفُ (لَا) يَجْزِمُ الْفِعْلَ الْمُضَارِعَ، فَتَظْهَرُ عَلَامَةُ الْجَزْمِ فِي آخِرِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَأْكُلْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِعْلٌ مُضَارِعٌ مَجْزُومٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَأْكُلْ فِي نَهَارِ رَمَضَانَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَشْرَبْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا تَشْرَبْ عَمْدًا وَأَنْتَ صَائِمٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا يَكْذِبْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِعْلٌ مُضَارِعٌ مَجْزُومٌ + اسْمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا يَكْذِبِ الصَّائِمُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَتَى نَنْوِي الصِّيَامَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نَفْعَلُ عِنْدَ غُرُوبِ الشَّمْسِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ يَجُوزُ الْأَكْلُ عَمْدًا فِي نَهَارِ رَمَضَانَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ يَجُوزُ لَهُ الْإِفْطَارُ فِي رَمَضَانَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نَفْعَلُ إِذَا أَكَلْنَا نَاسِينَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَبْلَ الْفَجْرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُفْطِرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا، لَا يَجُوزُ ذَلِكَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُسَافِرُ وَالْمَرِيضُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نُتِمُّ صَوْمَنَا، فَإِنَّهُ لَا يَبْطُلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ يَبْطُلُ صَوْمِي إِذَا أَكَلْتُ نَاسِيًا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا، لَا يَبْطُلُ صَوْمُكَ، أَتِمَّ صِيَامَكَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ يَجُوزُ لِلْمُسَافِرِ أَنْ يُفْطِرَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، يَجُوزُ لِلْمُسَافِرِ أَنْ يُفْطِرَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا، لَا يَجُوزُ الْأَكْلُ عَمْدًا فِي نَهَارِ رَمَضَانَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَبْلَ الْفَجْرِ شَرْطٌ لِصِحَّةِ الصِّيَامِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي نَهَارِ رَمَضَانَ عَمْدًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَمْدًا وَأَنْتَ صَائِمٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلْمَرِيضِ أَنْ يُفْطِرَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَمَضَانَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَهَارِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَأْكُلْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يُفْطِرَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِلْمُسَافِرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَجُوزُ لِلْمُسَافِرِ أَنْ يُفْطِرَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْفَجْرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَبْلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَنْوِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَنْوِي قَبْلَ الْفَجْرِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُبْطِلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَكْلُ وَالشُّرْبُ عِنْدَ غُرُوبِ الشَّمْسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا يُفْسِدُ الصِّيَامَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقَصْدُ إِلَى الصِّيَامِ قَبْلَ الْفَجْرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَقْتُ التَّوَقُّفِ عَنِ الْأَكْلِ وَالشُّرْبِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَتَى يَجُوزُ الْإِفْطَارُ فِي رَمَضَانَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَجُوزُ فِيهَا الْإِفْطَارُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا يَجُوزُ فِيهَا الْإِفْطَارُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمُسَافِرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمَرِيضُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْحَامِلُ وَالْمُرْضِعُ بِعُذْرٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمُقِيمُ الصَّحِيحُ الْقَادِرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ لَا عُذْرَ لَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "—",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَجُوزُ الْإِفْطَارُ لِـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ يُرَبِّي الصِّيَامُ نَفْسِي عَلَى التَّقْوَى وَالصَّبْرِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلصِّيَامُ يُعَلِّمُنِي ضَبْطَ النَّفْسِ عَنِ الشَّهَوَاتِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق ست كلمات متعلقة بالصيام بمعنًى صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل نهي وإباحة متعلقة بمبطلات الصيام. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أمثل حواراً قصيراً أسأل فيه عن حكم فقهي متعلق بالصيام. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أربع صفات واجبة للرسول (الصدق، الأمانة، التبليغ، الفطانة) بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن صفات الرسول من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جملاً باستخدام تركيب (اسم + صفة) لوصف صفة شخص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقدم مثالاً واحداً من الحياة اليومية يصور كل صفة من هذه الصفات.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلرَّسُولُ صَادِقٌ فِي قَوْلِهِ وَفِعْلِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ أَمِينٌ، يُحَافِظُ عَلَى الْأَمَانَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلرَّسُولُ يُبَلِّغُ رِسَالَةَ رَبِّهِ إِلَى النَّاسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلرَّسُولُ فَطِنٌ، حَكِيمٌ فِي تَدْبِيرِ أُمُورِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذِهِ أَرْبَعُ صِفَاتٍ وَاجِبَةٍ لِلرَّسُولِ: الصِّدْقُ، وَالْأَمَانَةُ، وَالتَّبْلِيغُ، وَالْفَطَانَةُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ضِدُّ الصِّدْقِ الْكَذِبُ، وَضِدُّ الْأَمَانَةِ الْخِيَانَةُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَتَعَلَّمُ مِنَ الرَّسُولِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ هَذِهِ الصِّفَاتِ الْحَسَنَةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلَيْكُمْ بِالصِّدْقِ، فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَنْ عَبْدِ اللهِ بْنِ مَسْعُودٍ رَضِيَ اللهُ عَنْهُ، قَالَ رَسُولُ اللهِ ﷺ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصِّدْقُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Bercakap Benar",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَمَانَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Dipercayai",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّبْلِيغُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Menyampaikan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْفَطَانَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Cerdik",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْكَذِبُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Bohong",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْخِيَانَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Khianat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْكِتْمَانُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Menyembunyikan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْبَلَادَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Bodoh",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَصِفُ شَخْصًا بِذِكْرِ اسْمِهِ ثُمَّ صِفَتِهِ مُبَاشَرَةً، وَتَتْبَعُ الصِّفَةُ الْمَوْصُوفَ مِنْ حَيْثُ الْمَعْرِفَةِ وَالنَّكِرَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْمٌ + صِفَةٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: مُحَمَّدٌ الصَّادِقُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِذَا كَانَ الِاسْمُ مَعْرِفَةً (بِـ\"الـ\" أَوْ عَلَمًا)، كَانَتِ الصِّفَةُ مَعْرِفَةً أَيْضًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّادِقُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ الصَّادِقُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الأَمِينُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرَّسُولُ الأَمِينُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فَطِنٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَبِيٌّ فَطِنٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ هُوَ الصَّادِقُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا يُسَمَّى ضِدُّ الْأَمَانَةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا يَفْعَلُ الرَّسُولُ بِرِسَالَةِ رَبِّهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ هُوَ الْفَطِنُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا ضِدُّ الصِّدْقِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ يَقُولُ الْحَقَّ دَائِمًا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يُبَلِّغُهَا لِلنَّاسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ يَكُونُ حَكِيمًا فِي تَدْبِيرِ أُمُورِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ صَدِيقُكَ صَادِقٌ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، هُوَ صَادِقٌ لَا يَكْذِبُ أَبَدًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ أُخْتُكَ أَمِينَةٌ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، هِيَ أَمِينَةٌ، أُحِبُّ أَنْ أُشَارِكَهَا سِرِّي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ تَصِفُ مُعَلِّمَكَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ فَطِنٌ، يَحُلُّ الْمَشَاكِلَ بِحِكْمَةٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صَادِقٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَمِينٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يُبَلِّغُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا يَكْذِبُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رِسَالَةَ رَبِّهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صَدِيقِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُشَارِكُهُ أَسْرَارِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُعَلِّمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَحُلُّ الْمَشَاكِلَ بِحِكْمَةٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَكْذِبُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ صَادِقٌ لَا يَكْذِبُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رِسَالَتَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرَّسُولُ يُبَلِّغُ رِسَالَتَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَحْفَظُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَمَانَةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخِي أَمِينٌ يَحْفَظُ الْأَمَانَةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حِفْظُ الْحُقُوقِ وَعَدَمُ الْخِيَانَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَوْلُ الْحَقِّ دَائِمًا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْحِكْمَةُ فِي تَدْبِيرِ الْأُمُورِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِيصَالُ الرِّسَالَةِ إِلَى النَّاسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصِّفَاتُ فِي حَيَاتِي الْيَوْمِيَّةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصِّفَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ مِنَ الْحَيَاةِ الْيَوْمِيَّةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَقُولُ الْحَقَّ فِي الِامْتِحَانِ وَلَا أَغُشُّ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَرُدُّ مَا وَجَدْتُهُ إِلَى صَاحِبِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُعَلِّمُ أَخِي مَا تَعَلَّمْتُهُ مِنَ الْخَيْرِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُفَكِّرُ قَبْلَ أَنْ أَتَصَرَّفَ فِي الْمُشْكِلَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أُرِيدُ أَنْ أَتَّصِفَ بِـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَيُّ صِفَةٍ مِنْ هَذِهِ الصِّفَاتِ أُرِيدُ أَنْ أُقَوِّيَهَا فِي نَفْسِي؟ وَلِمَاذَا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الرَّسُولُ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ كَانَ قُدْوَتِي فِي هَذِهِ الصِّفَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أربع صفات واجبة للرسول بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جملاً باستخدام تركيب (اسم + صفة). ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقدم مثالاً من الحياة اليومية يصور كل صفة. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق عبارات التقوى والمحبة لله ورسوله بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الأخلاق مع الله ورسوله من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أكتب جملاً مثبتة (أنا + فعل) وجملاً منفية (لا / ليس) متعلقة بالأخلاق مع الله ورسوله.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعبر عن إيماني ومحبتي لله ورسوله في جملة قصيرة باستخدام النفي والإثبات.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أُحِبُّ اللهَ، وَأُطِيعُهُ فِي كُلِّ أَمْرٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أَتَّقِي اللهَ فِي السِّرِّ وَالْعَلَنِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَوَكَّلُ عَلَى اللهِ، وَأَشْكُرُهُ عَلَى نِعَمِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أُحِبُّ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَأَتَّبِعُ سُنَّتَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا أَعْصِي اللهَ، وَلَا أَكْذِبُ عَلَى النَّبِيِّ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذَا هُوَ حُبِّي لِلَّهِ وَرَسُولِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ وَالنَّاسِ أَجْمَعِينَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَنْ أَنَسِ بْنِ مَالِكٍ رَضِيَ اللهُ عَنْهُ، قَالَ رَسُولُ اللهِ ﷺ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّقْوَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Rasa Takut kepada Allah",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمَحَبَّةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kecintaan / Kasih Sayang",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الطَّاعَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Ketaatan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الِاتِّبَاعُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Mengikut (Sunnah Rasul)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّوَكُّلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Berserah kepada Allah",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الشُّكْرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Bersyukur",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُطِيعُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Aku taat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا أَكْذِبُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Aku tidak berdusta",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَسْتَخْدِمُ (اِسْمٌ + فِعْلٌ) لِلْإِثْبَاتِ، وَنَسْتَخْدِمُ (لَا / لَيْسَ) لِلنَّفْيِ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِثْبَاتٌ: اِسْمٌ + فِعْلٌ  •  نَفْيٌ: لَا / لَيْسَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: أَنَا أُطِيعُ اللهَ. ← لَا أَعْصِي اللهَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "(لَا) تَنْفِي الْفِعْلَ الْمُضَارِعَ، وَ(لَيْسَ) تَنْفِي الْجُمْلَةَ الِاسْمِيَّةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُثْبَتَةٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْمٌ + فِعْلٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أُطِيعُ اللهَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْمٌ + اِسْمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا مُؤْمِنٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْفِيَّةٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا + فِعْلٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا أَعْصِي اللهَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَيْسَ + اِسْمٌ + اِسْمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَيْسَ النَّبِيُّ كَاذِبًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ تُحِبُّ اللهَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَفْعَلُ إِذَا أَحْبَبْتَ النَّبِيَّ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تَعْصِي اللهَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلَى مَنْ تَتَوَكَّلُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَفْعَلُ بَعْدَ النِّعْمَةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُطِيعُهُ فِي كُلِّ أَمْرٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَّبِعُ سُنَّتَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا، لَا أَعْصِيهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَوَكَّلُ عَلَى اللهِ وَحْدَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَشْكُرُ اللهَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تُطِيعُ اللهَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أُطِيعُ اللهَ، وَلَا أَعْصِيهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تُحِبُّ النَّبِيَّ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ، أُحِبُّ النَّبِيَّ وَأَتَّبِعُ سُنَّتَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ تُعَبِّرُ عَنْ تَقْوَاكَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَوَكَّلُ عَلَى اللهِ وَأَشْكُرُهُ دَائِمًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُحِبُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَا أَعْصِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَوَكَّلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللهَ فِي كُلِّ أَمْرٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيَّ وَأَتَّبِعُ سُنَّتَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللهَ أَبَدًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلَى اللهِ فِي كُلِّ شَأْنِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اللهَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سُنَّتَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَّبِعُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيِّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَّبِعُ سُنَّةَ النَّبِيِّ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَعْصِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الِاعْتِمَادُ عَلَى اللهِ بَعْدَ الْأَخْذِ بِالْأَسْبَابِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الِاعْتِرَافُ بِنِعْمَةِ اللهِ وَحَمْدُهُ عَلَيْهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "شُعُورُ الْقَلْبِ نَحْوَ اللهِ وَرَسُولِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْخَوْفُ مِنَ اللهِ وَطَاعَتُهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "القَوْلُ مَعَ العَمَلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمَحَبَّةُ الْحَقِيقِيَّةُ (قَوْلٌ وَعَمَلٌ)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقَوْلُ بِاللِّسَانِ فَقَطْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُطِيعُ أَوَامِرَ اللهِ وَأَجْتَنِبُ نَوَاهِيَهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَّبِعُ سُنَّةَ النَّبِيِّ فِي حَيَاتِي الْيَوْمِيَّةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "«أُحِبُّ اللهَ» بِاللِّسَانِ فَقَطْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "«أُحِبُّ النَّبِيَّ» بِاللِّسَانِ فَقَطْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمَحَبَّةُ الْحَقِيقِيَّةُ لِلَّهِ وَرَسُولِهِ تَظْهَرُ فِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ أُثْبِتُ حُبِّي لِلَّهِ وَرَسُولِهِ فِي حَيَاتِي الْيَوْمِيَّةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْحُبُّ الْحَقِيقِيُّ يَظْهَرُ فِي الطَّاعَةِ وَالِاتِّبَاعِ، لَا فِي الْكَلَامِ فَقَطْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق عبارات التقوى والمحبة لله ورسوله بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جملاً مثبتة ومنفية متعلقة بالأخلاق مع الله ورسوله. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أعبر عن إيماني ومحبتي لله ورسوله في جملة قصيرة. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق كلمات صلة القرابة وكلمات اجتماعية متعلقة بالمجتمع بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الأخلاق في الأسرة والمجتمع من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل وصف بسيطة باستخدام كلمات صلة القرابة وصفات خلقية.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أمثل حواراً قصيراً عن موقف أسري باللغة العربية.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذِهِ أُسْرَتِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبِي رَجُلٌ كَرِيمٌ، وَأُمِّي امْرَأَةٌ صَبُورَةٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِي أَخٌ وَأُخْتٌ، نَتَعَاوَنُ فِي الْبَيْتِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَدِّي وَجَدَّتِي يَعِيشَانِ مَعَنَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَحْتَرِمُ الْكِبَارَ، وَنَرْحَمُ الصِّغَارَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جِيرَانُنَا طَيِّبُونَ، نَتَعَاوَنُ مَعَهُمْ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلْمُجْتَمَعُ يَحْتَاجُ إِلَى التَّعَاوُنِ وَالتَّوَاضُعِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ جَارَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأُسْرَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Keluarga",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَبُ / الْأُمُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Ayah / Ibu",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَخُ / الْأُخْتُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Saudara lelaki / Saudara perempuan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْجَدُّ / الْجَدَّةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Datuk / Nenek",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْعَمُّ / الْخَالُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Pak Cik (sebelah ayah) / Pak Cik (sebelah ibu)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْجِيرَانُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Jiran-jiran",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُجْتَمَعُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Masyarakat",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّعَاوُنُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kerjasama",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الِاحْتِرَامُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Hormat-menghormati",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّوَاضُعُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Rendah hati",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التركيب الإضافي يربط بين اسمين (المضاف والمضاف إليه) ليصبحا اسماً واحداً يقيّد أحدهما الآخر، ولا يعطي جملة تامة بمفرده.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُضَافٌ + مُضَافٌ إِلَيْهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: أُسْرَةُ + أَنَا ← أُسْرَتِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُضَافُ إِلَيْهِ دَائِمًا مَجْرُورٌ، وَلَا يَدْخُلُ عَلَى الْمُضَافِ (الـ) التَّعْرِيفِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرَةٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرَتِي سَعِيدَةٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "طَالِبٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْعِلْمِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا طَالِبُ الْعِلْمِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُحَمَّدٌ رَسُولُ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ أَفْرَادُ أُسْرَتِكَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ تَصِفُ أَبَاكَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَفْعَلُ مَعَ إِخْوَتِكَ فِي الْبَيْتِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ تُعَامِلُ جِيرَانَكَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا يَحْتَاجُ إِلَيْهِ الْمُجْتَمَعُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبِي، وَأُمِّي، وَأَخِي، وَأُخْتِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ رَجُلٌ كَرِيمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَتَعَاوَنُ فِي الْبَيْتِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَحْتَرِمُهُمْ وَأَتَعَاوَنُ مَعَهُمْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَحْتَاجُ إِلَى التَّعَاوُنِ وَالتَّوَاضُعِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذِهِ أُسْرَتِي: أَبِي، وَأُمِّي، وَأَخِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَلْ تَخْرُجُ وَإِلَى أَيْنَ تَذْهَبُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَعَمْ يَا أُمِّي، أَسْتَأْذِنُكِ فِي الْخُرُوجِ مَعَ أَصْدِقَائِي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَفْعَلُ إِذَا رَأَيْتَ جَارَكَ مَرِيضًا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَارُنَا مَرِيضٌ، سَأُسَاعِدُهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُمِّي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَتَعَاوَنُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَحْتَرِمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَجُلٌ كَرِيمٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "امْرَأَةٌ صَبُورَةٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْكِبَارَ فِي أُسْرَتِنَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَعَ جِيرَانِنَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَرِيمٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَجُلٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبِي رَجُلٌ كَرِيمٌ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْجِيرَانِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَعَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَتَعَاوَنُ مَعَ الْجِيرَانِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْكِبَارَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأُسْرَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَحْتَرِمُ الْكِبَارَ فِي الْأُسْرَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ يَسْكُنُونَ قُرْبَ بَيْتِي",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ يَسْكُنُ مَعِي فِي الْبَيْتِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَقْدِيرُ الْكِبَارِ وَمُعَامَلَتُهُمْ بِأَدَبٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْعَمَلُ مَعًا لِتَحْقِيقِ هَدَفٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَسْؤُولِيَّتِي فِي الأُسْرَةِ وَالمُجْتَمَعِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "المَسْؤُولِيَّةُ فِي الأُسْرَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "المَسْؤُولِيَّةُ فِي المُجْتَمَعِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِرُّ الْوَالِدَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "طَاعَةُ الْوَالِدَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُسَاعَدَةُ الْإِخْوَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّعَاوُنُ مَعَ الْجِيرَانِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِحْتِرَامُ الْآخَرِينَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مُسَاعَدَةُ الْمُحْتَاجِينَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُقَدِّرُ أُسْرَتِي وَمُجْتَمَعِي بِـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ تُعَبِّرُ عَنِ الْحُبِّ لِأُسْرَتِكَ بِالْفِعْلِ لَا بِالْكَلَامِ فَقَطْ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِرُّ الْوَالِدَيْنِ مِنْ أَعْظَمِ الْأَعْمَالِ عِنْدَ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق كلمات صلة القرابة وكلمات اجتماعية متعلقة بالمجتمع بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل وصف بسيطة باستخدام كلمات صلة القرابة وصفات خلقية. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أمثل حواراً قصيراً عن موقف أسري باللغة العربية. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق كلمات التسلسل التاريخي (وُلِدَ، نَشَأَ، بُعِثَ، تَزَوَّجَ) مع كلمات الظرف بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن مولد النبي وحياته الأولى من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل سرد باستخدام الفعل الماضي لعرض أحداث متسلسلة من السيرة النبوية.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أحكي ثلاثة أحداث على الأقل من حياة النبي الأولى باللغة العربية.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ النَّبِيُّ مُحَمَّدٌ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ فِي مَكَّةَ، عَامَ الْفِيلِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاتَ أَبُوهُ قَبْلَ وِلَادَتِهِ وَنَشَأَ يَتِيمًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَعَى الْغَنَمَ فِي صِغَرِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَزَوَّجَ خَدِيجَةَ رَضِيَ اللهُ عَنْهَا وَهُوَ فِي الْخَامِسَةِ وَالْعِشْرِينَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَانَ يُسَمَّى الْأَمِينَ لِصِدْقِهِ وَأَمَانَتِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ نَبِيًّا فِي غَارِ حِرَاءَ، وَهُوَ فِي الْأَرْبَعِينَ مِنْ عُمُرِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَزَلَ عَلَيْهِ الْوَحْيُ لِأَوَّلِ مَرَّةٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَذِهِ بِدَايَةُ الرِّسَالَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِنَّكَ لَتَصِلُ الرَّحِمَ، وَتَحْمِلُ الْكَلَّ، وَتَكْسِبُ الْمَعْدُومَ، وَتَقْرِي الضَّيْفَ، وَتُعِينُ عَلَى نَوَائِبِ الْحَقِّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "قَالَتْ خَدِيجَةُ رَضِيَ اللهُ عَنْهَا لِلنَّبِيِّ ﷺ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَخْرَجَهُ الْبُخَارِيُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Dilahirkan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَشَأَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Membesar",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَعَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Mengembala",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَزَوَّجَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Berkahwin",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Diutuskan sebagai Rasul",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْيَتِيمُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Anak yatim",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي سَنَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Pada tahun",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَزَلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Turun",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "غَارُ حِرَاءَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Gua Hira'",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَسْتَخْدِمُ الْفِعْلَ الْمَاضِيَ لِسَرْدِ أَحْدَاثِ السِّيرَةِ. بَعْضُ الْأَفْعَالِ مَعْلُومَةٌ، وَبَعْضُهَا مَجْهُولَةٌ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِعْلٌ مَعْلُومٌ ↔ فِعْلٌ مَجْهُولٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: نَشَأَ (مَعْلُومٌ) — وُلِدَ (مَجْهُولٌ).",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْفِعْلُ الْمَجْهُولُ لَا يُذْكَرُ مَعَهُ الْفَاعِلُ، لِأَنَّهُ غَيْرُ مَعْلُومٍ أَوْ غَيْرُ مُهِمٍّ ذِكْرُهُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَعْلُومٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَشَأَ النَّبِيُّ يَتِيمًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَعَى النَّبِيُّ الْغَنَمَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَجْهُولٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ فِي مَكَّةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ نَبِيًّا فِي غَارِ حِرَاءَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَيْنَ وُلِدَ النَّبِيُّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا رَعَى النَّبِيُّ فِي صِغَرِهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ تَزَوَّجَهَا النَّبِيُّ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا سُمِّيَ الْأَمِينَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَيْنَ بُعِثَ النَّبِيُّ نَبِيًّا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ فِي مَكَّةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَعَى الْغَنَمَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَزَوَّجَ خَدِيجَةَ رَضِيَ اللهُ عَنْهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِصِدْقِهِ وَأَمَانَتِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ فِي غَارِ حِرَاءَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَيْنَ وَمَتَى وُلِدَ النَّبِيُّ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ فِي مَكَّةَ عَامَ الْفِيلِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كَيْفَ نَشَأَ النَّبِيُّ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَشَأَ يَتِيمًا، ثُمَّ رَعَى الْغَنَمَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَتَى بُعِثَ النَّبِيُّ نَبِيًّا؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ فِي غَارِ حِرَاءَ وَهُوَ فِي الْأَرْبَعِينَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيُّ فِي مَكَّةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "يَتِيمًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَدِيجَةَ رَضِيَ اللهُ عَنْهَا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَبِيًّا فِي غَارِ حِرَاءَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَكَّةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ النَّبِيُّ فِي مَكَّةَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْغَنَمَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صِغَرِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حِرَاءَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "غَارِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ فِي غَارِ حِرَاءَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَمِينُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ مَاتَ أَبُوهُ أَوْ أُمُّهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَقَبُ النَّبِيِّ قَبْلَ الْبَعْثَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا يَنْزِلُ مِنَ اللهِ عَلَى أَنْبِيَائِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَكَانُ نُزُولِ أَوَّلِ الْوَحْيِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَطُّ زَمَنِ حَيَاةِ النَّبِيِّ الأُولَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْحَدَثُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "السِّنُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وُلِدَ فِي مَكَّةَ، وَمَاتَ أَبُوهُ قَبْلَهَا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَشَأَ يَتِيمًا، وَرَعَى الْغَنَمَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بُعِثَ نَبِيًّا فِي غَارِ حِرَاءَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عِنْدَ الْوِلَادَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي الصِّغَرِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "٢٥ سَنَةً",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "٤٠ سَنَةً",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَعَلَّمُ مِنْ حَيَاةِ النَّبِيِّ قَبْلَ الْبَعْثَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَعَلَّمْتَ مِنْ حَيَاةِ النَّبِيِّ فِي طُفُولَتِهِ وَشَبَابِهِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّبْرُ عَلَى الْيُتْمِ وَالْفَقْرِ يُرَبِّي الْإِنْسَانَ عَلَى الْقُوَّةِ وَالتَّوَاضُعِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق كلمات التسلسل التاريخي مع كلمات الظرف بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل سرد باستخدام الفعل الماضي لعرض أحداث من السيرة. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أحكي ثلاثة أحداث على الأقل من حياة النبي الأولى. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق كلمات الرحلة والأحداث المتعلقة بالإسراء والمعراج والهجرة، مع الروابط الزمانية، بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الإسراء والمعراج والهجرة من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أحكي من جديد أحداث الإسراء والمعراج أو الهجرة شفهياً باللغة العربية.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرِيَ بِالنَّبِيِّ مِنْ مَكَّةَ إِلَى بَيْتِ الْمَقْدِسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَكِبَ النَّبِيُّ الْبُرَاقَ فِي هَذِهِ الرِّحْلَةِ الْعَجِيبَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَمَّا وَصَلَ إِلَى بَيْتِ الْمَقْدِسِ، صَلَّى إِمَامًا بِالْأَنْبِيَاءِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثُمَّ عُرِجَ بِهِ إِلَى السَّمَاءِ حَتَّى بَلَغَ سِدْرَةَ الْمُنْتَهَى.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فُرِضَتْ عَلَيْهِ الصَّلَاةُ فِي هَذِهِ اللَّيْلَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ أَنِ اشْتَدَّ أَذَى قُرَيْشٍ، هَاجَرَ النَّبِيُّ مِنْ مَكَّةَ إِلَى الْمَدِينَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حِينَ وَصَلَ إِلَى الْمَدِينَةِ، اسْتَقْبَلَهُ الْأَنْصَارُ بِالْفَرَحِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سُمِّيَ أَهْلُ مَكَّةَ الْمُهَاجِرِينَ، وَسُمِّيَ أَهْلُ الْمَدِينَةِ الْأَنْصَارَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَارَكْنَا حَوْلَهُ لِنُرِيَهُ مِنْ آيَاتِنَا ۚ إِنَّهُ هُوَ السَّمِيعُ الْبَصِيرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سُورَةُ الْإِسْرَاءِ، الْآيَةُ ١",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِسْرَاءُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Perjalanan malam",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمِعْرَاجُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Naik ke langit",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرِيَ بِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Dibawa berjalan malam",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْبُرَاقُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Al-Buraq (kenderaan Israk)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَيْتُ الْمَقْدِسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Masjidil Aqsa",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سِدْرَةُ الْمُنْتَهَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Sidratul Muntaha",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْهِجْرَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Penghijrahan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُهَاجِرُونَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Golongan Muhajirin",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْأَنْصَارُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Golongan Ansar",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَسْتَخْدِمُ هَذِهِ الرَّوَابِطَ لِرَبْطِ أَحْدَاثِ الْقِصَّةِ بَعْضِهَا بِبَعْضٍ:",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "رَوَابِطُ زَمَانِيَّةٌ فِي أُسْلُوبِ السَّرْدِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: لَمَّا وَصَلَ إِلَى بَيْتِ الْمَقْدِسِ، صَلَّى إِمَامًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "كُلُّ رَابِطٍ زَمَانِيٍّ يُفِيدُ عَلَاقَةً مُخْتَلِفَةً بَيْنَ الْحَدَثَيْنِ (apabila / ketika / setelah / sehingga).",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَمَّا",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "apabila",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لَمَّا وَصَلَ إِلَى بَيْتِ الْمَقْدِسِ، صَلَّى إِمَامًا.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حِينَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ketika",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حِينَ وَصَلَ إِلَى الْمَدِينَةِ، اسْتَقْبَلَهُ الْأَنْصَارُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ أَنْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "setelah",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ أَنِ اشْتَدَّ أَذَى قُرَيْشٍ، هَاجَرَ النَّبِيُّ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَتَّى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "sehingga",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُرِجَ بِهِ حَتَّى بَلَغَ سِدْرَةَ الْمُنْتَهَى.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِنْ أَيْنَ إِلَى أَيْنَ كَانَ الْإِسْرَاءُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا رَكِبَ النَّبِيُّ فِي رِحْلَةِ الْإِسْرَاءِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا فُرِضَ عَلَى النَّبِيِّ فِي لَيْلَةِ الْمِعْرَاجِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا هَاجَرَ النَّبِيُّ إِلَى الْمَدِينَةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ هُمُ الْأَنْصَارُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِنْ مَكَّةَ إِلَى بَيْتِ الْمَقْدِسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلصَّلَاةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَعْدَ أَنِ اشْتَدَّ أَذَى قُرَيْشٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَهْلُ الْمَدِينَةِ الَّذِينَ اسْتَقْبَلُوا النَّبِيَّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا حَدَثَ فِي رِحْلَةِ الْإِسْرَاءِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرِيَ بِهِ مِنْ مَكَّةَ إِلَى بَيْتِ الْمَقْدِسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا حَدَثَ فِي الْمِعْرَاجِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُرِجَ بِهِ إِلَى السَّمَاءِ حَتَّى بَلَغَ سِدْرَةَ الْمُنْتَهَى.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "لِمَاذَا هَاجَرَ النَّبِيُّ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَاجَرَ إِلَى الْمَدِينَةِ بَعْدَ أَنِ اشْتَدَّ أَذَى قُرَيْشٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرِيَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُرِجَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَاجَرَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "وَصَلَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالنَّبِيِّ مِنْ مَكَّةَ إِلَى بَيْتِ الْمَقْدِسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِهِ إِلَى السَّمَاءِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيُّ مِنْ مَكَّةَ إِلَى الْمَدِينَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِلَى الْمَدِينَةِ، اسْتَقْبَلَهُ الْأَنْصَارُ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمَقْدِسِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِلَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَيْتِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أُسْرِيَ بِهِ إِلَى بَيْتِ الْمَقْدِسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمُنْتَهَى",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "سِدْرَةَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بَلَغَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَتَّى بَلَغَ سِدْرَةَ الْمُنْتَهَى.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْمَدِينَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَاجَرَ النَّبِيُّ إِلَى الْمَدِينَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَهْلُ مَكَّةَ الَّذِينَ تَرَكُوا دِيَارَهُمْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَعْلَى مَكَانٍ بَلَغَهُ النَّبِيُّ فِي الْمِعْرَاجِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "دَابَّةٌ رَكِبَهَا النَّبِيُّ فِي الْإِسْرَاءِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِسْرَاءُ وَالْمِعْرَاجُ مُقَابِلَ الْهِجْرَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِسْرَاءُ وَالْمِعْرَاجُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِنْ مَكَّةَ إِلَى الْمَدِينَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلَى الْأَرْضِ، فِي أَيَّامٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "تَأْسِيسُ الدَّوْلَةِ الْإِسْلَامِيَّةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِنْ مَكَّةَ إِلَى بَيْتِ الْمَقْدِسِ ثُمَّ السَّمَاءِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فِي لَيْلَةٍ وَاحِدَةٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "فَرْضُ الصَّلَاةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَتَعَلَّمُ مِنَ الْإِسْرَاءِ وَالْهِجْرَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَعَلَّمْتَ مِنَ الْإِسْرَاءِ وَالْمِعْرَاجِ وَالْهِجْرَةِ لِحَيَاتِكَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّلَاةُ مِعْرَاجُ الْمُؤْمِنِ الْيَوْمِيُّ إِلَى رَبِّهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق كلمات الرحلة والروابط الزمانية بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني جمل سرد بالفعل الماضي والروابط الزمانية. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أحكي من جديد أحداث الإسراء والمعراج أو الهجرة شفهياً. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أسماء أربعة من الصحابة المختارين وألقابهم وصفات قيادتهم بنطق صحيح.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقرأ جملاً عن الصحابة المختارين وإسهاماتهم من النص.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني ترجمة مختصرة لأحد الصحابة باستخدام كلمات الصفات والفعل الماضي.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقدم ترجمة مختصرة لصحابي مختار شفهياً.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اَلصَّحَابَةُ هُمُ الَّذِينَ رَافَقُوا النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ وَآمَنُوا بِهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبُو بَكْرٍ الصِّدِّيقُ خَلَفَ النَّبِيَّ فِي الْخِلَافَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِشْتَهَرَ بِالصِّدْقِ وَالثَّبَاتِ فِي الْإِيمَانِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُمَرُ الْفَارُوقُ حَكَمَ بِالْعَدْلِ بَيْنَ النَّاسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَمَعَ عُثْمَانُ ذُو النُّورَيْنِ الْقُرْآنَ فِي مُصْحَفٍ وَاحِدٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلِيٌّ، كَرَّمَ اللهُ وَجْهَهُ، اشْتَهَرَ بِالْحِكْمَةِ وَالشَّجَاعَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْتُشْهِدَ بَعْضُهُمْ فِي سَبِيلِ اللهِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هَؤُلَاءِ الْخُلَفَاءُ الرَّاشِدُونَ قُدْوَتُنَا فِي الْقِيَادَةِ وَالْإِخْلَاصِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَيْرُ النَّاسِ قَرْنِي، ثُمَّ الَّذِينَ يَلُونَهُمْ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّحَابِيُّ / الصَّحَابَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Sahabat (tunggal/jamak)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبُو بَكْرٍ الصِّدِّيقُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Abu Bakar al-Siddiq",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُمَرُ الْفَارُوقُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Umar al-Faruq",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُثْمَانُ ذُو النُّورَيْنِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Uthman Zun Nurain",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلِيٌّ كَرَّمَ اللهُ وَجْهَهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Ali Karramallahu Wajhah",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِسْهَامُ / الْإِسْهَامَاتُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Sumbangan (tunggal/jamak)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْحِكْمَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Kebijaksanaan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الشَّجَاعَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Keberanian",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْعَدْلُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Keadilan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَلَفَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Menggantikan",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَكَمَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Memerintah",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اُسْتُشْهِدَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "Syahid",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "نَكْتُبُ تَرْجَمَةً مُخْتَصَرَةً بِتَرْتِيبِ: الِاسْمُ + اللَّقَبُ + الصِّفَةُ + الْإِسْهَامُ (بِفِعْلٍ مَاضٍ):",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْمٌ + لَقَبٌ + صِفَةٌ + إِسْهَامٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مِثَالٌ: أَبُو بَكْرٍ الصِّدِّيقُ، ثَابِتٌ فِي الْإِيمَانِ، خَلَفَ النَّبِيَّ فِي الْخِلَافَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْإِسْهَامُ يُذْكَرُ دَائِمًا بِفِعْلٍ مَاضٍ يُبَيِّنُ عَمَلًا قَامَ بِهِ الصَّحَابِيُّ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "ثَابِتٌ فِي الْإِيمَانِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَلَفَ النَّبِيَّ فِي الْخِلَافَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَادِلٌ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَكَمَ بِالْعَدْلِ بَيْنَ النَّاسِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَنْ خَلَفَ النَّبِيَّ فِي الْخِلَافَةِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِمَاذَا اشْتَهَرَ عُمَرُ الْفَارُوقُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا جَمَعَ عُثْمَانُ ذُو النُّورَيْنِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِمَاذَا اشْتَهَرَ عَلِيٌّ كَرَّمَ اللهُ وَجْهَهُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا نُسَمِّي هَؤُلَاءِ الصَّحَابَةَ الْأَرْبَعَةَ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالْعَدْلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقُرْآنَ فِي مُصْحَفٍ وَاحِدٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالْحِكْمَةِ وَالشَّجَاعَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْخُلَفَاءُ الرَّاشِدُونَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "هُوَ أَبُو بَكْرٍ الصِّدِّيقُ، اشْتَهَرَ بِالصِّدْقِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا فَعَلَ عُمَرُ الْفَارُوقُ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَا إِسْهَامُ عُثْمَانَ ذِي النُّورَيْنِ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَمَعَ الْقُرْآنَ فِي مُصْحَفٍ وَاحِدٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَمَعَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اشْتَهَرَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَبُو بَكْرٍ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيَّ فِي الْخِلَافَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُمَرُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالْعَدْلِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عُثْمَانُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقُرْآنَ فِي مُصْحَفٍ وَاحِدٍ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "عَلِيٌّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "بِالْحِكْمَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْخِلَافَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "النَّبِيَّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "خَلَفَ أَبُو بَكْرٍ النَّبِيَّ فِي الْخِلَافَةِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَكَمَ عُمَرُ بِالْعَدْلِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الْقُرْآنَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَمَعَ عُثْمَانُ الْقُرْآنَ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اشْتَهَرَ بِالْحِكْمَةِ وَالشَّجَاعَةِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "جَمَعَ الْقُرْآنَ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "حَكَمَ بِالْعَدْلِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اشْتَهَرَ بِالصِّدْقِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْتِعْدَادٌ لِلتَّقْدِيمِ: بِطَاقَةُ صَحَابِيٍّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "البَنْدُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "التَّفْصِيلُ (يَمْلَؤُهُ الطَّالِبُ)",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "اِسْمُهُ وَلَقَبُهُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "صِفَتُهُ الْبَارِزَةُ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "إِسْهَامُهُ الرَّئِيسِيُّ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "دَرْسٌ مِنْ حَيَاتِهِ أَقْتَدِي بِهِ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أَنَا أُعْجَبُ بِـ",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "مَاذَا تَعَلَّمْتَ مِنْ سِيرَةِ الصَّحَابَةِ الَّذِينَ دَرَسْتَهُمْ؟",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "الصَّحَابَةُ كَانُوا قُدْوَةً فِي الْإِخْلَاصِ وَخِدْمَةِ الدِّينِ.",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أنطق أسماء أربعة من الصحابة المختارين وألقابهم بنطق صحيح. 🗣️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أبني ترجمة مختصرة لأحد الصحابة. ✍️",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "أقدم ترجمة مختصرة لصحابي مختار شفهياً. 👥",
+   "file": "lib/data/curriculum.dart"
+  },
+  {
+   "text": "في رحاب اللغة العربية الربانية",
+   "file": "lib/main.dart"
+  },
+  {
+   "text": "أقرأ وأفهم",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "كلمات وقاعدة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أتكلم",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أفكر وأكتب",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أحلل وأطبق",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "السيرة والحياة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "الخاتمة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "الدرس العاشر — مولد النبي وحياته الأولى",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "جدول الكلمات والقاعدة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أتكلم باللغة العربية",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "الفصل الأول ‹ الوحدة الرابعة: السيرة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "إظهار / إخفاء التشكيل",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "بَ",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "إعادة ضبط التقدم",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "هل تريد إعادة ضبط كل التقدم في هذا الدرس؟",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "إلغاء",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "نعم",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "العرض التقديمي (وضع الفصل)",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "${(progress * 100).round()}٪",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس العاشر",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "تأكد من مراجعة كلمات القاموس وإكمال التقييم الذاتي أعلاه.",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أَحْسَنْتَ! 🎉",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الْعَاشِرَ: مَوْلِدُ النَّبِيِّ وَحَيَاتُهُ الْأُولَى",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "عرض وسام الإنجاز 🏆",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "الرجوع إلى القائمة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "الوحدة الرابعة: السيرة",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "أهداف التعلم",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "فِي نِهَايَةِ الدَّرْسِ، أَسْتَطِيعُ إِنْ شَاءَ اللهُ أَنْ:",
+   "file": "lib/screens/dars_1_10_screen.dart"
+  },
+  {
+   "text": "الدرس الحادي عشر — الإسراء والمعراج والهجرة",
+   "file": "lib/screens/dars_1_11_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الحادي عشر",
+   "file": "lib/screens/dars_1_11_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الْحَادِيَ عَشَرَ: الْإِسْرَاءُ وَالْمِعْرَاجُ وَالْهِجْرَةُ",
+   "file": "lib/screens/dars_1_11_screen.dart"
+  },
+  {
+   "text": "الدرس الثاني عشر — الصحابة المختارون وإسهاماتهم",
+   "file": "lib/screens/dars_1_12_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الثاني عشر",
+   "file": "lib/screens/dars_1_12_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الثَّانِيَ عَشَرَ: الصَّحَابَةُ الْمُخْتَارُونَ وَإِسْهَامَاتُهُمْ",
+   "file": "lib/screens/dars_1_12_screen.dart"
+  },
+  {
+   "text": "أكتب وأحول",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "الإيمان والحياة",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "الدرس الأول — الإيمان بالله",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "الفصل الأول ‹ الوحدة الأولى: العقيدة",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الأول",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "الوحدة الأولى: العقيدة الإسلامية",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "الإِيمَانُ بِاللهِ تَعَالَى",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "في نهاية هذا الدرس، أستطيع بإذن الله تعالى أن:",
+   "file": "lib/screens/dars_1_1_screen.dart"
+  },
+  {
+   "text": "العقيدة والحياة",
+   "file": "lib/screens/dars_1_2_screen.dart"
+  },
+  {
+   "text": "الدرس الثاني — الإيمان بالملائكة والكتب والرسل",
+   "file": "lib/screens/dars_1_2_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الثاني",
+   "file": "lib/screens/dars_1_2_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الثَّانِي: الْإِيمَانُ بِالْمَلَائِكَةِ وَالْكُتُبِ وَالرُّسُلِ",
+   "file": "lib/screens/dars_1_2_screen.dart"
+  },
+  {
+   "text": "الوحدة الأولى: العقيدة",
+   "file": "lib/screens/dars_1_2_screen.dart"
+  },
+  {
+   "text": "الْإِيمَانُ بِالْمَلَائِكَةِ وَالْكُتُبِ وَالرُّسُلِ",
+   "file": "lib/screens/dars_1_2_screen.dart"
+  },
+  {
+   "text": "الدرس الثالث — الإيمان باليوم الآخر والقضاء والقدر",
+   "file": "lib/screens/dars_1_3_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الثالث",
+   "file": "lib/screens/dars_1_3_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الثَّالِثَ: الْإِيمَانُ بِالْيَوْمِ الْآخِرِ وَالْقَضَاءِ وَالْقَدَرِ",
+   "file": "lib/screens/dars_1_3_screen.dart"
+  },
+  {
+   "text": "الْإِيمَانُ بِالْيَوْمِ الآخِرِ وَالْقَضَاءِ وَالْقَدَرِ",
+   "file": "lib/screens/dars_1_3_screen.dart"
+  },
+  {
+   "text": "الفقه والحياة",
+   "file": "lib/screens/dars_1_4_screen.dart"
+  },
+  {
+   "text": "الدرس الرابع — الطهارة: الوضوء والغسل",
+   "file": "lib/screens/dars_1_4_screen.dart"
+  },
+  {
+   "text": "الفصل الأول ‹ الوحدة الثانية: الفقه",
+   "file": "lib/screens/dars_1_4_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الرابع",
+   "file": "lib/screens/dars_1_4_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الرَّابِعَ: الطَّهَارَةُ — الوُضُوءُ وَالغُسْلُ",
+   "file": "lib/screens/dars_1_4_screen.dart"
+  },
+  {
+   "text": "الوحدة الثانية: الفقه",
+   "file": "lib/screens/dars_1_4_screen.dart"
+  },
+  {
+   "text": "الدرس الخامس — الصلاة المفروضة",
+   "file": "lib/screens/dars_1_5_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الخامس",
+   "file": "lib/screens/dars_1_5_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الْخَامِسَ: الصَّلَاةُ المَفْرُوضَةُ",
+   "file": "lib/screens/dars_1_5_screen.dart"
+  },
+  {
+   "text": "الدرس السادس — صيام رمضان",
+   "file": "lib/screens/dars_1_6_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس السادس",
+   "file": "lib/screens/dars_1_6_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ السَّادِسَ: صِيَامُ رَمَضَانَ",
+   "file": "lib/screens/dars_1_6_screen.dart"
+  },
+  {
+   "text": "الأخلاق والحياة",
+   "file": "lib/screens/dars_1_7_screen.dart"
+  },
+  {
+   "text": "الدرس السابع — صفات الرسول",
+   "file": "lib/screens/dars_1_7_screen.dart"
+  },
+  {
+   "text": "الفصل الأول ‹ الوحدة الثالثة: الأخلاق",
+   "file": "lib/screens/dars_1_7_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس السابع",
+   "file": "lib/screens/dars_1_7_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ السَّابِعَ: صِفَاتُ الرَّسُولِ",
+   "file": "lib/screens/dars_1_7_screen.dart"
+  },
+  {
+   "text": "الوحدة الثالثة: الأخلاق",
+   "file": "lib/screens/dars_1_7_screen.dart"
+  },
+  {
+   "text": "الدرس الثامن — الأخلاق مع الله ورسوله",
+   "file": "lib/screens/dars_1_8_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس الثامن",
+   "file": "lib/screens/dars_1_8_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ الثَّامِنَ: الْأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ",
+   "file": "lib/screens/dars_1_8_screen.dart"
+  },
+  {
+   "text": "الدرس التاسع — الأخلاق في الأسرة والمجتمع",
+   "file": "lib/screens/dars_1_9_screen.dart"
+  },
+  {
+   "text": "بحمد الله وتوفيقه تم الدرس التاسع",
+   "file": "lib/screens/dars_1_9_screen.dart"
+  },
+  {
+   "text": "أَتْمَمْتَ الدَّرْسَ التَّاسِعَ: الْأَخْلَاقُ فِي الْأُسْرَةِ وَالْمُجْتَمَعِ",
+   "file": "lib/screens/dars_1_9_screen.dart"
+  },
+  {
+   "text": "اللغة العربية الربانية ١",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "٤ وحدات · ١٢ درسا",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "العقيدة · الفقه · الأخلاق · السيرة",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "اللغة العربية الربانية ٢",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "قيد الإعداد",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "النحو التطبيقي · البلاغة والبيان",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "اللغة العربية الربانية ٣",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "القراءة الموسعة · التعبير والإنشاء",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "صباح الخير والبركة",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "طاب يومك وظهرك",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "طاب مساؤك بالخير",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "مساء الخير والسرور",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "روحيدي هابيل  |  محمد أبا الخير  |  أحمد مزمل نجيب  |  سعيد رمضان شكري  |  محمد إخوان يوسف",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "كلية الدراسات الإسلامية واللغة العربية — كياس",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "© $year جميع الحقوق محفوظة",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "اللغة العربية الربانية",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "كلية السلطان إسماعيل فترا الجامعية الإسلامية العالمية — منصة التعلم التفاعلي",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "مرحبا بك في رحاب اللغة العربية الربانية",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "منهج تعليمي معاصر يجمع بين فقه اللغة وترسيخ العقيدة والقيم الإسلامية الرفيعة.",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "الدرس الجاري",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "الدرس ١: الإيمان بالله",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "٪$percent",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "واصل التعلم الآن",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "٤ وحدات تعليمية",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "١٢ درسا في الفصل الأول",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "٨ مفردات متقنة",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "أسماء الله الحسنى والقواعد",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "٪$percent الإنجاز العام",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "تقدم رائع، واصل!",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "ابدأ درسك اليوم",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "تعذّر تشغيل التلاوة — تحقّق من اتصالك بالإنترنت.",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "كلمة اليوم الربانية",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "سورة طه: ١١٤",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "اللغة العربية الربانية ١ - ٣",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "اختر الكتاب لمتابعة الفصول والوحدات والأنشطة التفاعلية.",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "متاح الآن",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "قريبا",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "التقدم في الفصل",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "٪${(progress * 100).round()}",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "ادخل الفصل",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "مغلق حاليا",
+   "file": "lib/screens/dashboard_screen.dart"
+  },
+  {
+   "text": "الفصل الدراسي الأول",
+   "file": "lib/screens/semester1_screen.dart"
+  },
+  {
+   "text": "١",
+   "file": "lib/screens/semester1_screen.dart"
+  },
+  {
+   "text": "أربع وحدات تعليمية · اثنا عشر درسا تطبيقيا",
+   "file": "lib/screens/semester1_screen.dart"
+  },
+  {
+   "text": "ادخل الآن",
+   "file": "lib/screens/semester1_screen.dart"
+  },
+  {
+   "text": "كِتَابٌ يَجْمَعُ بَيْنَ تَعَلُّمِ اللُّغَةِ وَتَرْسِيخِ الْقِيَمِ الرَّبَّانِيَّةِ فِي آنٍ وَاحِدٍ",
+   "file": "lib/screens/splash_screen.dart"
+  },
+  {
+   "text": "انقر للبدء في التعلم",
+   "file": "lib/screens/splash_screen.dart"
+  },
+  {
+   "text": "اَللهُ هُوَ الإِلَهُ الحَقُّ.",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "الله هو الإله الحق",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "اَللهُ",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "اللهُ",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "الله",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "لله",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "TtsService: refusing to synthesize \"$text\" — contains لفظ الجلالة with no matching reciter clip.",
+   "file": "lib/services/tts_service.dart"
+  },
+  {
+   "text": "[ؐ-ًؚ-ٟۖ-ۜ۟-۪ۨ-ٰۭ]",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٠",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٢",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٣",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٤",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٥",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٦",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٧",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٨",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "٩",
+   "file": "lib/utils/arabic_text.dart"
+  },
+  {
+   "text": "النتيجة: $correct / $total",
+   "file": "lib/widgets/common.dart"
+  },
+  {
+   "text": "المظهر: تلقائي (النظام)",
+   "file": "lib/widgets/common.dart"
+  },
+  {
+   "text": "المظهر: فاتح",
+   "file": "lib/widgets/common.dart"
+  },
+  {
+   "text": "المظهر: داكن",
+   "file": "lib/widgets/common.dart"
+  },
+  {
+   "text": "الخروج من وضع العارض",
+   "file": "lib/widgets/common.dart"
+  },
+  {
+   "text": "وضع العارض (ملء الشاشة)",
+   "file": "lib/widgets/common.dart"
+  },
+  {
+   "text": "ممتاز! بارك الله فيك",
+   "file": "lib/widgets/dars1/celebration_dialog.dart"
+  },
+  {
+   "text": "لقد أتممت أنشطة وتقييم الدرس الأول (الإيمان بالله) بنجاح. هنيئا لك هذا التقدم المبارك!",
+   "file": "lib/widgets/dars1/celebration_dialog.dart"
+  },
+  {
+   "text": "أتممت كل أهداف الدرس ١",
+   "file": "lib/widgets/dars1/celebration_dialog.dart"
+  },
+  {
+   "text": "الحمد لله · تابع",
+   "file": "lib/widgets/dars1/celebration_dialog.dart"
+  },
+  {
+   "text": "دليل_${i + 1}.jpg",
+   "file": "lib/widgets/dars1/dalil_gallery.dart"
+  },
+  {
+   "text": "النَّشَاطُ ٢: اِخْتَرِ الكَلِمَةَ الصَّحِيحَةَ",
+   "file": "lib/widgets/dars1/fill_card.dart"
+  },
+  {
+   "text": "اِخْتَرِ الاسْمَ المُنَاسِبَ مِنَ القَائِمَةِ لِكُلِّ جُمْلَةٍ.",
+   "file": "lib/widgets/dars1/fill_card.dart"
+  },
+  {
+   "text": "— اختر الاسم —",
+   "file": "lib/widgets/dars1/fill_card.dart"
+  },
+  {
+   "text": "تحقق من الإجابات",
+   "file": "lib/widgets/dars1/fill_card.dart"
+  },
+  {
+   "text": "أَكْمِلِ الجُمَلَ بِاسْمٍ آخَرَ مِنْ أَسْمَاءِ اللهِ الحُسْنَى (إِجَابَةٌ مَفْتُوحَةٌ ✍️):",
+   "file": "lib/widgets/dars1/fill_card.dart"
+  },
+  {
+   "text": "اللَّهُ …",
+   "file": "lib/widgets/dars1/fill_card.dart"
+  },
+  {
+   "text": "النَّشَاطُ الأَوَّلُ: اِرْبِطِ الاسْمَ بِالمَعْنَى",
+   "file": "lib/widgets/dars1/matching_card.dart"
+  },
+  {
+   "text": "اُنْقُرِ اسْمًا ثُمَّ اُنْقُرْ مَعْنَاهُ المُنَاسِبَ مَعَ زَمِيلِكَ شَفَهِيًّا.",
+   "file": "lib/widgets/dars1/matching_card.dart"
+  },
+  {
+   "text": "الاسم الكريم",
+   "file": "lib/widgets/dars1/matching_card.dart"
+  },
+  {
+   "text": "المعنى (Makna)",
+   "file": "lib/widgets/dars1/matching_card.dart"
+  },
+  {
+   "text": "إعادة البدء",
+   "file": "lib/widgets/dars1/matching_card.dart"
+  },
+  {
+   "text": "إجابة كاملة ممتازة!",
+   "file": "lib/widgets/dars1/matching_card.dart"
+  },
+  {
+   "text": "لم يتم العثور على صوت عربي على هذا الجهاز.",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "🎧 اِقْرَأِ النَّصَّ بِصَوْتٍ مُرْتَفِعٍ مَعَ زَمِيلِكَ",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "إيقاف",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "استمع للنص كاملاً",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "مفعل: صوت Microsoft Edge الطبيعي (ar-SA-Hamed Neural)",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "شاهد من القرآن الكريم",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "إخفاء الترجمة",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "ترجمة (BM)",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "إيقاف التلاوة",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "استمع للتلاوة",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "تلاوة الشيخ مشاري راشد العفاسي",
+   "file": "lib/widgets/dars1/reading_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ نَحْوِيَّةٌ أَسَاسِيَّةٌ",
+   "file": "lib/widgets/dars1/rule_card.dart"
+  },
+  {
+   "text": "الجملة الاسمية",
+   "file": "lib/widgets/dars1/rule_card.dart"
+  },
+  {
+   "text": "📋 التَّقْيِيمُ الذَّاتِيُّ لِأَهْدَافِ الدَّرْسِ",
+   "file": "lib/widgets/dars1/self_assess_and_dictionary.dart"
+  },
+  {
+   "text": "قَائِمَةُ التَّقْيِيمِ الذَّاتِيِّ: اِسْتَطَعْتُ وَالْحَمْدُ لِلَّهِ أَنْ:",
+   "file": "lib/widgets/dars1/self_assess_and_dictionary.dart"
+  },
+  {
+   "text": "تهانينا! لقد حققت كل أهداف الدرس",
+   "file": "lib/widgets/dars1/self_assess_and_dictionary.dart"
+  },
+  {
+   "text": "بارك الله في علمك وسعيك في تعلم لغة القرآن.",
+   "file": "lib/widgets/dars1/self_assess_and_dictionary.dart"
+  },
+  {
+   "text": "عرض الوسام 🏆",
+   "file": "lib/widgets/dars1/self_assess_and_dictionary.dart"
+  },
+  {
+   "text": "📖 كَلِمَاتٌ جَدِيدَةٌ تَعَلَّمْتُهَا الْيَوْمَ",
+   "file": "lib/widgets/dars1/self_assess_and_dictionary.dart"
+  },
+  {
+   "text": "🎬 مُقَدِّمَةُ الدَّرْسِ",
+   "file": "lib/widgets/dars1/topic_intro_video.dart"
+  },
+  {
+   "text": "شَاهِدِ الفِيدْيُو القَصِيرَ قَبْلَ أَنْ تَبْدَأَ الدَّرْسَ.",
+   "file": "lib/widgets/dars1/topic_intro_video.dart"
+  },
+  {
+   "text": "تكبير الفيديو — وضع العارض",
+   "file": "lib/widgets/dars1/topic_intro_video.dart"
+  },
+  {
+   "text": "إغلاق وضع العارض",
+   "file": "lib/widgets/dars1/topic_intro_video.dart"
+  },
+  {
+   "text": "النَّشَاطُ ٣: حَوِّلِ الاسْمَ بِدُونِ \"الـ\" إِلَى مَعَ \"الـ\"",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "مِثَالٌ: رَحِيمٌ ← الرَّحِيمُ (اُكْتُبْ بِـ \"الـ\")",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "اكتب هنا…",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "تحقق من التحويل",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "النَّشَاطُ ٤: رَتِّبِ الكَلِمَاتِ لِتَكْوِينِ جُمْلَةٍ",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "اُنْقُرِ الكَلِمَاتِ بِالتَّرْتِيبِ الصَّحِيحِ لِبِنَاءِ الجُمْلَةِ المفيدة:",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "الجملة ${index + 1}",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "إعادة ضبط",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "انقر الكلمات أدناه لوضعها هنا…",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "بنك الكلمات المربعة:",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "صحيح! ممتاز",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "حاول مرة أخرى",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "إخفاء الحل",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "إظهار الحل النموذجي",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "الحل: ${item.answer}",
+   "file": "lib/widgets/dars1/transform_word_order_card.dart"
+  },
+  {
+   "text": "📖 القَامُوسُ الصَّغِيرُ لِلدَّرْسِ",
+   "file": "lib/widgets/dars1/vocab_card.dart"
+  },
+  {
+   "text": "٨ مفردات",
+   "file": "lib/widgets/dars1/vocab_card.dart"
+  },
+  {
+   "text": "اقرأ كل اسم كريم ومعناه، ثم جرب كتابة مثله أو جملة في العمود الثالث:",
+   "file": "lib/widgets/dars1/vocab_card.dart"
+  },
+  {
+   "text": "الكلمة (Lafaz)",
+   "file": "lib/widgets/dars1/vocab_card.dart"
+  },
+  {
+   "text": "المعنى (Maksud)",
+   "file": "lib/widgets/dars1/vocab_card.dart"
+  },
+  {
+   "text": "كتابتك (Latihan)",
+   "file": "lib/widgets/dars1/vocab_card.dart"
+  },
+  {
+   "text": "👥 الدَّلِيلُ أَمَامَ عَيْنَيْكَ! فَكِّرْ مَعَ زَمِيلِكَ",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "اُنْظُرْ إِلَى هَذِهِ الصُّوَرِ. فَكِّرْ: مَاذَا يَدُلُّ عَلَيْهِ مَا تَرَاهُ مِنْ صِفَاتِ اللهِ؟ اُكْتُبْ جُمْلَةً بِاسْتِخْدَامِ الإِطَارِ أَدْنَاهُ 👇",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "إطار الكتابة ✍️",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "هذا / هذه ____ دليل على أن الله ____ لأنه / لأنها ____",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "💭 سُؤَالُ التَّفْكِيرِ",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "كَيْفَ يُغَيِّرُ الإِيمَانُ بِاللهِ حَيَاتَكَ اليَوْمِيَّةَ؟ اُذْكُرْ مِثَالاً مِنْ حَيَاتِكَ.",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "إطار الجواب",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "عندما أؤمن بالله ____ وأنا، ____",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "🌟 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ اللهِ؟",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "سؤال عندي",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "شيء تعلمته",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "✍️ أَجِبْ عَنِ السُّؤَالَيْنِ التَّالِيَيْنِ قَبْلَ أَنْ تَخْرُجَ",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "السؤال الأول: اكتب ثلاثة أسماء من أسماء الله الحسنى مع معانيها",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "السؤال الثاني: اكتب جملة واحدة باستخدام القاعدة (اسم + خبر)",
+   "file": "lib/widgets/dars1/writing_frames.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars1110.compareTitle}",
+   "file": "lib/widgets/dars_1_10/analyze_card.dart"
+  },
+  {
+   "text": "اُنْظُرْ إِلَى الجَدْوَلِ، ثُمَّ نَاقِشْ مَعَ زَمِيلِكَ:",
+   "file": "lib/widgets/dars_1_10/analyze_card.dart"
+  },
+  {
+   "text": "📖 إِطَارُ الكِتَابَةِ",
+   "file": "lib/widgets/dars_1_10/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars1110.hadithText}﴾",
+   "file": "lib/widgets/dars_1_10/reading_card.dart"
+  },
+  {
+   "text": "💭 السِّيرَةُ وَالحَيَاةُ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: مَاذَا تَعَلَّمْتَ مِنْ حَيَاةِ النَّبِيِّ فِي طُفُولَتِهِ وَشَبَابِهِ؟",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars1110.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "٢) ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "٣) ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنْ مَوْلِدِ النَّبِيِّ وَحَيَاتِهِ الْأُولَى؟",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ عِنْدِي",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "شَيْءٌ تَعَلَّمْتُهُ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "✍️ بِطَاقَةُ الخُرُوجِ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "أَجِبْ عَنِ السُّؤَالَيْنِ التَّالِيَيْنِ قَبْلَ أَنْ تَخْرُجَ:",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُحْكِ ثَلَاثَةَ أَحْدَاثٍ مِنْ حَيَاةِ النَّبِيِّ الْأُولَى بِاسْتِخْدَامِ الْفِعْلِ الْمَاضِي",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ كَلِمَةَ ظَرْفٍ وَاحِدَةً تَعَلَّمْتَهَا فِي هَذَا الدَّرْسِ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 التَّقْيِيمُ الذَّاتِيُّ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "التَّقْيِيمُ الذَّاتِيُّ: اِسْتَطَعْتُ وَالْحَمْدُ لِلَّهِ أَنْ:",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "📖 قَامُوسِي الصَّغِيرُ",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "كَلِمَاتٌ جَدِيدَةٌ تَعَلَّمْتُهَا الْيَوْمَ:",
+   "file": "lib/widgets/dars_1_10/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: الْفِعْلُ الْمَاضِي وَأُسْلُوبُ السَّرْدِ",
+   "file": "lib/widgets/dars_1_10/rule_card.dart"
+  },
+  {
+   "text": "مَعْلُومٌ / مَجْهُولٌ",
+   "file": "lib/widgets/dars_1_10/rule_card.dart"
+  },
+  {
+   "text": "الفِعْلُ",
+   "file": "lib/widgets/dars_1_10/rule_card.dart"
+  },
+  {
+   "text": "النَّوْعُ",
+   "file": "lib/widgets/dars_1_10/rule_card.dart"
+  },
+  {
+   "text": "المِثَالُ",
+   "file": "lib/widgets/dars_1_10/rule_card.dart"
+  },
+  {
+   "text": "🗣️ النَّشَاطُ ١: طَابِقِ السُّؤَالَ بِالْحَرْفِ الْمُنَاسِبِ",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "اِقْرَأِ الْأَسْئِلَةَ وَالْأَجْوِبَةَ، ثُمَّ اُنْقُرْ سُؤَالاً ثُمَّ الْجَوَابَ الْمُنَاسِبَ لَهُ، مَعَ زَمِيلِكَ شَفَهِيًّا.",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "الأَسْئِلَةُ",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "الأَجْوِبَةُ",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "👥 النَّشَاطُ ٢: كَارْدُ الحِوَارِ",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "اِسْأَلْ زَمِيلَكَ وَأَجِبْ. ثُمَّ تَبَادَلَا الدَّوْرَ.",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "الطَّالِبُ (ب) 👤",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "الطَّالِبُ (أ) 👤",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "الآنَ: بَدِّلِ الدَّوْرَ وَاسْتَخْدِمْ كَلِمَاتٍ أُخْرَى مِنَ الْجَدْوَلِ. 🔄",
+   "file": "lib/widgets/dars_1_10/speaking_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ ١: طَابِقْ بَيْنَ الْكَلِمَةِ وَالْجُمْلَةِ",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "الْكَلِمَةُ",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "الْجُمْلَةُ",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "تحقق",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ الثَّانِي: أَكْمِلِ الْجُمَلَ",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "اِخْتَرِ الْكَلِمَةَ الْمُنَاسِبَةَ مِنَ الصُّنْدُوقِ وَاكْتُبْهَا فِي الْفَرَاغِ.",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "— اختر —",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ الثَّالِثُ: رَتِّبِ الْكَلِمَاتِ لِتَكْوِينِ جُمْلَةٍ",
+   "file": "lib/widgets/dars_1_10/think_write_card.dart"
+  },
+  {
+   "text": "📖 جَدْوَلُ الكَلِمَاتِ",
+   "file": "lib/widgets/dars_1_10/vocab_card.dart"
+  },
+  {
+   "text": "١٠ مفردات",
+   "file": "lib/widgets/dars_1_10/vocab_card.dart"
+  },
+  {
+   "text": "اقرأ كل كلمة ومعناها، ثم جرب كتابة مثلها أو جملة في العمود الثالث:",
+   "file": "lib/widgets/dars_1_10/vocab_card.dart"
+  },
+  {
+   "text": "الكَلِمَةُ",
+   "file": "lib/widgets/dars_1_10/vocab_card.dart"
+  },
+  {
+   "text": "المَعْنَى",
+   "file": "lib/widgets/dars_1_10/vocab_card.dart"
+  },
+  {
+   "text": "كِتَابَتُكَ",
+   "file": "lib/widgets/dars_1_10/vocab_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars1111.compareTitle}",
+   "file": "lib/widgets/dars_1_11/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars1111.ayahDisplay}﴾",
+   "file": "lib/widgets/dars_1_11/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: مَاذَا تَعَلَّمْتَ مِنَ الْإِسْرَاءِ وَالْمِعْرَاجِ وَالْهِجْرَةِ لِحَيَاتِكَ؟",
+   "file": "lib/widgets/dars_1_11/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars1111.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_11/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الْإِسْرَاءِ وَالْهِجْرَةِ؟",
+   "file": "lib/widgets/dars_1_11/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اِحْكِ ثَلَاثَةَ أَحْدَاثٍ مِنَ الْإِسْرَاءِ وَالْمِعْرَاجِ بِاسْتِخْدَامِ الْفِعْلِ الْمَاضِي",
+   "file": "lib/widgets/dars_1_11/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اِبْنِ جُمْلَةً بِاسْتِخْدَامِ أَحَدِ الرَّوَابِطِ الزَّمَانِيَّةِ (لَمَّا / حِينَ / بَعْدَ أَنْ / حَتَّى)",
+   "file": "lib/widgets/dars_1_11/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: رَوَابِطُ زَمَانِيَّةٌ",
+   "file": "lib/widgets/dars_1_11/rule_card.dart"
+  },
+  {
+   "text": "أُسْلُوبُ السَّرْدِ",
+   "file": "lib/widgets/dars_1_11/rule_card.dart"
+  },
+  {
+   "text": "الرَّابِطُ",
+   "file": "lib/widgets/dars_1_11/rule_card.dart"
+  },
+  {
+   "text": "٩ مفردات",
+   "file": "lib/widgets/dars_1_11/vocab_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars1112.compareTitle}",
+   "file": "lib/widgets/dars_1_12/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars1112.hadithText}﴾",
+   "file": "lib/widgets/dars_1_12/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: مَاذَا تَعَلَّمْتَ مِنْ سِيرَةِ الصَّحَابَةِ الَّذِينَ دَرَسْتَهُمْ؟",
+   "file": "lib/widgets/dars_1_12/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars1112.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_12/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الصَّحَابَةِ الْمُخْتَارِينَ؟",
+   "file": "lib/widgets/dars_1_12/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرْ أَسْمَاءَ الْخُلَفَاءِ الرَّاشِدِينَ الْأَرْبَعَةِ",
+   "file": "lib/widgets/dars_1_12/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ إِسْهَامًا وَاحِدًا لِأَحَدِ الصَّحَابَةِ الَّذِينَ دَرَسْتَهُمْ",
+   "file": "lib/widgets/dars_1_12/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: أُسْلُوبُ كِتَابَةِ التَّرْجَمَةِ المُخْتَصَرَةِ",
+   "file": "lib/widgets/dars_1_12/rule_card.dart"
+  },
+  {
+   "text": "اسْمٌ + لَقَبٌ + صِفَةٌ + إِسْهَامٌ",
+   "file": "lib/widgets/dars_1_12/rule_card.dart"
+  },
+  {
+   "text": "الاسْمُ وَاللَّقَبُ",
+   "file": "lib/widgets/dars_1_12/rule_card.dart"
+  },
+  {
+   "text": "الْإِسْهَامُ",
+   "file": "lib/widgets/dars_1_12/rule_card.dart"
+  },
+  {
+   "text": "١٢ مفردات",
+   "file": "lib/widgets/dars_1_12/vocab_card.dart"
+  },
+  {
+   "text": "👥 تَمْثِيلُ الْأَدْوَارِ: أَنَا أُؤْمِنُ بِأَنَّ...",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "أَوَّلًا، أَكْمِلِ الْجَدْوَلَ:",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "الاِسْمُ",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "التَّفْسِيرُ",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "ملك / كتاب / رسول",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "العمل أو المعنى",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "ثَانِيًا، مَثِّلِ الْحِوَارَ مَعَ زَمِيلِكَ بِاسْتِخْدَامِ إِطَارِ الْكَلَامِ. طَالِبٌ (أ) دَاعِيَةٌ، طَالِبٌ (ب) يُصَحِّحُ أَوْ يُؤَكِّدُ.",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "الطَّالِبُ (أ): أَنَا أُؤْمِنُ بِأَنَّ ______ (الِاسْمُ) ______ (نَوْعُهُ)، وَعَمَلُهُ/مَعْنَاهُ ______.",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "الطَّالِبُ (ب): نَعَمْ، صَحِيحٌ. إِنَّ...",
+   "file": "lib/widgets/dars_1_2/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars112.ayahDisplay}﴾",
+   "file": "lib/widgets/dars_1_2/reading_card.dart"
+  },
+  {
+   "text": "💭 العَقِيدَةُ وَالحَيَاةُ",
+   "file": "lib/widgets/dars_1_2/reflection_exit_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: ${Dars112.thinkingQuestion}",
+   "file": "lib/widgets/dars_1_2/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars112.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_2/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الْمَلَائِكَةِ وَالْكُتُبِ وَالرُّسُلِ؟",
+   "file": "lib/widgets/dars_1_2/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرْ اسْمَيْنِ مِنْ أَسْمَاءِ الْمَلَائِكَةِ وَعَمَلَ كُلٍّ مِنْهُمَا",
+   "file": "lib/widgets/dars_1_2/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ كِتَابًا وَاحِدًا مِنَ الْكُتُبِ السَّمَاوِيَّةِ وَالرَّسُولَ الَّذِي أُنْزِلَ عَلَيْهِ",
+   "file": "lib/widgets/dars_1_2/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ",
+   "file": "lib/widgets/dars_1_2/rule_card.dart"
+  },
+  {
+   "text": "الْمُبْتَدَأُ",
+   "file": "lib/widgets/dars_1_2/rule_card.dart"
+  },
+  {
+   "text": "الْخَبَرُ",
+   "file": "lib/widgets/dars_1_2/rule_card.dart"
+  },
+  {
+   "text": "الجُمْلَةُ",
+   "file": "lib/widgets/dars_1_2/rule_card.dart"
+  },
+  {
+   "text": "اِقْرَأِ الْأَسْئِلَةَ وَالْأَجْوِبَةَ مَعَ زَمِيلِكَ شَفَهِيًّا، ثُمَّ اُنْقُرِ السُّؤَالَ ثُمَّ الْجَوَابَ الْمُنَاسِبَ لَهُ.",
+   "file": "lib/widgets/dars_1_2/speaking_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ ١: طَابِقْ بَيْنَ الْمَلَكِ وَالْعَمَلِ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "الْمَلَكُ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "الْعَمَلُ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ الثَّانِي: طَابِقْ بَيْنَ الْكِتَابِ وَالرَّسُولِ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "الْكِتَابُ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ الثَّالِثُ: أَكْمِلِ الْجُمَلَ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ الرَّابِعُ: رَتِّبِ الْكَلِمَاتِ لِتَكْوِينِ جُمْلَةٍ",
+   "file": "lib/widgets/dars_1_2/think_write_card.dart"
+  },
+  {
+   "text": "🎙️ مُقَابَلَةٌ قَصِيرَةٌ: مُحَاكَاةُ التَّوَاصُلِ",
+   "file": "lib/widgets/dars_1_3/analyze_card.dart"
+  },
+  {
+   "text": "أَوَّلًا، اِسْتَعِدَّ لِلْمُقَابَلَةِ بِكِتَابَةِ إِجَابَتِكَ عَلَى كُلِّ سُؤَالٍ:",
+   "file": "lib/widgets/dars_1_3/analyze_card.dart"
+  },
+  {
+   "text": "اكتب إجابتك هنا…",
+   "file": "lib/widgets/dars_1_3/analyze_card.dart"
+  },
+  {
+   "text": "ثَانِيًا، مَثِّلِ الْمُقَابَلَةَ مَعَ زَمِيلِكَ بِاسْتِخْدَامِ إِطَارِ الْكَلَامِ. طَالِبٌ (أ) مُذِيعٌ، طَالِبٌ (ب) يُجِيبُ.",
+   "file": "lib/widgets/dars_1_3/analyze_card.dart"
+  },
+  {
+   "text": "اَلْمُذِيعُ: هَلْ تَرْضَى بِقَضَاءِ اللهِ؟",
+   "file": "lib/widgets/dars_1_3/analyze_card.dart"
+  },
+  {
+   "text": "اَلطَّالِبُ: نَعَمْ، أَرْضَى بِقَضَاءِ اللهِ لِأَنَّ...",
+   "file": "lib/widgets/dars_1_3/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars113.ayahDisplay}﴾",
+   "file": "lib/widgets/dars_1_3/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: ${Dars113.thinkingQuestion}",
+   "file": "lib/widgets/dars_1_3/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars113.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_3/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الْيَوْمِ الآخِرِ وَالْقَضَاءِ وَالْقَدَرِ؟",
+   "file": "lib/widgets/dars_1_3/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرْ ثَلَاثَةَ أَحْدَاثٍ مِنْ أَحْدَاثِ الْيَوْمِ الآخِرِ",
+   "file": "lib/widgets/dars_1_3/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: عَبِّرْ عَنِ الرِّضَا بِقَضَاءِ اللهِ فِي جُمْلَةٍ بِاسْتِخْدَامِ (لِأَنَّ)",
+   "file": "lib/widgets/dars_1_3/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: ${Dars113.ruleTitle}",
+   "file": "lib/widgets/dars_1_3/rule_card.dart"
+  },
+  {
+   "text": "النَّمَطُ",
+   "file": "lib/widgets/dars_1_3/rule_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ",
+   "file": "lib/widgets/dars_1_3/rule_card.dart"
+  },
+  {
+   "text": "الجَوَابُ",
+   "file": "lib/widgets/dars_1_3/rule_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — المُقَارَنَةُ بَيْنَ الوُضُوءِ وَالغُسْلِ",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "اُنْظُرْ إِلَى الجَدْوَلِ، ثُمَّ نَاقِشْ مَعَ زَمِيلِكَ الفَرْقَ بَيْنَ الوُضُوءِ وَالغُسْلِ:",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "وَجْهُ المُقَارَنَةِ",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "الوُضُوءُ",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "الغُسْلُ",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "أَكْمِلِ الجُمْلَتَيْنِ الآتِيَتَيْنِ بِأُسْلُوبِكَ:",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "هَذَا الوُضُوءُ ____________ لِأَنَّهُ:",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "هَذَا الغُسْلُ ____________ لِأَنَّهُ:",
+   "file": "lib/widgets/dars_1_4/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars114.hadithText}﴾",
+   "file": "lib/widgets/dars_1_4/reading_card.dart"
+  },
+  {
+   "text": "💭 الفِقْهُ وَالحَيَاةُ",
+   "file": "lib/widgets/dars_1_4/reflection_exit_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: لِمَاذَا نُحَافِظُ عَلَى الطَّهَارَةِ كُلَّ يَوْمٍ؟",
+   "file": "lib/widgets/dars_1_4/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars114.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_4/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الطَّهَارَةِ؟",
+   "file": "lib/widgets/dars_1_4/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: كَيْفَ نَتَوَضَّأُ؟ اُكْتُبْ ثَلَاثَ خُطُوَاتٍ",
+   "file": "lib/widgets/dars_1_4/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ كَلِمَتَيْنِ مِنْ كَلِمَاتِ التَّرْتِيبِ الَّتِي تَعَلَّمْتَهَا",
+   "file": "lib/widgets/dars_1_4/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: كَلِمَاتُ التَّرْتِيبِ",
+   "file": "lib/widgets/dars_1_4/rule_card.dart"
+  },
+  {
+   "text": "كَلِمَاتُ التَّرْتِيبِ",
+   "file": "lib/widgets/dars_1_4/rule_card.dart"
+  },
+  {
+   "text": "كَلِمَةُ التَّرْتِيبِ",
+   "file": "lib/widgets/dars_1_4/rule_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ ١: رَتِّبِ الخُطُوَاتِ",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "رَتِّبِ الخُطُوَاتِ الآتِيَةَ بِاسْتِخْدَامِ كَلِمَاتِ التَّرْتِيبِ (أَوَّلاً – ثُمَّ – بَعْدَ ذَلِكَ – أَخِيراً)، بِالنَّقْرِ عَلَى القِطَعِ أَدْنَاهُ بِالتَّرْتِيبِ الصَّحِيحِ:",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "انقر القطع أدناه لبناء الترتيب هنا…",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "تحقق من الترتيب",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ ٢: أَكْمِلِ الْجُمَلَ",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "✍️ النَّشَاطُ ٣: كِتَابَةُ الْجُمَلِ",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "اُكْتُبْ ثَلَاثَ جُمَلٍ بِأُسْلُوبِكَ الْخَاصِّ تَصِفُ فِيهَا خُطُوَاتِ الوُضُوءِ، مُسْتَخْدِماً كَلِمَاتِ التَّرْتِيبِ:",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "اكتب جملتك هنا…",
+   "file": "lib/widgets/dars_1_4/think_write_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars115.compareTitle}",
+   "file": "lib/widgets/dars_1_5/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars115.hadithText}﴾",
+   "file": "lib/widgets/dars_1_5/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: لِمَاذَا نُحَافِظُ عَلَى الصَّلَاةِ فِي أَوْقَاتِهَا؟",
+   "file": "lib/widgets/dars_1_5/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars115.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_5/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الصَّلَاةِ؟",
+   "file": "lib/widgets/dars_1_5/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرْ أَسْمَاءَ أَوْقَاتِ الصَّلَاةِ الْخَمْسِ",
+   "file": "lib/widgets/dars_1_5/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ فِعْلَ أَمْرٍ وَاحِدًا تَعَلَّمْتَهُ فِي هَذَا الدَّرْسِ",
+   "file": "lib/widgets/dars_1_5/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: فِعْلُ الْأَمْرِ",
+   "file": "lib/widgets/dars_1_5/rule_card.dart"
+  },
+  {
+   "text": "فِعْلُ الْأَمْرِ",
+   "file": "lib/widgets/dars_1_5/rule_card.dart"
+  },
+  {
+   "text": "أَصْلُهُ (مُضَارِعٌ ← مَاضٍ)",
+   "file": "lib/widgets/dars_1_5/rule_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars116.compareTitle}",
+   "file": "lib/widgets/dars_1_6/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars116.hadithText}﴾",
+   "file": "lib/widgets/dars_1_6/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: كَيْفَ يُرَبِّي الصِّيَامُ نَفْسِي عَلَى التَّقْوَى وَالصَّبْرِ؟",
+   "file": "lib/widgets/dars_1_6/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars116.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_6/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ صِيَامِ رَمَضَانَ؟",
+   "file": "lib/widgets/dars_1_6/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرْ رُكْنًا وَاحِدًا وَمُبْطِلًا وَاحِدًا مِنْ مُبْطِلَاتِ الصِّيَامِ",
+   "file": "lib/widgets/dars_1_6/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اِبْنِ جُمْلَةَ نَهْيٍ بِاسْتِخْدَامِ (لَا + فِعْلٌ مُضَارِعٌ)",
+   "file": "lib/widgets/dars_1_6/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: أُسْلُوبُ النَّهْيِ",
+   "file": "lib/widgets/dars_1_6/rule_card.dart"
+  },
+  {
+   "text": "أُسْلُوبُ النَّهْيِ",
+   "file": "lib/widgets/dars_1_6/rule_card.dart"
+  },
+  {
+   "text": "صِيغَةُ النَّهْيِ",
+   "file": "lib/widgets/dars_1_6/rule_card.dart"
+  },
+  {
+   "text": "التَّحْلِيلُ",
+   "file": "lib/widgets/dars_1_6/rule_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars117.compareTitle}",
+   "file": "lib/widgets/dars_1_7/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars117.hadithText}﴾",
+   "file": "lib/widgets/dars_1_7/reading_card.dart"
+  },
+  {
+   "text": "💭 الأخلاق وَالحَيَاةُ",
+   "file": "lib/widgets/dars_1_7/reflection_exit_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: أَيُّ صِفَةٍ مِنْ هَذِهِ الصِّفَاتِ أُرِيدُ أَنْ أُقَوِّيَهَا فِي نَفْسِي؟ وَلِمَاذَا؟",
+   "file": "lib/widgets/dars_1_7/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars117.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_7/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الصِّفَاتِ الْمَحْمُودَةِ؟",
+   "file": "lib/widgets/dars_1_7/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرِ الصِّفَاتِ الْأَرْبَعَ الْوَاجِبَةَ لِلرَّسُولِ",
+   "file": "lib/widgets/dars_1_7/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اِبْنِ جُمْلَةً بِتَرْكِيبِ (اسْمٌ + صِفَةٌ)",
+   "file": "lib/widgets/dars_1_7/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: اِسْمٌ + صِفَةٌ",
+   "file": "lib/widgets/dars_1_7/rule_card.dart"
+  },
+  {
+   "text": "الِاسْمُ",
+   "file": "lib/widgets/dars_1_7/rule_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars118.compareTitle}",
+   "file": "lib/widgets/dars_1_8/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars118.hadithText}﴾",
+   "file": "lib/widgets/dars_1_8/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: كَيْفَ أُثْبِتُ حُبِّي لِلَّهِ وَرَسُولِهِ فِي حَيَاتِي الْيَوْمِيَّةِ؟",
+   "file": "lib/widgets/dars_1_8/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars118.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_8/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الْأَخْلَاقِ مَعَ اللهِ وَرَسُولِهِ؟",
+   "file": "lib/widgets/dars_1_8/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُكْتُبْ جُمْلَةً مُثْبَتَةً وَجُمْلَةً مَنْفِيَّةً مُتَعَلِّقَتَيْنِ بِالْأَخْلَاقِ مَعَ اللهِ",
+   "file": "lib/widgets/dars_1_8/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ عِبَارَةً وَاحِدَةً تَدُلُّ عَلَى مَحَبَّتِكَ لِلنَّبِيِّ",
+   "file": "lib/widgets/dars_1_8/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: الجُمْلَةُ المُثْبَتَةُ وَالمَنْفِيَّةُ",
+   "file": "lib/widgets/dars_1_8/rule_card.dart"
+  },
+  {
+   "text": "إِثْبَاتٌ وَنَفْيٌ",
+   "file": "lib/widgets/dars_1_8/rule_card.dart"
+  },
+  {
+   "text": "👥 مُقَابَلَةٌ قَصِيرَةٌ — ${Dars119.compareTitle}",
+   "file": "lib/widgets/dars_1_9/analyze_card.dart"
+  },
+  {
+   "text": "﴿${Dars119.hadithText}﴾",
+   "file": "lib/widgets/dars_1_9/reading_card.dart"
+  },
+  {
+   "text": "سُؤَالٌ لِلتَّفْكِيرِ: كَيْفَ تُعَبِّرُ عَنِ الْحُبِّ لِأُسْرَتِكَ بِالْفِعْلِ لَا بِالْكَلَامِ فَقَطْ؟",
+   "file": "lib/widgets/dars_1_9/reflection_exit_card.dart"
+  },
+  {
+   "text": "١) ${Dars119.thinkingFirstReason}",
+   "file": "lib/widgets/dars_1_9/reflection_exit_card.dart"
+  },
+  {
+   "text": "📋 تَأَمَّلْ: مَاذَا تَعَلَّمْتَ الْيَوْمَ عَنِ الأُسْرَةِ وَالمُجْتَمَعِ؟",
+   "file": "lib/widgets/dars_1_9/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الأَوَّلُ: اُذْكُرْ ثَلَاثَةً مِنْ أَفْرَادِ أُسْرَتِكَ بِاللُّغَةِ الْعَرَبِيَّةِ",
+   "file": "lib/widgets/dars_1_9/reflection_exit_card.dart"
+  },
+  {
+   "text": "السُّؤَالُ الثَّانِي: اُذْكُرْ قِيمَةً خُلُقِيَّةً وَاحِدَةً فِي التَّعَامُلِ مَعَ الْمُجْتَمَعِ",
+   "file": "lib/widgets/dars_1_9/reflection_exit_card.dart"
+  },
+  {
+   "text": "💡 قَاعِدَةٌ: التَّرْكِيبُ الْإِضَافِيُّ",
+   "file": "lib/widgets/dars_1_9/rule_card.dart"
+  },
+  {
+   "text": "الْمُضَافُ",
+   "file": "lib/widgets/dars_1_9/rule_card.dart"
+  },
+  {
+   "text": "الْمُضَافُ إِلَيْهِ",
+   "file": "lib/widgets/dars_1_9/rule_card.dart"
+  },
+  {
+   "text": "تعذر فتح رابط التحدي. حاول مرة أخرى.",
+   "file": "lib/widgets/game_banner.dart"
+  },
+  {
+   "text": "جديد · لعبة صفية مباشرة",
+   "file": "lib/widgets/game_banner.dart"
+  },
+  {
+   "text": "تحدي جبل الربانية",
+   "file": "lib/widgets/game_banner.dart"
+  },
+  {
+   "text": "سِبَاقٌ إِلَى الْقِمَّةِ — أجب عن الأسئلة وتسلّق الجبل مباشرة أمام الفصل.",
+   "file": "lib/widgets/game_banner.dart"
+  },
+  {
+   "text": "ابدأ اللعب",
+   "file": "lib/widgets/game_banner.dart"
+  },
+  {
+   "text": "إغلاق العرض التقديمي",
+   "file": "lib/widgets/projector_mode.dart"
+  },
+  {
+   "text": "الجملة ${widget.index + 1}",
+   "file": "lib/widgets/shared/word_order_activity.dart"
+  },
+  {
+   "text": "الحل: ${widget.item.answer}",
+   "file": "lib/widgets/shared/word_order_activity.dart"
+  }
+ ],
+ "assets": {
+  "assets/audio/quran/lafz_jalalah.mp3": "f059a0b6b21c77b1d204646d654f4cc6d1a3db364629875e8b64a4d8cd3f20e0",
+  "assets/audio/tts/reading_0.mp3": "f7e0f47b6e4d233b7616896673e94d4f740f0ce9668de465b0758966aec6a97b",
+  "assets/audio/tts/reading_1.mp3": "5c7598f129bf9ff738d4b70744c99a81eb1c83395f82520b0e11cf1a28ecaef5",
+  "assets/audio/tts/reading_2.mp3": "a886f5f7149bb14cab4bf976f553f8435b4d6bc4d14a73b0b267a208da34270e",
+  "assets/audio/tts/reading_3.mp3": "ab6979850dcbf7f9799631fd69d939c6486e8f182c903b5277da8fff9a2d1ae3",
+  "assets/audio/tts/reading_4.mp3": "9ed822476783dcf7b8c794483232f930174e1e99b15102097c2fa11e67ca6f52",
+  "assets/audio/tts/reading_5.mp3": "e43ecc03a14492a22270c8e5224af084c4e646210fe116a25effc57660cfd87a",
+  "assets/audio/tts/vocab_1.mp3": "fcb088363d1936a2ffb18b42155ecfad929e5c07457be0dd6498d03bb63389d3",
+  "assets/audio/tts/vocab_2.mp3": "b2acf009fab0687b9a3db58d4f4776ae351d8cdc55dbc93e7230f7736175d4cb",
+  "assets/audio/tts/vocab_3.mp3": "743edac959e21d25eed99bf214c5b06b4b47b1d89150ad294ccfb050d75a6405",
+  "assets/audio/tts/vocab_4.mp3": "adc8fece8b49f5a366db93e72ad0c94fdbd6435276f5b7c76766fcf1b7b86e85",
+  "assets/audio/tts/vocab_5.mp3": "063410f560fb7f85eef86c606428880288c1b2de789369fe96cccae005961976",
+  "assets/audio/tts/vocab_6.mp3": "7efb84ca8979e5b937643e11df222fba5a95c479529009b53c69b51897ed1d0d",
+  "assets/audio/tts/vocab_7.mp3": "d431534b38caa6932b4ddf0c0ca9aaeb4f0d740727627ce6a9dcc2b9d34c4e74",
+  "assets/audio/tts_dars110/reading_1.mp3": "5cfec988fa297bd35cd0701d15cac4306ba7a30ff5889e1a80ad6ab6ded58242",
+  "assets/audio/tts_dars110/reading_2.mp3": "3edcf8d4ebc7fdfcf96b5dd66c72c5f703bfaed7856479eca813384c817d0828",
+  "assets/audio/tts_dars110/reading_4.mp3": "7c99c67dfccd2f25499b6851a3d9eb64a3a9f5630e8b084107915436a859227a",
+  "assets/audio/tts_dars110/reading_5.mp3": "fcc7fb8a022c7839f58f2cd1ab6153b47164c247add1c9158e52065e351bd657",
+  "assets/audio/tts_dars110/reading_6.mp3": "aae1ecda459e71b4e6d8be2d8fbea124c85156ecf2e7752defda90fb8371c219",
+  "assets/audio/tts_dars110/reading_7.mp3": "a8668a8163a75bf0230d20e44de6738730479dc8d1162cd3d1f12049d8705c1d",
+  "assets/audio/tts_dars110/vocab_0.mp3": "475285ca01b0d261f5c087a08bf3bc919f6b49dc04cb44c36e7c3548cc8271d0",
+  "assets/audio/tts_dars110/vocab_1.mp3": "0e2726c679bb03adbfb26d6326b8849eb8f7867c8d7bc31f8ff325a764edbd93",
+  "assets/audio/tts_dars110/vocab_2.mp3": "ee2096e8f0c5f9adc56a253c6f3029e62b697ce9f260e95bb1b59e3c6fcd3863",
+  "assets/audio/tts_dars110/vocab_3.mp3": "7e232577d818798ec52a50b1ae2b4e72f18dc46535a47e48739546f2c0a12dd5",
+  "assets/audio/tts_dars110/vocab_4.mp3": "b269fe4f5cfaa091ec2ecb60ca9cce0107ec0ec2aecb160f41c3a1e33462c774",
+  "assets/audio/tts_dars110/vocab_5.mp3": "aee656543c52e4b6a35e2b8172e78005cc53e381ac792c3a827740073fd17f30",
+  "assets/audio/tts_dars110/vocab_6.mp3": "d880e14d99a491540621f245be6b71dbb6e26c8d59cbf1a7114938ce4d62931c",
+  "assets/audio/tts_dars110/vocab_7.mp3": "ff08b1f5aa73245ba7445918245467fd107a144fc946998344bd070b2809613a",
+  "assets/audio/tts_dars110/vocab_8.mp3": "4206d19fa4b1c81ec0a816e44952eaa279cad88828364a8c4c61dcd11d7b3fe1",
+  "assets/audio/tts_dars110/vocab_9.mp3": "16b7dc02d53de56dd54f5dcf1468a78cff50fdeffc7d143d75aed8723d2c8fea",
+  "assets/audio/tts_dars111/reading_0.mp3": "ad826225cbddecbb5456ef39d0b17c7cada0e45567d9028486fb78be22538210",
+  "assets/audio/tts_dars111/reading_1.mp3": "b03cf5f10ea3b23f1f16be3006da5d157656dfe73be69b7f37b7d5232ea7d3df",
+  "assets/audio/tts_dars111/reading_2.mp3": "85a60692e1148afa533cea823629af57dc04b5d86c5e46f64a247e0a3c4cc856",
+  "assets/audio/tts_dars111/reading_3.mp3": "bfee12a04a745bce1e2793793e362da49e6fa6dad5c5e226603c403f10edb5f1",
+  "assets/audio/tts_dars111/reading_4.mp3": "ba1f5df01c7bf7e386b4199a0a254cd02b58c1c652e01e87a7959e2f32cc4b6c",
+  "assets/audio/tts_dars111/reading_5.mp3": "955b55ae09bdf26476079418b8db2a65ec2c7460b881c7e44bf4c92f06aaec4e",
+  "assets/audio/tts_dars111/reading_6.mp3": "f1ccceb940053005f3ac37894f499f21890f59ece95935793bebca667b805a09",
+  "assets/audio/tts_dars111/reading_7.mp3": "a33e1dac1dee948b433ca5ca15c65bef232d0f57dab4bc98a9d7f3afe9f7b0c4",
+  "assets/audio/tts_dars111/vocab_0.mp3": "21872ad0fbe8135c22d99424f8f1f82832e0a5c09a1369910740e1bb56fd096e",
+  "assets/audio/tts_dars111/vocab_1.mp3": "e1eb02f6e2525ed7d0335dabffbf70d252deae2fc0bdd7d1a4e5980e3bd8763e",
+  "assets/audio/tts_dars111/vocab_2.mp3": "ec4478a64c41d966d2e87cf5789f9dad277dab9797c42468f9dc1f7327a7f5b3",
+  "assets/audio/tts_dars111/vocab_3.mp3": "312799a267e348229d5374bc2512e4a1be30aa2035d1b8ade350350e5b0cd79b",
+  "assets/audio/tts_dars111/vocab_4.mp3": "dd4378445495cd6d1912f3e5d88744a857c1cc4bfc176ab904ce87d7b9678573",
+  "assets/audio/tts_dars111/vocab_5.mp3": "88fc3ebd10d37656e5d0109347c4e4bbc6f230734c9434ab525a33db66d8717e",
+  "assets/audio/tts_dars111/vocab_6.mp3": "647e5c91f9cc3fa623594f5e6523fca2cd6e0e5bfe0dcc4dd723e7772838494c",
+  "assets/audio/tts_dars111/vocab_7.mp3": "8143343cf45e0843ca5f39125838a93bbadf2717216e2e5c2d9a2badb524e9bc",
+  "assets/audio/tts_dars111/vocab_8.mp3": "9c23f41f54c0a6bad90b4b19f9923fb3b52775b6e35d0a44b684199f79c884e1",
+  "assets/audio/tts_dars112/reading_1.mp3": "2a04f92bfb79cbb388968e90ada4f13b26f90c2853f81d7d96b5d974f716d1d5",
+  "assets/audio/tts_dars112/reading_2.mp3": "c8c60aa744cff7540279236e5fc26bbe2bb3cd3c743c3e2e8d824f816adf425e",
+  "assets/audio/tts_dars112/reading_3.mp3": "489bccff4c962aa5e8f4fc1a703bf8618c5cb36c5e06984858c8f25c78e26c3e",
+  "assets/audio/tts_dars112/reading_4.mp3": "f378e238d89a3490828117c227f48e88e43f2667e1ce6c31fc830b821ce6dc1d",
+  "assets/audio/tts_dars112/reading_7.mp3": "53362041ded15337c050eadbbac86b62832fe5017544c128ed61628fa9bb5d3e",
+  "assets/audio/tts_dars112/vocab_0.mp3": "ac68c6058628bdb0bb92d105f30c1e8b55ee4ea68e532c168040aed38787a0c7",
+  "assets/audio/tts_dars112/vocab_1.mp3": "683bbcdbc6605a7929d3e701e049440a1e57c4ec3fa69a387a6fa7c16d068a9b",
+  "assets/audio/tts_dars112/vocab_10.mp3": "6a24dcd01c9f2f9487fdbeb1558685fac641ba6ecb56a61095a4988e8f73bb60",
+  "assets/audio/tts_dars112/vocab_11.mp3": "35e118f935aace25cc6abfdcca8ae898a5ea2b752d31453c425c93afd03e54d3",
+  "assets/audio/tts_dars112/vocab_2.mp3": "b1a76b7fc59e5e28007a2fac890ac2040c89d9db718ff38a5e2e63b9f0aac7a9",
+  "assets/audio/tts_dars112/vocab_3.mp3": "887849aea134585b536c0277b7e5b66003408bb39d55cc405d4425b111789933",
+  "assets/audio/tts_dars112/vocab_5.mp3": "822ee9f282e7a4daefdcc4f007fa92c8032e5082af324e78ead75bda2221c377",
+  "assets/audio/tts_dars112/vocab_6.mp3": "211fd1a843a9dbacfcd6e4511996e87e5e8c7c354dbac9ce09c9f54bd1ddcb82",
+  "assets/audio/tts_dars112/vocab_7.mp3": "43d9b4293b96e390c08f7f2d5a1e22806380fa565da6f86fd7ba345a502e39c4",
+  "assets/audio/tts_dars112/vocab_8.mp3": "b34a06961d375feaf70bf027e1671f4a10097be7a1201d489c09f9b41f31ae8b",
+  "assets/audio/tts_dars112/vocab_9.mp3": "4b3c484f27e71935b109e828c588d3b2afaf49221cdcb3d29e347dca45b6a0fe",
+  "assets/audio/tts_dars12/reading_0.mp3": "a02903f489697dab68a6326786235c53e8c817b5483b85a3d1baf1d9b7a659dc",
+  "assets/audio/tts_dars12/reading_1.mp3": "fb2fe43b7b6d87b12514eddfff57ef987125c235f2eac45ee9d7003440c657d9",
+  "assets/audio/tts_dars12/reading_2.mp3": "43057b9a3d2c49050ea753360080aef05636d87b607794c28c05f81dc4e45074",
+  "assets/audio/tts_dars12/reading_3.mp3": "b36e581bb085b56d3d89647321af61ad128de81aacf229dbd68b46523f1428b2",
+  "assets/audio/tts_dars12/reading_4.mp3": "b21065f7eefa32fdce7394401d9de7258255e7f696816801232cbc0ede24af64",
+  "assets/audio/tts_dars12/reading_6.mp3": "b2f3ab0541530f949c50eeee46c6aadb923ef4c86e6495e80953aacdd178ab16",
+  "assets/audio/tts_dars12/reading_7.mp3": "de1169452f7b2cd32efdfb9fba3e66b24cbc60939c991e67125f70190d5d7850",
+  "assets/audio/tts_dars12/vocab_0.mp3": "93256ef028e0a8f7587d686b59b988fd79870c94b21c558375ce5148e3721395",
+  "assets/audio/tts_dars12/vocab_1.mp3": "f95e3bf28d9b2bee5308874e11845e2295f46372625ec750daecea573186c51e",
+  "assets/audio/tts_dars12/vocab_2.mp3": "ba729010855bccfcbc8f4183e31ffbfe1328e50f5c4fafd0fd82935558e4d2b6",
+  "assets/audio/tts_dars12/vocab_3.mp3": "58e5d6d9cf676905d5069a60cfbc595d97bb1faa0bce9e4aa4285af2a61c2e4e",
+  "assets/audio/tts_dars12/vocab_4.mp3": "b249441d33f23770c6eb74221680ccbbb98bbb5fa70c9af3ce8189e6bb2a9d29",
+  "assets/audio/tts_dars12/vocab_5.mp3": "520ee06eaf139e7feea25284f24c0ec63d4ed316cdbe178d353ea148b6dbcc22",
+  "assets/audio/tts_dars12/vocab_6.mp3": "573295f7359fc08afba6a34ed42206eff887107cffe754b186f26215c21146cb",
+  "assets/audio/tts_dars12/vocab_7.mp3": "560e5544a06342cd31393b5ce7e25046663d8e7bd31a1a0aaaf991a13a246cfd",
+  "assets/audio/tts_dars12/vocab_8.mp3": "d2156b02e868a84842ecd71989f68639c42eaa0e0d116da00be4b8ff2f8dc966",
+  "assets/audio/tts_dars13/reading_0.mp3": "3ebd5bd7606af511ccae6a617d206ed4da1d9d59564a9ab70f4bc5f052bd9efe",
+  "assets/audio/tts_dars13/reading_1.mp3": "fa28079716903ec71d7a5c45e8342b92499e17e9906ac85b93462522eaf6a9ec",
+  "assets/audio/tts_dars13/reading_3.mp3": "03a1cbc63ac757f00d0b457fc08c9d386f1bb0e90b9a0d034d45f3acfdea1e8a",
+  "assets/audio/tts_dars13/reading_4.mp3": "d80d6435d6aa5493110bbb844ac7704c82303493dc7caa318034b9a563bd9cb4",
+  "assets/audio/tts_dars13/reading_7.mp3": "186173db5ddf75092b32c92ba6f101b0c610e56d87a60d04f879a0f66f33ebee",
+  "assets/audio/tts_dars13/vocab_0.mp3": "e0c707002a55e61654e7608db7de8513ba480f3e622d03c757f40c8e0e1c0fa0",
+  "assets/audio/tts_dars13/vocab_1.mp3": "edec7b5cc6cb37064a8d11cd487d41857a9dccad9dbe1561352820139f3e8b99",
+  "assets/audio/tts_dars13/vocab_2.mp3": "4ba31c2dc1fea3ec5522fcdbf6c5ca992ca953bae06f5582b3791e5b7f119fdb",
+  "assets/audio/tts_dars13/vocab_3.mp3": "2515ce9abe2f927e354cc038239bda828cf75bc771b1cacbe6b25ee21fe1ac79",
+  "assets/audio/tts_dars13/vocab_4.mp3": "d238e805e7d9a1da84e8d6f1529ce15dccc1e6b672531a6184ad0a82d8302a38",
+  "assets/audio/tts_dars13/vocab_5.mp3": "48d1bb3a0ac80161d9870c25c239097208ff45841567cec49c356a36ba1f976d",
+  "assets/audio/tts_dars13/vocab_6.mp3": "8243c2424499068e97249fdf4e7ef68fc87a8e1f123786f21fd1084db07206d5",
+  "assets/audio/tts_dars13/vocab_7.mp3": "9f55acb07bd9cd353c29f1462bc928e4a125a4fe7ff95d96c30a4d66e5a46495",
+  "assets/audio/tts_dars14/reading_0.mp3": "67fdb6cdd7eabbd24cfa8a94d14d4f77cec0d7fa9311ec325b7350130db6cdb7",
+  "assets/audio/tts_dars14/reading_1.mp3": "2549d03a727306af7ed3d4c6cb820869e8a24a5da08cc185f786f39979c1860f",
+  "assets/audio/tts_dars14/reading_2.mp3": "50983e5a548f6fee9b1182d11c3487ec650abcb50d1558bd0b886b13176f08c9",
+  "assets/audio/tts_dars14/reading_3.mp3": "8a367ad047f756e32e454e52fa7655108ebfcdbc2d7f6345f6d08d5c53f5bb3f",
+  "assets/audio/tts_dars14/reading_4.mp3": "017cb835446b5da02fd426c0861d57ab19c2ca9d42327e53dbeff4044cc822a1",
+  "assets/audio/tts_dars14/reading_5.mp3": "d9f26ecee6eb4f1c30f5fe486195e8d05120832c6a830db70b9115baf3ec9827",
+  "assets/audio/tts_dars14/reading_6.mp3": "b6328a5a52f9b57804f3d7287afb81149f63f8c15f0970f5727b35f295818a72",
+  "assets/audio/tts_dars14/vocab_0.mp3": "9890de7eae95f8da0b96714803b01df14e7dafa4cfe4862d233560a2b5b8cc1b",
+  "assets/audio/tts_dars14/vocab_1.mp3": "4054abcf6bc77dbc9fa6a66e7589547eb9897c87497b6976d961c9860971c7bf",
+  "assets/audio/tts_dars14/vocab_2.mp3": "5f22211e07f2cc61c554595d7637975cf2c2ddcc045a39e1631e1bd6c7b560bc",
+  "assets/audio/tts_dars14/vocab_3.mp3": "d4487b40ea380b586daec945d4d4e5bb5fb727075906cc92998374a2c5ff0468",
+  "assets/audio/tts_dars14/vocab_4.mp3": "35716771800ac2fa4b4ae2576e83f09408fb9f5bfc2259832ad0cab453aef96d",
+  "assets/audio/tts_dars14/vocab_5.mp3": "332f89a1e7832cf9c36307ed642741197d6ea7409172c3dc3c559e7566791954",
+  "assets/audio/tts_dars14/vocab_6.mp3": "43cc2933552b23eb97de0b433c76eb9c7cfaba70627a4e306aeaf6ed17f6c884",
+  "assets/audio/tts_dars14/vocab_7.mp3": "8d2bf7c04ebc16356843e93170f740010c9fc0d5e23b68a2eb8d33cc50ef09f5",
+  "assets/audio/tts_dars15/reading_0.mp3": "b2decf37506d9475c608850ce22baf5eaefb41dfc8bd04db0ccc1e225f203ce8",
+  "assets/audio/tts_dars15/reading_1.mp3": "b4b946358e0b798712e570bad0a1e47d6bcedc137dfe8f160bbb6778fe6fb09b",
+  "assets/audio/tts_dars15/reading_2.mp3": "c509b1e7c4144277f24f88f4ab6b35973eafef19e293c76278efac7cd530dddb",
+  "assets/audio/tts_dars15/reading_3.mp3": "59c2a62dac5587167b523edfae873a9c5b7545b05de853e49eddde8ef66332ab",
+  "assets/audio/tts_dars15/reading_4.mp3": "b398363b6adbc05d71e349994b0136a46c63c0b416dacf9b3def8348fb228ca7",
+  "assets/audio/tts_dars15/reading_5.mp3": "248929a4ba7aee548c8e01097f942f528ec43ff28a332ea83959ffadfc1a9594",
+  "assets/audio/tts_dars15/reading_6.mp3": "7ab9144c31aa72a7cc968781e90efcb19c841e1c46df2337119d6c65c5cc01ed",
+  "assets/audio/tts_dars15/reading_7.mp3": "bacf05c35f605976e83b8ec58d4e35ed524f416f2d4dd14be17a114427c1a78e",
+  "assets/audio/tts_dars15/vocab_0.mp3": "b9ddc3838b6dfea22e191bb967c80a2ba55f72a3fdbe5e70c45ef12ffb2798d1",
+  "assets/audio/tts_dars15/vocab_1.mp3": "a5ec3ac658d53260eca6714f305656f26cddb99acec1e49166222ea63e699fc1",
+  "assets/audio/tts_dars15/vocab_2.mp3": "ef3a113808d9256c39f2ea520ed5e949e8889c185fb1a1ab933a3202f6878ace",
+  "assets/audio/tts_dars15/vocab_3.mp3": "84292321b2aa865d41dcc0a9ea43740405fe334f20318cc9c28bf8840d0adb0f",
+  "assets/audio/tts_dars15/vocab_4.mp3": "ae3fdff012c721e146994d98bbdd9379f7daa2f6809bd042171c046add6c9eaf",
+  "assets/audio/tts_dars15/vocab_5.mp3": "cecb0313f3c1496c796a0adae71a6b1e064218dac74f55e33511db407f627861",
+  "assets/audio/tts_dars15/vocab_6.mp3": "4e3260f7668eb198093d9bf086301b187505218d0019aa7e8da8688fa4c8edd4",
+  "assets/audio/tts_dars15/vocab_7.mp3": "3881a4d5a1e058b2857dedb7e42ff6301e36afca61145ba47d45243b3328c669",
+  "assets/audio/tts_dars16/reading_0.mp3": "d24d487c10a8c9b384d0afe7bded55eafb600877b8c2d16e85e1c3828020a4a8",
+  "assets/audio/tts_dars16/reading_1.mp3": "41a906d96460dc763aee5ddf2ba398de20b132f9526ca17ec68ff4cf4889e194",
+  "assets/audio/tts_dars16/reading_2.mp3": "4cf2cb9072ea3f6da372da841b928759abaabf557309c9629f91e2e305f686ff",
+  "assets/audio/tts_dars16/reading_3.mp3": "7c4dde6aa58a339116c1560028e247c6eae147ae53a59cc12b7b9646ff160caa",
+  "assets/audio/tts_dars16/reading_4.mp3": "d7a1a79a2741430a13f1ea6a5d48839c542c822fc8c053f5ae0c0116ce1f1458",
+  "assets/audio/tts_dars16/reading_5.mp3": "cf3deafccd346f9365b30f9fb8cf2302966df2876f38b0f4a8b5f1bb933aaa37",
+  "assets/audio/tts_dars16/reading_6.mp3": "ae3f39f09204fef3f9999d6c8ab81483995e634eea60cc54e12a93d75c0ea81a",
+  "assets/audio/tts_dars16/reading_7.mp3": "42e5383211cd669ebdf45109a31893cddb2bdf6441494623d137b6f4f5f25d4a",
+  "assets/audio/tts_dars16/vocab_0.mp3": "bf893cb5620eec876d4977102dc925b99ee127cc50283d09897b367b84a31950",
+  "assets/audio/tts_dars16/vocab_1.mp3": "5dc2af3fa55c3e5208e26df0311a1ba0f41743f1c9f29cef9deb27af8218b75e",
+  "assets/audio/tts_dars16/vocab_2.mp3": "33985d8897b786d6f98d2ab212283140dbec805ec7f2428635fd80e3cce2cbd8",
+  "assets/audio/tts_dars16/vocab_3.mp3": "9ecdff21daf6d57173d7b94537c49fd346db40a4b55f6aa41c4d0d56aff9d2a3",
+  "assets/audio/tts_dars16/vocab_4.mp3": "c2e1ffb0c5116ef1e9add5e3bd7c6f3a1456f992f6446235ab5035efcaa3c00c",
+  "assets/audio/tts_dars16/vocab_5.mp3": "9e4634498acb0cd0c5715dba4918ed495c9d3ba6c76e6647eae146bb9076b088",
+  "assets/audio/tts_dars16/vocab_6.mp3": "135a78555ee2dad1a00662913e139ff28e5b75450be09edfdc06c168273a4765",
+  "assets/audio/tts_dars16/vocab_7.mp3": "8a7860be7f2d4fece781f4f6a9ffa2c6d3f27e5ae6dd972a052409d099b8f111",
+  "assets/audio/tts_dars17/reading_0.mp3": "3a62620a506589707abecb0de4053cf4bb979f0c7d23556d17bdf4098a6cb56e",
+  "assets/audio/tts_dars17/reading_1.mp3": "9832de59470b40dc8219a3e857838c2bbead4ece8c76887465e44834b4d99854",
+  "assets/audio/tts_dars17/reading_2.mp3": "2ae16cd85dc5b66b1ff527b286038df495f9df5fa0eb8b840da064341631b383",
+  "assets/audio/tts_dars17/reading_3.mp3": "62ce33857effd2556f2794665f8eb1649e86a0974f3b0d2d17246484024428c0",
+  "assets/audio/tts_dars17/reading_4.mp3": "b6a67b4ff7101fabf933e5f2328216b727f6721a5d9d4e17cfea3f79a992a500",
+  "assets/audio/tts_dars17/reading_5.mp3": "ad701067daa8ccc35d72edb53d41b7a9ec17d2ac36d1369c25146680704f0f70",
+  "assets/audio/tts_dars17/vocab_0.mp3": "1c0634684be4efc03c73e7f6a8d16dd7fad0de1eb7c26004d2b6de4740e5e305",
+  "assets/audio/tts_dars17/vocab_1.mp3": "d87232f51d8324fed74fdeb79748ca745ef4801575eeca51b79d9291cf851a8c",
+  "assets/audio/tts_dars17/vocab_2.mp3": "7c8eea804ed23265fc2a2d4dec2f27861056f5a4f13b832670ca96a332919e72",
+  "assets/audio/tts_dars17/vocab_3.mp3": "087fb34bbcdd0bd2a16d54e656220a955b1521e43347445e5194c9a60b2ceeec",
+  "assets/audio/tts_dars17/vocab_4.mp3": "dc0fa562751be13ec8565dd2ff6d8f8d9cccf7298d51cec8351f3e817590cf8b",
+  "assets/audio/tts_dars17/vocab_5.mp3": "f0fad5a4cf8f53b6910184cdb94935d59a7aa4e6f40fe49e60e7e9e3e9ed5565",
+  "assets/audio/tts_dars17/vocab_6.mp3": "23e41b94e498f6d730494adae0d5c2767e35dfa3d24eef3fe437dbd6415deeb5",
+  "assets/audio/tts_dars17/vocab_7.mp3": "8416c19bf980bd87401d7c838d81750bcc1fe6a56bfb930d8856f5917cab1e7a",
+  "assets/audio/tts_dars18/vocab_0.mp3": "14f121e1939ae9d852a1cc7ac67c40f3f411ca6ca37cb77f6cbaa820b1c7b723",
+  "assets/audio/tts_dars18/vocab_1.mp3": "07263cda764492d9c76c38a4a954f030a8c1b5612956e2c53a87d19a69f50c79",
+  "assets/audio/tts_dars18/vocab_2.mp3": "d8f65de1246e78d70898af790cb7ec280dcca712807db22d2165d64d78f64492",
+  "assets/audio/tts_dars18/vocab_3.mp3": "1a458ea061f93e700a05bd9d50afc87e4015b15633e5ef20cfeb36faa9b42e00",
+  "assets/audio/tts_dars18/vocab_4.mp3": "42e603b8476193522578417e06db8ce5416f5481a3704b0668a740a52c20ecb6",
+  "assets/audio/tts_dars18/vocab_5.mp3": "98f830004d8619283c837935c5595805bf42c469e207129b6cb8bb6abcc6b3b1",
+  "assets/audio/tts_dars18/vocab_6.mp3": "12de9057cb576952266cdd46c18eda7acf2a6bea4575c9125d5b3c4ba1741908",
+  "assets/audio/tts_dars18/vocab_7.mp3": "9c84ac1abb35cbe048c57abbe23d2e22c6b2b748e095857f0f2b2813ed252c81",
+  "assets/audio/tts_dars19/reading_0.mp3": "0982be75ba27bf3251bf4dc3457955ff974e743edcbf1552debaec48b29bd473",
+  "assets/audio/tts_dars19/reading_1.mp3": "8330b94e0327c091202c01bd5baf02d648c433943af59225cae2d40a62bd1e9a",
+  "assets/audio/tts_dars19/reading_2.mp3": "0dd7ef3b602c9b35b7287d5fd3c5df4639893f1dfa553c86cc58206ed40f4a91",
+  "assets/audio/tts_dars19/reading_3.mp3": "f91ca7194ec89b8876ba7b3bc7c534879ceae4a12387a7b9f49766e1013658e2",
+  "assets/audio/tts_dars19/reading_4.mp3": "fb530f85cce8ece7d443fa0834a87e73430daa66e6b8fbc248b0ef7f0e4e1f21",
+  "assets/audio/tts_dars19/reading_5.mp3": "7acb150407b0790f78a85917e162cc891103ac7e681bf2e3905203a9c78d974c",
+  "assets/audio/tts_dars19/reading_6.mp3": "a7bb1806077f1703a943185bfdcf4d9bd5f298957252cfb4f2be1d6809d519ad",
+  "assets/audio/tts_dars19/vocab_0.mp3": "01d7496ec3bb409414e945a18f5c1fa5aab36573b7660a78d85b7fc54644ab0d",
+  "assets/audio/tts_dars19/vocab_1.mp3": "7dc4a096638b40e7e2f7ed457434f91d341ad733a029b6437fedeb14e8e91cc9",
+  "assets/audio/tts_dars19/vocab_2.mp3": "181a2af3ff83e78da505d8412e95db38a4667fca2be7ae1ff307ee7fd6c2f375",
+  "assets/audio/tts_dars19/vocab_3.mp3": "5d4d16ee183759409285d7f3fa6ec23e46f33d20e34549c205a39a56442151d3",
+  "assets/audio/tts_dars19/vocab_4.mp3": "afebd2758d2ef2e25953d459d91e4399603dbf193f2e00987c8bd427d45895c1",
+  "assets/audio/tts_dars19/vocab_5.mp3": "c36400c6e2887e6f94d21147aa2af0ceda5df730c42f8cc1c07dbac4c67eb270",
+  "assets/audio/tts_dars19/vocab_6.mp3": "b0cc7ec21847fef43dbfdffe8698653853e8e4c668a396e2f414bcd6d9430bec",
+  "assets/audio/tts_dars19/vocab_7.mp3": "5e8a692e260897bbead00030ea38db21c9dc62190553f9faf8d6e4e432370a5b",
+  "assets/audio/tts_dars19/vocab_8.mp3": "3af74d7bfdccfd96c0742f4d99154a93aa2e141f65e9f4c346b1ca3a1adc4976",
+  "assets/audio/tts_dars19/vocab_9.mp3": "19ff880bd5c156dc8be538d5acc2b025d04aa3a02a91bc5b288dfb7b68bc0059",
+  "assets/fonts/almarai/Almarai-Bold.ttf": "06401391b5b39fbcf2bc0c6a6e03faf992435e7b011183a1861737e913af8613",
+  "assets/fonts/almarai/Almarai-Regular.ttf": "5b5cad33c8e5922083728d271cdcda91f96ba291f1307eccc4f4ef732dc19622",
+  "assets/fonts/amiri/Amiri-Bold.ttf": "8cfed49b66de57e360ac61631d882dddfa23095d3ddb39fc2133eaf93892e79a",
+  "assets/fonts/amiri/Amiri-Regular.ttf": "cd2550c0f4c05eb341bf97958211aaa39382bca96577ba3a67d4a3b4912c43c0",
+  "assets/fonts/amiri_quran/AmiriQuran-Regular.ttf": "7b11410d2c7c091e56c5ce7f2e6faf911372b84d68c3506819ee0ff5cd25c6e6",
+  "assets/fonts/cairo/Cairo-Variable.ttf": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+  "assets/fonts/tajawal/Tajawal-Bold.ttf": "0342ab6b74b6bd1b4b5bf7beda45a9734a2b3147a31e8a3a45b6a3417a52d9d7",
+  "assets/fonts/tajawal/Tajawal-Medium.ttf": "1ff8bd943a261c9dd7906bdb1993cab87b6d925a7fb5f848cdb51ed301531090",
+  "assets/fonts/tajawal/Tajawal-Regular.ttf": "6882892da3e03527d5db2bbab3b48bde6ef2e878a43f522d1a4eebda90010a19",
+  "assets/images/dalil/dalil_1.jpg": "3cb9e955c692bef8784c5121efb18051ffd222e4e5584c7ae6faec51adfb94ba",
+  "assets/images/dalil/dalil_2.jpg": "fc8bce2208094d612d748031057da31ba025625afa9c3f59c21c330418e33dca",
+  "assets/images/dalil/dalil_3.jpg": "d454d827d037ca2eb51fe78de2e4c71c3f4d5d8ec860a0fdff06293119abec6c",
+  "assets/images/dalil/dalil_4.jpg": "62427c6383e7140be36decde8189bc5a2dd8986d02dda376b0104c490154c8b2",
+  "assets/images/rabbani_mark.png": "4592434edac157c9ba203de787d6e3b003de254a774e097a5b240af238739185",
+  "assets/images/rabbani_mark_circle.png": "a8673d840565f9d6862e99ee76c6e5b67e1badaa0a70d21a313c07918d95648b",
+  "assets/video/topik1.mp4": "2750397bf297c55c411b443253aae0a847623135d88f8d802cf4febb4934c4ce",
+  "assets/video/topik2.mp4": "b6336564e5f5837182fb2d859bfc60428f0317b1f92f14b0fe1bc166a5cb7209",
+  "assets/video/topik3.mp4": "b056f15028495fee22af2dacb60de643ac5cfcf45d23115f9974f7132dc03154",
+  "assets/video/topik4.mp4": "9edde3df4b604df8a9479bca1d1dcae95984a820536dd359b8a8c4fe3707bf3a",
+  "assets/video/topik5.mp4": "57d7a934965eb0e87f1446e24cd1d7e33a631f4206c2cb4b81c57c4a5440e16a",
+  "assets/video/topik6.mp4": "ab24a55077eb62c205aa4be4f890d66c5123451221a1499863a15a694de45b54",
+  "assets/video/topik7.mp4": "9272176da655d3cceb366ab9ceaafc97fbfc3c8767ed917094492dd89ee747ab",
+  "assets/video/topik8.mp4": "677547bc1d08555167ba83275c311d61f21c453ab23012dae51d2fad116b0e69",
+  "assets/video/topik9.mp4": "b36ff32b739c2c7384f118f3bbe33fc1a473547d2b177e61d97896ed557b8570"
+ }
+}

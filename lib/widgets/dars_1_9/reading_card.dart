@@ -75,11 +75,7 @@ class _ReadingCard9State extends State<ReadingCard9> {
               const Expanded(child: CardHeading('🎧 اِقْرَأِ النَّصَّ بِصَوْتٍ مُرْتَفِعٍ مَعَ زَمِيلِكَ')),
               ElevatedButton.icon(
                 onPressed: _playAll,
-                icon: Icon(
-                  _playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  size: 18,
-                  color: Colors.white,
-                ),
+                icon: Icon(_playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded, size: 18, color: Colors.white),
                 label: Text(
                   _playingAll ? 'إيقاف' : 'استمع للنص كاملاً',
                   style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
@@ -162,8 +158,12 @@ class _ReadingCard9State extends State<ReadingCard9> {
                   children: [
                     Icon(Icons.menu_book_rounded, size: 15, color: c.gold),
                     const SizedBox(width: 6),
-                    Text(Dars119.hadithNarrator,
-                        style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 13.5, color: c.textMuted)),
+                    Expanded(
+                      child: Text(
+                        Dars119.hadithNarrator,
+                        style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 13.5, color: c.textMuted),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 8),

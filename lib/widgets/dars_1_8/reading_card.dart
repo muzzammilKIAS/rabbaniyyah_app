@@ -4,6 +4,7 @@ import '../../data/curriculum.dart';
 import '../../state/app_state.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
+import '../../services/tts_service.dart';
 import '../common.dart';
 
 class ReadingCard8 extends StatefulWidget {
@@ -30,7 +31,7 @@ class _ReadingCard8State extends State<ReadingCard8> {
   }
 
   Future<void> _speakLine(int i) async {
-    if (Dars118.readingNoAudio.contains(i)) return;
+    if (!TtsService.canSpeak(Dars118.readingLines[i])) return;
     if (_speakingLine == i) return _stopEverything();
     final tts = context.read<AppState>().tts;
     if (_playingAll) await _stopEverything();
@@ -49,7 +50,7 @@ class _ReadingCard8State extends State<ReadingCard8> {
     setState(() => _playingAll = true);
     for (var i = 0; i < Dars118.readingLines.length; i++) {
       if (!mounted || _cancelAll) return;
-      if (Dars118.readingNoAudio.contains(i)) continue;
+      if (!TtsService.canSpeak(Dars118.readingLines[i])) continue;
       setState(() => _speakingLine = i);
       await app.tts.speak(Dars118.readingLines[i]);
     }
@@ -68,10 +69,9 @@ class _ReadingCard8State extends State<ReadingCard8> {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    // Every reading line in this lesson names لفظ الجلالة mid-sentence, so
-    // all of them are in readingNoAudio and there is nothing to play — omit
-    // the button rather than show one that flickers and plays nothing.
-    final hasPlayableLines = Dars118.readingNoAudio.length < Dars118.readingLines.length;
+    // Every line here names لفظ الجلالة; they play from spliced clips (see
+    // tool/audio/build_jalalah_lines.py). Hide "play all" only if none can.
+    final hasPlayableLines = Dars118.readingLines.any(TtsService.canSpeak);
     return SectionCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +134,7 @@ class _ReadingCard8State extends State<ReadingCard8> {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  if (Dars118.readingNoAudio.contains(i))
+                  if (!TtsService.canSpeak(Dars118.readingLines[i]))
                     const SizedBox(width: 32)
                   else
                     SpeakButton(onTap: () => _speakLine(i), size: 32, speaking: _speakingLine == i),
@@ -172,8 +172,12 @@ class _ReadingCard8State extends State<ReadingCard8> {
                   children: [
                     Icon(Icons.menu_book_rounded, size: 15, color: c.gold),
                     const SizedBox(width: 6),
-                    Text(Dars118.hadithNarrator,
-                        style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 13.5, color: c.textMuted)),
+                    Expanded(
+                      child: Text(
+                        Dars118.hadithNarrator,
+                        style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 13.5, color: c.textMuted),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 8),

@@ -1,12 +1,31 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import '../data/exercise_models.dart';
+import '../data/lesson_catalog.dart';
+import '../data/supplemental_exercises.dart';
 import '../services/quran_audio_service.dart';
 import '../services/storage_service.dart';
 import '../services/tts_service.dart';
 
 const _navPrefix = 'rabbaniyyah_nav_tashkeel_on';
 const _themeModeKey = 'rabbaniyyah_nav_theme_mode';
+
+/// Cross-lesson learning progress (visited/completed/bookmarked lessons,
+/// supplemental-exercise results, last lesson opened). One small blob.
+const _progressKey = 'rabbaniyyah_progress_v1';
+
+/// Where a lesson stands for the student, shown on unit/lesson cards.
+enum LessonStatus { notStarted, inProgress, completed }
+
+/// Best result of one supplemental exercise.
+class ExerciseResult {
+  const ExerciseResult({required this.score, required this.total, required this.attempts});
+  final int score;
+  final int total;
+  final int attempts;
+  int get stars => starsFor(score, total);
+}
 
 /// Storage key prefix per lesson, keyed by the same numeric id used in its
 /// class/file names (111, 112, 113, 114 = س1و1د1..د3, س1و2د4).
@@ -54,7 +73,14 @@ class AppState extends ChangeNotifier {
   static const _saveDebounce = Duration(milliseconds: 500);
   final Map<String, Timer> _saveTimers = {};
 
+  Map<String, dynamic> _progress = {};
+
+  /// False when the browser refused localStorage — progress then lasts only
+  /// for this session (shown as a small notice on the dashboard).
+  bool get storageIsPersistent => _storage.isPersistent;
+
   void load() {
+    _progress = _storage.readBlob(_progressKey);
     _tashkeelOn = _storage.getBool(_navPrefix, true);
     _themeMode = _themeModeFromString(_storage.getString(_themeModeKey, 'system'));
     for (final id in _lessonKeys.keys) {
@@ -232,6 +258,173 @@ class AppState extends ChangeNotifier {
   void dars1112SetSelfCheck(int index, bool value) => _lessonSetSelfCheck('1112', index, value);
   double dars1112Progress(int totalItems) => _lessonProgress('1112', totalItems);
   Future<void> resetDars1112() => _resetLesson('1112');
+
+  // ───────────────────────── Learning progress ─────────────────────────
+
+  Set<int> _intSet(String key) {
+    final raw = _progress[key];
+    if (raw is List) return raw.whereType<num>().map((e) => e.toInt()).toSet();
+    return {};
+  }
+
+  void _putIntSet(String key, Set<int> v) {
+    _progress[key] = (v.toList()..sort());
+    _saveProgress();
+  }
+
+  void _saveProgress() {
+    notifyListeners();
+    _storage.writeBlob(_progressKey, _progress);
+  }
+
+  Map<String, dynamic> get _exercises {
+    final raw = _progress['ex'];
+    if (raw is Map<String, dynamic>) return raw;
+    final fresh = <String, dynamic>{};
+    _progress['ex'] = fresh;
+    return fresh;
+  }
+
+  /// Records that lesson [n] was opened, and remembers it as the lesson to
+  /// resume from the dashboard.
+  void markVisited(int n) {
+    final visited = _intSet('visited');
+    final changed = visited.add(n) || _progress['last'] != n;
+    if (!changed) return;
+    _progress['last'] = n;
+    _putIntSet('visited', visited);
+  }
+
+  int? get lastLesson {
+    final v = _progress['last'];
+    return v is num ? v.toInt() : null;
+  }
+
+  bool isVisited(int n) => _intSet('visited').contains(n);
+
+  bool isBookmarked(int n) => _intSet('bookmarks').contains(n);
+  Set<int> get bookmarks => _intSet('bookmarks');
+
+  void toggleBookmark(int n) {
+    final b = _intSet('bookmarks');
+    b.contains(n) ? b.remove(n) : b.add(n);
+    _putIntSet('bookmarks', b);
+  }
+
+  bool isCompleted(int n) => _intSet('completed').contains(n);
+  int get completedCount => _intSet('completed').length;
+
+  void setCompleted(int n, bool done) {
+    final set = _intSet('completed');
+    done ? set.add(n) : set.remove(n);
+    _putIntSet('completed', set);
+  }
+
+  /// Units whose completion was already celebrated — so the confetti plays
+  /// once per unit, not on every visit.
+  bool unitCelebrated(int unit) => _intSet('celebratedUnits').contains(unit);
+  void markUnitCelebrated(int unit) {
+    final s = _intSet('celebratedUnits')..add(unit);
+    _putIntSet('celebratedUnits', s);
+  }
+
+  ExerciseResult? exerciseResult(int n, String exerciseId) {
+    final raw = _exercises['$n:$exerciseId'];
+    if (raw is! Map) return null;
+    return ExerciseResult(
+      score: (raw['score'] as num?)?.toInt() ?? 0,
+      total: (raw['total'] as num?)?.toInt() ?? 0,
+      attempts: (raw['attempts'] as num?)?.toInt() ?? 0,
+    );
+  }
+
+  /// Stores an exercise attempt, keeping the best score.
+  void recordExercise(int n, String exerciseId, {required int score, required int total}) {
+    final prev = exerciseResult(n, exerciseId);
+    final best = prev == null || score > prev.score ? score : prev.score;
+    _exercises['$n:$exerciseId'] = {
+      'score': best,
+      'total': total,
+      'attempts': (prev?.attempts ?? 0) + 1,
+    };
+    _saveProgress();
+  }
+
+  void resetExercise(int n, String exerciseId) {
+    if (_exercises.remove('$n:$exerciseId') != null) _saveProgress();
+  }
+
+  int exercisesDone(int n) =>
+      exercisesFor(n).where((e) => exerciseResult(n, e.id) != null).length;
+
+  int exercisesTotal(int n) => exercisesFor(n).length;
+
+  int starsForLesson(int n) =>
+      exercisesFor(n).fold(0, (sum, e) => sum + (exerciseResult(n, e.id)?.stars ?? 0));
+
+  /// Share of the lesson's self-assessment checklist the student ticked.
+  double selfAssessFraction(int n) {
+    final meta = lessonByN(n);
+    if (meta == null) return 0;
+    return _lessonProgress(meta.id, meta.selfAssessCount);
+  }
+
+  /// Lesson progress, 0–1: half from the lesson's own self-assessment,
+  /// half from the supplemental exercises. A lesson the student marked as
+  /// finished counts as complete.
+  double lessonProgress(int n) {
+    if (isCompleted(n)) return 1;
+    final total = exercisesTotal(n);
+    final ex = total == 0 ? 0.0 : exercisesDone(n) / total;
+    return ((selfAssessFraction(n) + ex) / 2).clamp(0.0, 1.0);
+  }
+
+  LessonStatus lessonStatus(int n) {
+    if (isCompleted(n)) return LessonStatus.completed;
+    if (isVisited(n) || lessonProgress(n) > 0) return LessonStatus.inProgress;
+    return LessonStatus.notStarted;
+  }
+
+  double unitProgress(int unit) {
+    final ls = lessonsInUnit(unit);
+    if (ls.isEmpty) return 0;
+    return ls.fold(0.0, (s, l) => s + lessonProgress(l.n)) / ls.length;
+  }
+
+  bool unitCompleted(int unit) => lessonsInUnit(unit).every((l) => isCompleted(l.n));
+
+  double get overallProgress =>
+      kLessons.fold(0.0, (s, l) => s + lessonProgress(l.n)) / kLessons.length;
+
+  int get totalExercisesDone => kLessons.fold(0, (s, l) => s + exercisesDone(l.n));
+  int get totalExercises => kLessons.fold(0, (s, l) => s + exercisesTotal(l.n));
+
+  /// Points: 10 per exercise star, 50 per completed lesson.
+  int get xp =>
+      kLessons.fold(0, (s, l) => s + starsForLesson(l.n) * 10 + (isCompleted(l.n) ? 50 : 0));
+
+  /// Clears a lesson's answers AND its supplemental results/completion.
+  Future<void> resetLessonAll(int n) async {
+    final meta = lessonByN(n);
+    if (meta == null) return;
+    _exercises.removeWhere((k, _) => k.startsWith('$n:'));
+    final done = _intSet('completed')..remove(n);
+    _progress['completed'] = done.toList()..sort();
+    await _resetLesson(meta.id);
+    _saveProgress();
+  }
+
+  /// Wipes every lesson's answers and all progress (keeps theme/tashkeel).
+  Future<void> resetAllProgress() async {
+    for (final id in _lessonKeys.keys) {
+      _saveTimers.remove(id)?.cancel();
+      _lessons[id] = {};
+      await _storage.clearBlob(_lessonKeys[id]!);
+    }
+    _progress = {};
+    await _storage.clearBlob(_progressKey);
+    notifyListeners();
+  }
 
   @override
   void dispose() {

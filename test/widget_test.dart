@@ -25,7 +25,9 @@ void main() {
       ),
     );
 
-    expect(find.textContaining('في رحاب اللغة العربية الربانية'), findsOneWidget);
+    // The splash shows the short title (the long "في رحاب…" name is the
+    // MaterialApp/window title, not on screen).
+    expect(find.text('اللغة العربية الربانية'), findsOneWidget);
 
     // Let the splash's delayed CTA timer and pulse animation settle so no
     // timers are left pending when the test tears down.

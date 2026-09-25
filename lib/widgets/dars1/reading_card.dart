@@ -98,11 +98,7 @@ class _ReadingCardState extends State<ReadingCard> {
               const Expanded(child: CardHeading('🎧 اِقْرَأِ النَّصَّ بِصَوْتٍ مُرْتَفِعٍ مَعَ زَمِيلِكَ')),
               ElevatedButton.icon(
                 onPressed: _playAll,
-                icon: Icon(
-                  _playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  size: 18,
-                  color: Colors.white,
-                ),
+                icon: Icon(_playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded, size: 18, color: Colors.white),
                 label: Text(
                   _playingAll ? 'إيقاف' : 'استمع للنص كاملاً',
                   style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
@@ -127,11 +123,7 @@ class _ReadingCardState extends State<ReadingCard> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.auto_awesome_rounded,
-                  size: 14,
-                  color: c.gold,
-                ),
+                Icon(Icons.auto_awesome_rounded, size: 14, color: c.gold),
                 const SizedBox(width: 6),
                 Flexible(
                   child: Text(
@@ -210,13 +202,7 @@ class _ReadingCardState extends State<ReadingCard> {
               ),
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: c.goldBorder, width: 1.6),
-              boxShadow: [
-                BoxShadow(
-                  color: c.gold.withValues(alpha: 0.12),
-                  blurRadius: 18,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+              boxShadow: [BoxShadow(color: c.gold.withValues(alpha: 0.12), blurRadius: 18, offset: const Offset(0, 4))],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
@@ -259,20 +245,19 @@ class _ReadingCardState extends State<ReadingCard> {
                               ),
                             ),
                             const Spacer(),
-                            // Translation toggle
-                            TextButton.icon(
-                              onPressed: () => setState(() => _showTranslation = !_showTranslation),
-                              icon: Icon(
-                                _showTranslation ? Icons.visibility_off_outlined : Icons.translate_rounded,
-                                size: 15,
-                                color: c.accent,
-                              ),
-                              label: Text(
-                                _showTranslation ? 'إخفاء الترجمة' : 'ترجمة (BM)',
-                                style: TextStyle(
-                                  fontSize: 11.5,
-                                  fontWeight: FontWeight.w700,
+                            // Translation toggle (Flexible so a narrow phone can't overflow)
+                            Flexible(
+                              child: TextButton.icon(
+                                onPressed: () => setState(() => _showTranslation = !_showTranslation),
+                                icon: Icon(
+                                  _showTranslation ? Icons.visibility_off_outlined : Icons.translate_rounded,
+                                  size: 15,
                                   color: c.accent,
+                                ),
+                                label: Text(
+                                  _showTranslation ? 'إخفاء الترجمة' : 'ترجمة (BM)',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(fontSize: 11.5, fontWeight: FontWeight.w700, color: c.accent),
                                 ),
                               ),
                             ),
@@ -291,12 +276,7 @@ class _ReadingCardState extends State<ReadingCard> {
                             Dars111.ayahDisplay,
                             font: AppTheme.quranFont,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 21,
-                              height: 2.2,
-                              color: c.accent,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: TextStyle(fontSize: 21, height: 2.2, color: c.accent, fontWeight: FontWeight.w600),
                           ),
                         ),
                         if (_showTranslation) ...[
@@ -342,9 +322,7 @@ class _ReadingCardState extends State<ReadingCard> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(
-                                        _speakingLine == -1
-                                            ? Icons.stop_rounded
-                                            : Icons.play_arrow_rounded,
+                                        _speakingLine == -1 ? Icons.stop_rounded : Icons.play_arrow_rounded,
                                         size: 18,
                                         color: _speakingLine == -1 ? Colors.white : c.gold,
                                       ),
@@ -449,11 +427,7 @@ class _PulsingAudioWavesState extends State<_PulsingAudioWaves> with SingleTicke
     return Container(
       width: 3.5,
       height: h.clamp(6.0, 22.0),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(2),
-      ),
+      decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2)),
     );
   }
 }
-

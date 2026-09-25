@@ -23,15 +23,36 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
   VideoPlayerController? _controller;
   bool _ready = false;
   bool _loading = false;
+  bool _failed = false;
 
   Future<VideoPlayerController?> _ensureController() async {
     final existing = _controller;
-    if (existing != null) return existing;
-    setState(() => _loading = true);
+    if (existing != null && _ready) return existing;
+    if (existing != null) return null; // still initialising
+    setState(() {
+      _loading = true;
+      _failed = false;
+    });
     final c = VideoPlayerController.asset(widget.assetPath);
     _controller = c;
     c.addListener(_onTick);
-    await c.initialize();
+    try {
+      await c.initialize();
+    } catch (e) {
+      // Missing/corrupt file or unsupported codec: show a quiet notice in
+      // place of the player instead of an endless spinner.
+      debugPrint('TopicIntroVideo: cannot load ${widget.assetPath}: $e');
+      c.removeListener(_onTick);
+      await c.dispose();
+      if (mounted) {
+        setState(() {
+          _controller = null;
+          _loading = false;
+          _failed = true;
+        });
+      }
+      return null;
+    }
     if (!mounted) return c;
     setState(() {
       _ready = true;
@@ -109,33 +130,51 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
                       child: Center(
                         child: _loading
                             ? CircularProgressIndicator(color: c.accent)
+                            : _failed
+                            ? Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(Icons.videocam_off_outlined, size: 36, color: c.textMuted),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    'تعذّر تشغيل الفيديو · Video tidak dapat dimainkan',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 13, color: c.textMuted),
+                                  ),
+                                ],
+                              )
                             : Icon(Icons.movie_creation_outlined, size: 40, color: c.textMuted),
                       ),
                     ),
-                  GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: _loading ? null : _togglePlay,
-                    child: AnimatedOpacity(
-                      opacity: playing ? 0 : 1,
-                      duration: const Duration(milliseconds: 200),
-                      child: Container(
-                        color: Colors.black.withValues(alpha: 0.25),
-                        child: Center(
-                          child: _loading
-                              ? const SizedBox.shrink()
-                              : Container(
-                                  width: 64,
-                                  height: 64,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.white.withValues(alpha: 0.92),
-                                  ),
-                                  child: Icon(Icons.play_arrow_rounded, size: 36, color: c.accent),
-                                ),
+                  if (!_failed)
+                    Semantics(
+                      button: true,
+                      label: playing ? 'Jeda video' : 'Main video',
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: _loading ? null : _togglePlay,
+                        child: AnimatedOpacity(
+                          opacity: playing ? 0 : 1,
+                          duration: const Duration(milliseconds: 200),
+                          child: Container(
+                            color: Colors.black.withValues(alpha: 0.25),
+                            child: Center(
+                              child: _loading
+                                  ? const SizedBox.shrink()
+                                  : Container(
+                                      width: 64,
+                                      height: 64,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.white.withValues(alpha: 0.92),
+                                      ),
+                                      child: Icon(Icons.play_arrow_rounded, size: 36, color: c.accent),
+                                    ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
@@ -173,8 +212,10 @@ class _TopicIntroVideoState extends State<TopicIntroVideo> {
                     // Plain LTR so the bidi algorithm doesn't reorder the
                     // two neutral "00:00" chunks around the slash.
                     textDirection: TextDirection.ltr,
-                    child: Text('${_fmt(position)} / ${_fmt(duration)}',
-                        style: TextStyle(fontSize: 11, color: c.textMuted)),
+                    child: Text(
+                      '${_fmt(position)} / ${_fmt(duration)}',
+                      style: TextStyle(fontSize: 11, color: c.textMuted),
+                    ),
                   ),
                 ),
                 IconButton(
@@ -243,10 +284,7 @@ class _ProjectorVideoViewState extends State<_ProjectorVideoView> {
             fit: StackFit.expand,
             children: [
               Center(
-                child: AspectRatio(
-                  aspectRatio: controller.value.aspectRatio,
-                  child: VideoPlayer(controller),
-                ),
+                child: AspectRatio(aspectRatio: controller.value.aspectRatio, child: VideoPlayer(controller)),
               ),
               AnimatedOpacity(
                 opacity: _showControls ? 1 : 0,
@@ -281,7 +319,11 @@ class _ProjectorVideoViewState extends State<_ProjectorVideoView> {
                             children: [
                               IconButton(
                                 onPressed: _togglePlay,
-                                icon: Icon(playing ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white, size: 32),
+                                icon: Icon(
+                                  playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                                  color: Colors.white,
+                                  size: 32,
+                                ),
                               ),
                               Expanded(
                                 child: SliderTheme(
@@ -306,8 +348,10 @@ class _ProjectorVideoViewState extends State<_ProjectorVideoView> {
                                 padding: const EdgeInsets.symmetric(horizontal: 8),
                                 child: Directionality(
                                   textDirection: TextDirection.ltr,
-                                  child: Text('${widget.fmt(position)} / ${widget.fmt(duration)}',
-                                      style: const TextStyle(fontSize: 13, color: Colors.white70)),
+                                  child: Text(
+                                    '${widget.fmt(position)} / ${widget.fmt(duration)}',
+                                    style: const TextStyle(fontSize: 13, color: Colors.white70),
+                                  ),
                                 ),
                               ),
                             ],

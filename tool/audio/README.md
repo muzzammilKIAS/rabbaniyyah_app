@@ -68,6 +68,33 @@ whole sentence at once gives a false "dark" reading.
 ٱللَّهُ, nominative, so the lām is مفخّم and the ending matches the vocab
 entry's ḍamma.
 
+## Mid-sentence lines (all lessons) — `build_jalalah_lines.py`
+
+Every other text naming the divine name (15 reading lines in Dars 2, 3, 7,
+8, 10, 12 and the Dars 12 vocab «عَلِيٌّ كَرَّمَ اللهُ وَجْهَهُ») is built by
+`build_jalalah_lines.py`: the line is split at each divine name, the other
+words are read by `ar-SA-HamedNeural` at `-10%` (the pace of all other
+`tts_dars*` clips, matched by duration), and the name is a word-by-word
+reciter clip in the right case ending:
+
+| Form | Clip (audio.qurancdn.com/wbw/…) | Measured lām |
+| --- | --- | --- |
+| ٱللَّهُ (marfūʿ) | 002_255_001 (bundled as quran/lafz_jalalah.mp3) | F2 ≈ 776 Hz — dark |
+| ٱللَّهِ (majrūr) | 001_001_002 | F2 ≈ 772 Hz — dark |
+| ٱللَّهَ (manṣūb) | 002_153_008 | F2 ≈ 799 Hz — dark |
+| لِلَّهِ | 001_002_002 | F2 ≈ 1625 Hz — clear, correct after kasra |
+
+The reciter word starts afresh (ibtidāʾ with hamzat al-waṣl), so its lām is
+مفخّم. Speak buttons are shown by `TtsService.canSpeak`: a text with the
+divine name gets a button only when such a clip exists.
+
+```bash
+python build_jalalah_lines.py <dir with the 4 wbw mp3s> ../../assets/audio
+```
+
+`test/tts_coverage_test.dart` fails if any reading line or vocab word in
+the 12 lessons has no bundled audio.
+
 ## Still synthesized
 
 Reading lines 1–5 contain no divine name, so they remain plain TTS. If a

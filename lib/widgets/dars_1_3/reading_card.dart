@@ -4,6 +4,7 @@ import '../../data/curriculum.dart';
 import '../../state/app_state.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
+import '../../services/tts_service.dart';
 import '../common.dart';
 
 class ReadingCard3 extends StatefulWidget {
@@ -32,7 +33,7 @@ class _ReadingCard3State extends State<ReadingCard3> {
   }
 
   Future<void> _speakLine(int i) async {
-    if (Dars113.readingNoAudio.contains(i)) return;
+    if (!TtsService.canSpeak(Dars113.readingLines[i])) return;
     if (_speakingLine == i) return _stopEverything();
     final tts = context.read<AppState>().tts;
     if (_playingAll) await _stopEverything();
@@ -64,7 +65,7 @@ class _ReadingCard3State extends State<ReadingCard3> {
     setState(() => _playingAll = true);
     for (var i = 0; i < Dars113.readingLines.length; i++) {
       if (!mounted || _cancelAll) return;
-      if (Dars113.readingNoAudio.contains(i)) continue;
+      if (!TtsService.canSpeak(Dars113.readingLines[i])) continue;
       setState(() => _speakingLine = i);
       await app.tts.speak(Dars113.readingLines[i]);
     }
@@ -133,7 +134,7 @@ class _ReadingCard3State extends State<ReadingCard3> {
                         style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: _speakingLine == i ? Colors.white : c.textMuted)),
                   ),
                   const SizedBox(width: 12),
-                  if (Dars113.readingNoAudio.contains(i))
+                  if (!TtsService.canSpeak(Dars113.readingLines[i]))
                     const SizedBox(width: 32)
                   else
                     SpeakButton(onTap: () => _speakLine(i), size: 32, speaking: _speakingLine == i),

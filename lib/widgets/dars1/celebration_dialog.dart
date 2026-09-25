@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
+import '../confetti.dart';
 
 class CelebrationDialog extends StatefulWidget {
-  const CelebrationDialog({super.key, this.title, this.message});
+  const CelebrationDialog({super.key, this.title, this.message, this.badge, this.confetti = false});
 
   final String? title;
   final String? message;
 
-  static Future<void> show(BuildContext context, {String? title, String? message}) {
+  /// Text of the small badge under the message. Defaults to lesson 1's
+  /// wording, so every other lesson must pass its own.
+  final String? badge;
+
+  /// Plays a short confetti burst (reserved for finishing a whole unit).
+  final bool confetti;
+
+  static Future<void> show(BuildContext context, {String? title, String? message, String? badge, bool confetti = false}) {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
-      builder: (ctx) => CelebrationDialog(title: title, message: message),
+      builder: (ctx) => CelebrationDialog(title: title, message: message, badge: badge, confetti: confetti),
     );
   }
 
@@ -30,6 +38,10 @@ class _CelebrationDialogState extends State<CelebrationDialog> with SingleTicker
       vsync: this,
       duration: const Duration(milliseconds: 700),
     )..forward();
+    // Respect reduced-motion: jump straight to the settled dialog.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && (MediaQuery.maybeDisableAnimationsOf(context) ?? false)) _anim.value = 1;
+    });
   }
 
   @override
@@ -41,7 +53,7 @@ class _CelebrationDialogState extends State<CelebrationDialog> with SingleTicker
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    return ScaleTransition(
+    final dialog = ScaleTransition(
       scale: CurvedAnimation(parent: _anim, curve: Curves.elasticOut),
       child: Dialog(
         backgroundColor: Colors.transparent,
@@ -130,7 +142,7 @@ class _CelebrationDialogState extends State<CelebrationDialog> with SingleTicker
                     Icon(Icons.military_tech_rounded, size: 20, color: c.accent),
                     const SizedBox(width: 8),
                     Text(
-                      'أتممت كل أهداف الدرس ١',
+                      widget.badge ?? 'أتممت كل أهداف الدرس ١',
                       style: TextStyle(
                         fontFamily: AppTheme.uiFont,
                         fontWeight: FontWeight.w700,
@@ -154,6 +166,8 @@ class _CelebrationDialogState extends State<CelebrationDialog> with SingleTicker
         ),
       ),
     );
+    if (!widget.confetti) return dialog;
+    return Stack(children: [dialog, const Positioned.fill(child: ConfettiBurst())]);
   }
 }
 

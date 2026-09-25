@@ -134,6 +134,8 @@ class Staggered extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Reduced motion: show content immediately, no fade/slide.
+    if (MediaQuery.maybeDisableAnimationsOf(context) ?? false) return child;
     final fade = CurvedAnimation(parent: controller, curve: Interval(start, end, curve: Curves.easeOutCubic));
     return FadeTransition(
       opacity: fade,
@@ -164,7 +166,19 @@ class _PageBackdropState extends State<PageBackdrop> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    _breathe = AnimationController(vsync: this, duration: const Duration(milliseconds: 3600))..repeat(reverse: true);
+    _breathe = AnimationController(vsync: this, duration: const Duration(milliseconds: 3600));
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // The ambient "breathing" glow is decoration only — keep it still when
+    // the user asks for reduced motion.
+    if (MediaQuery.maybeDisableAnimationsOf(context) ?? false) {
+      _breathe.stop();
+    } else if (!_breathe.isAnimating) {
+      _breathe.repeat(reverse: true);
+    }
   }
 
   @override

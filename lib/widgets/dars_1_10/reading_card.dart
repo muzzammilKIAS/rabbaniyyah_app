@@ -4,6 +4,7 @@ import '../../data/curriculum.dart';
 import '../../state/app_state.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
+import '../../services/tts_service.dart';
 import '../common.dart';
 
 class ReadingCard10 extends StatefulWidget {
@@ -30,7 +31,7 @@ class _ReadingCard10State extends State<ReadingCard10> {
   }
 
   Future<void> _speakLine(int i) async {
-    if (Dars1110.readingNoAudio.contains(i)) return;
+    if (!TtsService.canSpeak(Dars1110.readingLines[i])) return;
     if (_speakingLine == i) return _stopEverything();
     final tts = context.read<AppState>().tts;
     if (_playingAll) await _stopEverything();
@@ -49,7 +50,7 @@ class _ReadingCard10State extends State<ReadingCard10> {
     setState(() => _playingAll = true);
     for (var i = 0; i < Dars1110.readingLines.length; i++) {
       if (!mounted || _cancelAll) return;
-      if (Dars1110.readingNoAudio.contains(i)) continue;
+      if (!TtsService.canSpeak(Dars1110.readingLines[i])) continue;
       setState(() => _speakingLine = i);
       await app.tts.speak(Dars1110.readingLines[i]);
     }
@@ -77,11 +78,7 @@ class _ReadingCard10State extends State<ReadingCard10> {
               const Expanded(child: CardHeading('🎧 اِقْرَأِ النَّصَّ بِصَوْتٍ مُرْتَفِعٍ مَعَ زَمِيلِكَ')),
               ElevatedButton.icon(
                 onPressed: _playAll,
-                icon: Icon(
-                  _playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  size: 18,
-                  color: Colors.white,
-                ),
+                icon: Icon(_playingAll ? Icons.stop_rounded : Icons.play_arrow_rounded, size: 18, color: Colors.white),
                 label: Text(
                   _playingAll ? 'إيقاف' : 'استمع للنص كاملاً',
                   style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700),
@@ -129,7 +126,7 @@ class _ReadingCard10State extends State<ReadingCard10> {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  if (Dars1110.readingNoAudio.contains(i))
+                  if (!TtsService.canSpeak(Dars1110.readingLines[i]))
                     const SizedBox(width: 32)
                   else
                     SpeakButton(onTap: () => _speakLine(i), size: 32, speaking: _speakingLine == i),
@@ -167,8 +164,12 @@ class _ReadingCard10State extends State<ReadingCard10> {
                   children: [
                     Icon(Icons.menu_book_rounded, size: 15, color: c.gold),
                     const SizedBox(width: 6),
-                    Text(Dars1110.hadithNarrator,
-                        style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 13.5, color: c.textMuted)),
+                    Expanded(
+                      child: Text(
+                        Dars1110.hadithNarrator,
+                        style: TextStyle(fontFamily: AppTheme.arabicFont, fontSize: 13.5, color: c.textMuted),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 8),

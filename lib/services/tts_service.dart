@@ -238,6 +238,27 @@ class TtsService with ChangeNotifier {
     'الْأَنْصَارُ': 'assets/audio/tts_dars111/vocab_8.mp3',
 
     // Dars1112 — lesson 12
+
+    // Lines naming لفظ الجلالة mid-sentence — spliced by
+    // tool/audio/build_jalalah_lines.py: Hamed for the other words, a
+    // reciter's word-by-word clip (right case ending) for the divine name.
+    'اَلْقُرْآنُ كِتَابُ اللهِ، وَمُحَمَّدٌ رَسُولُ اللهِ.': 'assets/audio/tts_dars12/reading_5.mp3',
+    'فِي ذَلِكَ الْيَوْمِ، يُحَاسِبُ اللهُ كُلَّ إِنْسَانٍ عَلَى عَمَلِهِ.': 'assets/audio/tts_dars13/reading_2.mp3',
+    'اَلْقَدَرُ تَقْدِيرُ اللهِ لِكُلِّ شَيْءٍ.': 'assets/audio/tts_dars13/reading_5.mp3',
+    'اَلْمُؤْمِنُ يَرْضَى بِقَضَاءِ اللهِ، وَيَعْمَلُ وَيَجْتَهِدُ.': 'assets/audio/tts_dars13/reading_6.mp3',
+    'نَتَعَلَّمُ مِنَ الرَّسُولِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ هَذِهِ الصِّفَاتِ الْحَسَنَةَ.': 'assets/audio/tts_dars17/reading_6.mp3',
+    'أَنَا أُحِبُّ اللهَ، وَأُطِيعُهُ فِي كُلِّ أَمْرٍ.': 'assets/audio/tts_dars18/reading_0.mp3',
+    'أَنَا أَتَّقِي اللهَ فِي السِّرِّ وَالْعَلَنِ.': 'assets/audio/tts_dars18/reading_1.mp3',
+    'أَتَوَكَّلُ عَلَى اللهِ، وَأَشْكُرُهُ عَلَى نِعَمِهِ.': 'assets/audio/tts_dars18/reading_2.mp3',
+    'أَنَا أُحِبُّ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَأَتَّبِعُ سُنَّتَهُ.': 'assets/audio/tts_dars18/reading_3.mp3',
+    'لَا أَعْصِي اللهَ، وَلَا أَكْذِبُ عَلَى النَّبِيِّ.': 'assets/audio/tts_dars18/reading_4.mp3',
+    'هَذَا هُوَ حُبِّي لِلَّهِ وَرَسُولِهِ.': 'assets/audio/tts_dars18/reading_5.mp3',
+    'وُلِدَ النَّبِيُّ مُحَمَّدٌ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ فِي مَكَّةَ، عَامَ الْفِيلِ.': 'assets/audio/tts_dars110/reading_0.mp3',
+    'تَزَوَّجَ خَدِيجَةَ رَضِيَ اللهُ عَنْهَا وَهُوَ فِي الْخَامِسَةِ وَالْعِشْرِينَ.': 'assets/audio/tts_dars110/reading_3.mp3',
+    'اَلصَّحَابَةُ هُمُ الَّذِينَ رَافَقُوا النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ وَآمَنُوا بِهِ.': 'assets/audio/tts_dars112/reading_0.mp3',
+    'عَلِيٌّ، كَرَّمَ اللهُ وَجْهَهُ، اشْتَهَرَ بِالْحِكْمَةِ وَالشَّجَاعَةِ.': 'assets/audio/tts_dars112/reading_5.mp3',
+    'اِسْتُشْهِدَ بَعْضُهُمْ فِي سَبِيلِ اللهِ.': 'assets/audio/tts_dars112/reading_6.mp3',
+    'عَلِيٌّ كَرَّمَ اللهُ وَجْهَهُ': 'assets/audio/tts_dars112/vocab_4.mp3',
     'أَبُو بَكْرٍ الصِّدِّيقُ خَلَفَ النَّبِيَّ فِي الْخِلَافَةِ.': 'assets/audio/tts_dars112/reading_1.mp3',
     'اِشْتَهَرَ بِالصِّدْقِ وَالثَّبَاتِ فِي الْإِيمَانِ.': 'assets/audio/tts_dars112/reading_2.mp3',
     'عُمَرُ الْفَارُوقُ حَكَمَ بِالْعَدْلِ بَيْنَ النَّاسِ.': 'assets/audio/tts_dars112/reading_3.mp3',
@@ -255,6 +276,31 @@ class TtsService with ChangeNotifier {
     'حَكَمَ': 'assets/audio/tts_dars112/vocab_10.mp3',
     'اُسْتُشْهِدَ': 'assets/audio/tts_dars112/vocab_11.mp3',
   };
+
+  /// Read-only view of the pre-rendered map, for coverage tests.
+  @visibleForTesting
+  static Map<String, String> get preRenderedAssets => _preRenderedAssets;
+
+  /// Asset that [speak] would play for [text] (exact, then tashkeel-blind
+  /// match), or null when only the live voice could read it.
+  static String? assetFor(String text) {
+    final normalized = text.trim();
+    final exact = _preRenderedAssets[normalized];
+    if (exact != null) return exact;
+    final stripped = stripTashkeel(normalized);
+    for (final entry in _preRenderedAssets.entries) {
+      if (stripTashkeel(entry.key) == stripped) return entry.value;
+    }
+    return null;
+  }
+
+  /// Whether a speak button may be shown for [text]: it has a bundled clip,
+  /// or it contains no لفظ الجلالة (which the live voice must never read).
+  static bool canSpeak(String text) {
+    if (assetFor(text) != null) return true;
+    final skeleton = stripTashkeel(text);
+    return !skeleton.contains('الله') && !skeleton.contains('لله');
+  }
 
   Future<void> init() async {
     await _initSystemTts();
