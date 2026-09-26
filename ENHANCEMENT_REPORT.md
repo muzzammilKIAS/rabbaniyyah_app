@@ -79,6 +79,17 @@ Butang audio kini dipaparkan melalui `TtsService.canSpeak`. `test/tts_coverage_t
 memastikan setiap baris bacaan dan kosa kata dalam 12 dars ada audio, dan disahkan dalam Chrome
 (klip `tts_dars18/*.mp3` dimuatkan apabila diklik).
 
+### Video teks Dars 10–12 (26 Sep 2026)
+
+Dars 10–12 kini mempunyai video (`assets/video/topik10–12.mp4`; 61 s, 80 s, 59 s; 1280×720):
+- **Struktur:** kad tajuk dars, kemudian satu babak bagi setiap baris bacaan, kemudian kad hadis/ayat. Teks
+  dipaparkan verbatim daripada `curriculum.dart`, serentak dengan naratif audio app.
+- **Ilustrasi:** SVG beranimasi yang menunjukkan tempat, cahaya dan objek sahaja. **Tiada gambaran Nabi ﷺ,
+  sahabat, malaikat atau Buraq.** Nama sahabat dipaparkan dalam medalion kaligrafi.
+- **Kad penutup:** Dars 11 menggunakan bacaan Alafasy (Al-Isrāʾ 17:1). Matan hadis Dars 10 dan 12 dibaca oleh
+  suara Hamed.
+- **Sumber:** boleh dijana semula dari `tool/video/` (lihat README di sana).
+
 ## 5. Gamifikasi (ringan)
 
 - Bintang 1–3 setiap aktiviti (berdasarkan jawapan betul pada cubaan pertama; skor terbaik disimpan).

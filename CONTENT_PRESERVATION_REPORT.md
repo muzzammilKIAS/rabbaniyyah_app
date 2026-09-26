@@ -17,7 +17,7 @@ Semua 202 fail aset (gambar, video, audio, fon) juga tidak berubah.
 | Unit | 4 / 4 masih ada |
 | Dars | 12 / 12 masih ada, setiap satu dengan semua bahagian asalnya |
 | Video asal (topik1–topik9) | Kekal, dipaparkan pada dars 1–9 seperti sebelum ini |
-| Dars tanpa video (10–12) | Tiada pemain video, tiada placeholder |
+| Dars 10–12 | Tiada video sebelum ini (tiada placeholder). Pada 26 Sep 2026 video teks baharu ditambah atas permintaan pengguna (`topik10–12.mp4`), berdasarkan teks bacaan dars tersebut |
 
 ## 2. Kaedah semakan
 

@@ -139,13 +139,13 @@ final List<LessonMeta> kLessons = [
     readingLines: Dars119.readingLines,
     vocab: Dars119.vocab,
   ),
-  // Lessons 10–12 have no intro video yet — add `video:` when one exists.
+  // Lessons 10–12: text videos built in tool/video (build_scenes.py).
   LessonMeta(
     n: 10,
     id: '1110',
     unit: 3,
     ordinal: 'الدرس العاشر',
-    video: null,
+    video: 'assets/video/topik10.mp4',
     selfAssessCount: Dars1110.selfAssessItems.length,
     readingLines: Dars1110.readingLines,
     vocab: Dars1110.vocab,
@@ -155,7 +155,7 @@ final List<LessonMeta> kLessons = [
     id: '1111',
     unit: 3,
     ordinal: 'الدرس الحادي عشر',
-    video: null,
+    video: 'assets/video/topik11.mp4',
     selfAssessCount: Dars1111.selfAssessItems.length,
     readingLines: Dars1111.readingLines,
     vocab: Dars1111.vocab,
@@ -165,7 +165,7 @@ final List<LessonMeta> kLessons = [
     id: '1112',
     unit: 3,
     ordinal: 'الدرس الثاني عشر',
-    video: null,
+    video: 'assets/video/topik12.mp4',
     selfAssessCount: Dars1112.selfAssessItems.length,
     readingLines: Dars1112.readingLines,
     vocab: Dars1112.vocab,

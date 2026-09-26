@@ -1,0 +1,152 @@
+/* Shared look for the Dars 10–12 text videos (see DIRECTION.md). */
+@font-face { font-family: "Amiri"; src: url("fonts/Amiri-Regular.ttf"); font-weight: 400; font-display: block; }
+@font-face { font-family: "Amiri"; src: url("fonts/Amiri-Bold.ttf"); font-weight: 700; font-display: block; }
+@font-face { font-family: "AmiriQuran"; src: url("fonts/AmiriQuran-Regular.ttf"); font-display: block; }
+@font-face { font-family: "Tajawal"; src: url("fonts/Tajawal-Bold.ttf"); font-weight: 700; font-display: block; }
+
+:root {
+  --bg: #06241b;
+  --bg-2: #0b3b2e;
+  --fg: #f8f1e1;
+  --muted: #d9c9a3;
+  --accent: #d4a53a;
+  --accent-2: #f3d7a1;
+  --accent-ink: #f3d7a1;
+  --ink: #0b3b2e;
+  --card: #f8f1e1;
+  --font: "Tajawal", sans-serif;
+  --grain-opacity: 0.035;
+}
+html, body { background: var(--bg); }
+
+/* World: one full-bleed SVG illustration, moved by the camera. */
+.world { position: absolute; inset: -4%; }
+.world svg { width: 100%; height: 100%; display: block; }
+.cam-push { animation: cam-push var(--scene-dur) var(--ease-inout) both; }
+.cam-pull { animation: cam-pull var(--scene-dur) var(--ease-inout) both; }
+.cam-pan-l { animation: cam-pan-l var(--scene-dur) var(--ease-inout) both; }
+.cam-pan-r { animation: cam-pan-r var(--scene-dur) var(--ease-inout) both; }
+.cam-up { animation: cam-up var(--scene-dur) var(--ease-inout) both; }
+@keyframes cam-push { from { scale: 1; } to { scale: 1.07; } }
+@keyframes cam-pull { from { scale: 1.08; } to { scale: 1; } }
+@keyframes cam-pan-l { from { translate: 2.5% 0; } to { translate: -2.5% 0; } }
+@keyframes cam-pan-r { from { translate: -2.5% 0; } to { translate: 2.5% 0; } }
+@keyframes cam-up { from { translate: 0 3%; scale: 1.04; } to { translate: 0 -2%; scale: 1.04; } }
+
+/* Soft darkening under the caption, so the card sits on quiet ground. */
+.shade { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(3, 18, 13, 0.55), rgba(3, 18, 13, 0) 45%); }
+
+/* HUD: lesson chip (top) and the reading-line caption (bottom). */
+.hud .safe { position: absolute; inset: 0; padding: 5%; display: block; }
+.chip-lesson {
+  position: absolute; top: 5.5%; right: 5%;
+  font-family: "Tajawal"; font-weight: 700; font-size: calc(var(--u) * 3);
+  color: var(--accent-2); background: rgba(6, 36, 27, 0.78);
+  border: 2px solid rgba(212, 165, 58, 0.7); border-radius: 999px; padding: 0.35em 0.95em;
+  direction: rtl;
+}
+.steps { position: absolute; top: 7%; left: 5%; display: flex; gap: calc(var(--u) * 1); direction: rtl; }
+.steps b { width: calc(var(--u) * 1.5); height: calc(var(--u) * 1.5); border-radius: 50%;
+  background: rgba(248, 241, 225, 0.3); border: 1px solid rgba(248, 241, 225, 0.5); }
+.steps b.done { background: var(--accent); border-color: var(--accent); }
+.caption {
+  position: absolute; left: 7%; right: 7%; bottom: 6%;
+  background: rgba(248, 241, 225, 0.96); border: 3px solid var(--accent); border-radius: calc(var(--u) * 2.4);
+  box-shadow: 0 1.2vmin 4vmin rgba(0, 0, 0, 0.35), inset 0 0 0 calc(var(--u) * 0.6) rgba(248, 241, 225, 1),
+    inset 0 0 0 calc(var(--u) * 0.8) rgba(212, 165, 58, 0.45);
+  padding: calc(var(--u) * 2.2) calc(var(--u) * 4);
+  text-align: center; direction: rtl;
+}
+.caption .ar { margin: 0; font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 5.6);
+  line-height: 1.7; color: var(--ink); text-wrap: balance; }
+
+/* Title card and closing card. */
+.center { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; direction: rtl; }
+.title-block { display: grid; gap: calc(var(--u) * 2.2); justify-items: center; }
+.unit-label { font-family: "Tajawal"; font-weight: 700; font-size: calc(var(--u) * 3.4); color: var(--accent-2); letter-spacing: 0.02em; }
+.lesson-no { font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 6); color: var(--accent); }
+.lesson-title { font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 9); color: var(--fg); line-height: 1.5;
+  max-width: 80vw; text-wrap: balance; text-shadow: 0 0.6vmin 2vmin rgba(0, 0, 0, 0.45); }
+.rule { width: calc(var(--u) * 30); height: 3px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+
+.scroll-card {
+  position: relative; width: 78vw; padding: calc(var(--u) * 5) calc(var(--u) * 6);
+  background: radial-gradient(ellipse at center, #fbf6ea 0%, #f1e6cc 100%);
+  border: 4px solid var(--accent); border-radius: calc(var(--u) * 4);
+  box-shadow: 0 2vmin 6vmin rgba(0, 0, 0, 0.45), inset 0 0 0 calc(var(--u) * 1) #fbf6ea,
+    inset 0 0 0 calc(var(--u) * 1.3) rgba(6, 95, 70, 0.55);
+  direction: rtl; text-align: center; display: grid; gap: calc(var(--u) * 2.2);
+}
+.scroll-card .kind { font-family: "Tajawal"; font-weight: 700; font-size: calc(var(--u) * 3); color: #7a5a14; }
+.scroll-card .narrator { font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 4.2); color: #3d4f45; line-height: 1.6; }
+.scroll-card .matn { font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 6.4); color: var(--ink); line-height: 1.7; text-wrap: balance; }
+.scroll-card .quran { font-family: "AmiriQuran"; font-size: calc(var(--u) * 5.6); color: var(--ink); line-height: 2.1; text-wrap: balance; }
+.scroll-card .source { font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 3.6); color: #7a5a14; }
+.corner { position: absolute; width: calc(var(--u) * 7); height: calc(var(--u) * 7); color: var(--accent); }
+.corner svg { width: 100%; height: 100%; }
+.corner.tl { top: calc(var(--u) * -3.2); left: calc(var(--u) * -3.2); }
+.corner.tr { top: calc(var(--u) * -3.2); right: calc(var(--u) * -3.2); }
+.corner.bl { bottom: calc(var(--u) * -3.2); left: calc(var(--u) * -3.2); }
+.corner.br { bottom: calc(var(--u) * -3.2); right: calc(var(--u) * -3.2); }
+
+/* Calligraphic roundels (names of the Khulafāʾ, key words): world text. */
+.roundels { position: absolute; inset: 0; display: grid; place-items: center; }
+.roundel-row { display: flex; gap: calc(var(--u) * 5); direction: rtl; align-items: center; margin-top: -14vh; }
+.roundel {
+  width: calc(var(--u) * 30); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle, #0b3b2e 0%, #06241b 70%);
+  border: calc(var(--u) * 0.8) solid var(--accent);
+  box-shadow: 0 0 0 calc(var(--u) * 1) #06241b, 0 0 0 calc(var(--u) * 1.4) rgba(212, 165, 58, 0.6), 0 2vmin 5vmin rgba(0, 0, 0, 0.5);
+  text-align: center; padding: calc(var(--u) * 2);
+}
+.roundel.sm { width: calc(var(--u) * 21); }
+.roundel .name { font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 5.2); line-height: 1.35; color: var(--accent-2); }
+.roundel.sm .name { font-size: calc(var(--u) * 3.6); }
+.tags { display: flex; gap: calc(var(--u) * 2.5); justify-content: center; margin-top: calc(var(--u) * 3); direction: rtl; }
+.tag { display: inline-flex; align-items: center; gap: 0.4em; font-family: "Amiri"; font-weight: 700; font-size: calc(var(--u) * 4.6);
+  color: var(--fg); background: rgba(6, 36, 27, 0.8); border: 2px solid var(--accent); border-radius: 999px; padding: 0.1em 0.8em; }
+.tag i { color: var(--accent); font-size: 0.9em; }
+
+/* A roundel centred on the ring drawn in the SVG (ring centre y = 330/900 = 36.7%). */
+.roundel-wrap { position: absolute; left: 50%; top: 36.7%; transform: translate(-50%, -50%); }
+.roundel-wrap .roundel { width: calc(var(--u) * 34); }
+.tags-wrap { position: absolute; left: 0; right: 0; top: 60%; }
+
+/* Illustration motion. All CSS animations — seekable. */
+.twinkle { animation: twinkle 2.6s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+@keyframes twinkle { from { opacity: 0.25; } to { opacity: 1; } }
+.sun-rise { animation: sun-rise var(--scene-dur) var(--ease-out) both; }
+@keyframes sun-rise { from { translate: 0 160px; } to { translate: 0 0; } }
+.sun-set { animation: sun-set var(--scene-dur) var(--ease-in) both; }
+@keyframes sun-set { from { translate: 0 -40px; } to { translate: 0 130px; } }
+.graze { transform-box: fill-box; transform-origin: 50% 100%; animation: graze 1.7s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+@keyframes graze { from { rotate: -3deg; translate: 0 0; } to { rotate: 4deg; translate: -6px 3px; } }
+.wander { animation: wander var(--scene-dur) linear both; }
+@keyframes wander { from { translate: 30px 0; } to { translate: -40px 0; } }
+.walk { animation: walk var(--scene-dur) linear both; }
+@keyframes walk { from { translate: 260px 0; } to { translate: -300px 0; } }
+.step { transform-box: fill-box; transform-origin: 50% 0%; animation: step 0.9s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+@keyframes step { from { rotate: -9deg; } to { rotate: 9deg; } }
+.pulse { animation: pulse 2.2s ease-in-out infinite alternate; }
+@keyframes pulse { from { opacity: 0.55; } to { opacity: 1; } }
+.flicker { animation: flicker 1.3s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+@keyframes flicker { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.8; } }
+.beam { transform-box: fill-box; transform-origin: 50% 0%; animation: beam 1.8s var(--ease-out) 0.5s both; }
+@keyframes beam { from { opacity: 0; scale: 1 0.1; } }
+.glow-in { animation: glow-in 2s var(--ease-out) 0.4s both; }
+@keyframes glow-in { from { opacity: 0; } }
+.ascend { animation: ascend var(--scene-dur) var(--ease-inout) both; }
+@keyframes ascend { from { translate: 0 420px; } to { translate: 0 -120px; } }
+.sway { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 3.2s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+@keyframes sway { from { rotate: -1.6deg; } to { rotate: 1.6deg; } }
+.drift-cloud { animation: drift-cloud var(--scene-dur) linear both; }
+@keyframes drift-cloud { from { translate: -60px 0; } to { translate: 80px 0; } }
+.page { transform-box: fill-box; transform-origin: center; animation: page-in 1.1s var(--ease-out) both; animation-delay: var(--d, 0s); }
+@keyframes page-in { from { opacity: 0; translate: var(--fx) var(--fy); rotate: var(--fr); } }
+.grow-up { transform-box: fill-box; transform-origin: 50% 100%; animation: grow-up 1.4s var(--ease-out) 0.3s both; }
+@keyframes grow-up { from { scale: 1 0; } }
+.spin-slow { transform-box: fill-box; transform-origin: center; animation: spin-slow 40s linear infinite; }
+@keyframes spin-slow { to { rotate: 360deg; } }
+.tilt { transform-box: fill-box; transform-origin: 50% 12%; animation: tilt 2.6s ease-in-out infinite alternate; }
+@keyframes tilt { from { rotate: -5deg; } to { rotate: 5deg; } }
