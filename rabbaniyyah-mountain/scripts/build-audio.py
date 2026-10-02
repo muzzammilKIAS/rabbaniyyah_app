@@ -1,5 +1,8 @@
 """Jana audio sebutan bagi set guru menggunakan Piper TTS (suara ar_JO-kareem-medium), kemudian tukar kepada AAC (.m4a).
 
+Piper tidak deterministik: setiap klip disemak dengan faster-whisper (bahasa Arab) dan hanya klip yang dikenal pasti
+dengan tepat disimpan. Klip sedia ada TIDAK ditulis ganti; padam fail .m4a untuk menjana semula.
+
 Teks Arab bervokal disalin daripada modul RC3411. Jalankan:  python3 scripts/build-audio.py
 """
 import subprocess, sys, wave
@@ -19,6 +22,8 @@ from piper import PiperVoice  # noqa: E402
 voice = PiperVoice.load(str(VOICE), config_path=str(VOICE) + ".json")
 OUT.mkdir(parents=True, exist_ok=True)
 for name, text in CLIPS.items():
+    if (OUT / f"{name}.m4a").exists():
+        print(name, "sedia ada, dilangkau"); continue
     wav = OUT / f"{name}.wav"
     with wave.open(str(wav), "wb") as wf:
         voice.synthesize_wav(text, wf)
