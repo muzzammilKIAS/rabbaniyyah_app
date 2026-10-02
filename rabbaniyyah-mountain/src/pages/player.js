@@ -95,7 +95,7 @@ function showLobby() {
   state.screen = 'lobby';
   const r = state.room;
   shell(`<section class="panel center lobby-wait">
-    <span class="eyebrow">LEVEL ${r.level} · ${esc(r.title.toUpperCase())}</span>
+    <span class="eyebrow">${esc(r.label)} · ${esc(r.title.toUpperCase())}</span>
     <div class="wait-avatar">${avatarSVG(state.me?.avatar || state.avatar, { label: state.name })}<span class="wait-ring"></span></div>
     <h1>Anda di Base Camp, ${esc(state.me?.name || state.name)}!</h1>
     <p class="lead">Lihat nama anda di skrin guru. Pendakian akan bermula sebentar lagi.</p>
@@ -109,7 +109,7 @@ function hud() {
   const r = state.room, me = state.me || {};
   const pct = Math.round((me.index || 0) / r.total * 100), climb = Math.round((me.correct || 0) / r.total * 100);
   return `<div class="hud" id="hud">
-    <div class="hud-title"><span>Level ${r.level} · ${esc(r.title)}</span><span class="hud-topics" lang="ar" dir="rtl">${r.topics.map(esc).join(' + ')}</span></div>
+    <div class="hud-title"><span>${r.set ? 'Set Guru' : `Level ${r.level}`} · ${esc(r.title)}</span><span class="hud-topics" lang="ar" dir="rtl">${r.topics.map(esc).join(' + ')}</span></div>
     <div class="hud-stats"><div><small>Altitud</small><strong>${fmt(me.altitude || 0)} m</strong></div><div><small>Kemajuan</small><strong>${pct}%</strong></div>${r.settings.leaderboard ? `<div><small>Kedudukan</small><strong>#${me.rank || '–'}</strong></div>` : ''}<div><small>Skor</small><strong>${fmt(me.score || 0)}</strong></div></div>
     <div class="track" aria-label="Kemajuan pendakian ${climb}%"><div class="track-fill" style="width:${climb}%"></div>${[25, 50, 75].map(c => `<span class="track-cp" style="left:${c}%"></span>`).join('')}<span class="track-summit">⚑</span><span class="track-me" style="left:${climb}%">${avatarSVG(me.avatar || state.avatar, { crop: 'head', label: '' })}</span></div>
   </div>`;
@@ -185,7 +185,7 @@ function showEnded() {
   if (!me) return screen('message', { title: 'Pendakian tamat', text: 'Terima kasih kerana menyertai.' });
   const summit = me.correct === r.total;
   shell(`<section class="panel center finish">
-    <span class="eyebrow">PENDAKIAN TAMAT · LEVEL ${r.level}</span>
+    <span class="eyebrow">PENDAKIAN TAMAT · ${esc(r.label)}</span>
     <div class="finish-scene ${summit ? 'summit' : ''}">${avatarSVG(me.avatar, { label: me.name })}</div>
     <h1>${r.settings.leaderboard && me.rank <= 3 ? ['🥇', '🥈', '🥉'][me.rank - 1] + ' ' : ''}Tahniah, ${esc(me.name)}!</h1>
     <p class="lead">${summit ? 'Anda menawan puncak ilmu.' : 'Setiap langkah ialah ilmu. Teruskan mendaki!'}</p>

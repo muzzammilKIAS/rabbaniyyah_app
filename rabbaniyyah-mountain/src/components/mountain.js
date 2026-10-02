@@ -45,7 +45,7 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
  * @param {HTMLElement} el
  * @param {{total:number, compact?:boolean, me?:string}} options
  */
-export function createMountain(el, { total = 12, compact = false, me = null } = {}) {
+export function createMountain(el, { total = 12, compact = false, me = null, hideNames = false } = {}) {
   el.classList.add('mountain', compact ? 'is-compact' : 'is-full');
   el.innerHTML = `<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gunung pendakian dari Base Camp ke Puncak">${scene}<g class="stations"></g><g class="markers"></g><g class="cards"></g><g class="fx"></g></svg>`;
   const svg = el.querySelector('svg'), path = svg.querySelector('.trail-bed'), progressPath = svg.querySelector('.trail-progress');
@@ -118,9 +118,9 @@ export function createMountain(el, { total = 12, compact = false, me = null } = 
 
 
   function cardLines({ list, base }) {
-    const shown = base ? [] : list.slice(0, 4);
+    const shown = base || hideNames ? [] : list.slice(0, 4);
     const rows = shown.map(p => `${p.finished ? '✓ ' : p.rank <= 3 && p.correct > 0 ? ['①', '②', '③'][p.rank - 1] + ' ' : ''}${p.name.length > 14 ? p.name.slice(0, 13) + '…' : p.name}`);
-    const more = base ? 0 : list.length - shown.length;
+    const more = base || hideNames ? 0 : list.length - shown.length;
     return [base ? `${list.length} pendaki di Base Camp` : `${list.length} pendaki`, ...rows, ...(more > 0 ? [`+${more} lagi`] : [])];
   }
   function cardSize(c) { const lines = cardLines(c); return { w: Math.max(...lines.map((l, i) => l.length * (i ? 9.6 : 8.4))) + 28, h: 16 + lines.length * 23 }; }
@@ -147,7 +147,7 @@ export function createMountain(el, { total = 12, compact = false, me = null } = 
       let m = markers.get(p.id);
       if (!m) { m = makeMarker(p); markers.set(p.id, m); }
       const { x, y, scale, grouped } = pos.get(p.id);
-      const shown = label(p.name, 16);
+      const shown = hideNames && me !== p.id ? '' : label(p.name, 16);
       const s = m.state, station = clamp(p.correct, 0, total);
       if (s.x !== x || s.y !== y || s.scale !== scale) {
         const climbed = s.correct !== undefined && p.correct > s.correct;
@@ -158,14 +158,15 @@ export function createMountain(el, { total = 12, compact = false, me = null } = 
         Object.assign(s, { x, y, scale, station });
       }
       if (s.shown !== shown) { m.text.textContent = shown; const w = Math.max(40, shown.length * 9.6 + 24); m.rect.setAttribute('width', w); m.rect.setAttribute('x', -w / 2); s.shown = shown; }
-      m.title.textContent = `${p.name} — ${fmt(p.altitude ?? 0)} m${p.finished ? ' · Selesai' : ''}`;
-      const badge = p.finished ? '✓' : p.rank <= 3 && p.correct > 0 ? String(p.rank) : '';
+      m.title.textContent = `${hideNames ? 'Pendaki' : p.name} — ${fmt(p.altitude ?? 0)} m${p.finished ? ' · Selesai' : ''}`;
+      const badge = p.finished ? '✓' : !hideNames && p.rank <= 3 && p.correct > 0 ? String(p.rank) : '';
       if (s.badge !== badge) { m.badge.textContent = badge; s.badge = badge; }
       m.g.classList.toggle('has-badge', !!badge && !grouped);
       m.g.classList.toggle('grouped', grouped);
       m.g.classList.toggle('is-finished', !!p.finished);
       m.g.classList.toggle('is-offline', p.online === false);
-      m.g.classList.toggle('is-leader', leader?.id === p.id);
+      m.g.classList.toggle('is-leader', !hideNames && leader?.id === p.id);
+      m.g.classList.toggle('no-label', !shown);
       m.g.classList.toggle('is-me', me === p.id);
       s.correct = p.correct;
     }

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { levels, topics, questionsFor, topicBank, publicQuestion, recordAnswer, newPlayer, altitude, rankPlayers, timeBonus, streakBonus, analytics, isCorrect } from '../shared/game.js';
+import { levels, topics, questionsFor, topicBank, publicQuestion, recordAnswer, newPlayer, altitude, rankPlayers, timeBonus, streakBonus, analytics, isCorrect, questionsForSet } from '../shared/game.js';
 import { cleanAvatar } from '../shared/avatar.js';
 
 test('pemetaan level: tepat 2 topik berturutan, level 7 tidak tersedia', () => {
@@ -79,4 +79,24 @@ test('analitik mengasingkan ketepatan topik A dan B', () => {
 test('avatar dibersihkan daripada input tidak sah', () => {
   assert.deepEqual(cleanAvatar({ gender: 'female', head: 'cap', shirt: 99, x: '<script>' }).head, 'hijab');
   assert.equal(cleanAvatar(null).gender, 'male');
+});
+
+test('set guru: soalan tetap, jawapan sah selepas rombak, susun ayat dan mod selamat', () => {
+  const qs = questionsForSet('akhlak-7-9');
+  assert.equal(qs.length, 16);
+  for (const q of qs) {
+    if (q.type === 'arrange') { assert.equal(q.answer.length, q.tokens.length); assert.ok(q.answer.every(t => q.tokens.includes(t))); }
+    else { assert.equal(q.options[q.answer], q.correctText); assert.ok(!('answer' in publicQuestion(q))); }
+    assert.ok(q.explanation && q.topicTitle);
+  }
+  assert.ok(qs.some(q => q.audio) && qs.some(q => q.image), 'set mesti ada audio dan gambar');
+  assert.equal(questionsForSet('akhlak-7-9-tebus').length, 6);
+  // Mod selamat: tiada bonus kelajuan, jawapan pantas dan perlahan dapat markah sama.
+  const fast = newPlayer(), slow = newPlayer();
+  recordAnswer(fast, qs, qs[0].id, qs[0].answer, { elapsedMs: 500, calm: true });
+  recordAnswer(slow, qs, qs[0].id, qs[0].answer, { elapsedMs: 25000, calm: true });
+  assert.equal(fast.score, 1000); assert.equal(slow.score, 1000);
+  const arr = qs.find(q => q.type === 'arrange'), p = newPlayer({ index: qs.indexOf(arr) });
+  recordAnswer(p, qs, arr.id, [...arr.answer]);
+  assert.equal(p.correct, 1);
 });

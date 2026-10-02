@@ -18,6 +18,7 @@ const bar = (pct, cls = '') => `<span class="pct-bar ${cls}"><i style="width:${p
 
 export function resultsView(r) {
   const { analytics: a, awards } = r.results;
+  const calm = !!r.settings?.calm;
   const [first, second, third] = r.players;
   const podium = [[second, 2], [first, 1], [third, 3]].filter(([p]) => p).map(([p, n]) => `
     <div class="podium-spot p${n}"><div class="podium-av">${avatarSVG(p.avatar, { label: p.name })}</div><strong>${esc(p.name)}</strong><span>${fmt(p.score)} mata · ${fmt(p.altitude)} m</span><div class="podium-block">${n}</div></div>`).join('');
@@ -26,17 +27,17 @@ export function resultsView(r) {
   const review = a.questions.filter(q => q.needsReview).length;
   return `
   <section class="results-hero">
-    <div><span class="eyebrow">LEVEL ${r.level} · ${esc(r.title.toUpperCase())} · KOD ${r.code}</span><h1>Ekspedisi selesai. <em>أَحْسَنْتُمْ!</em></h1>
+    <div><span class="eyebrow">${esc(r.label || `LEVEL ${r.level}`)} · ${esc(r.title.toUpperCase())} · KOD ${r.code}</span><h1>Ekspedisi selesai. <em>أَحْسَنْتُمْ!</em></h1>
     <p class="lead">${r.players.length} pendaki · ${r.players.filter(p => p.correct === r.total).length} sampai ke puncak · ${r.total} soalan</p></div>
     <div class="class-acc"><strong>${a.accuracy ?? 0}%</strong><span>Ketepatan kelas</span></div>
   </section>
-  ${r.players.length ? `<section class="podium">${podium}</section>` : ''}
-  ${awards.length ? `<section class="awards">${awards.map(w => `<div class="award ${w.key}"><span class="award-icon" aria-hidden="true">${{ accurate: '◎', streak: '⚡', fast: '➶' }[w.key]}</span><small>${w.label}</small><strong>${esc(w.name)}</strong><span>${esc(w.value)}</span></div>`).join('')}</section>` : ''}
+  ${r.players.length && !calm ? `<section class="podium">${podium}</section>` : ''}
+  ${awards.length && !calm ? `<section class="awards">${awards.map(w => `<div class="award ${w.key}"><span class="award-icon" aria-hidden="true">${{ accurate: '◎', streak: '⚡', fast: '➶' }[w.key]}</span><small>${w.label}</small><strong>${esc(w.name)}</strong><span>${esc(w.value)}</span></div>`).join('')}</section>` : ''}
   <section class="results-grid">
     <div class="card"><h2>Ketepatan mengikut topik</h2>${topicRows}</div>
     <div class="card"><h2>Analisis soalan</h2><p class="hint">${review ? `${review} soalan di bawah 60% ditanda untuk ulang kaji.` : 'Tiada soalan di bawah 60%. Syabas!'}</p><ol class="q-analysis">${qRows}</ol></div>
   </section>
-  <section class="card"><h2>Kedudukan penuh</h2><table class="board-table"><thead><tr><th>#</th><th>Pendaki</th><th>Altitud</th><th>Betul</th><th>Ketepatan</th><th>Skor</th><th>Status</th></tr></thead><tbody>${leaderboardRows(r)}</tbody></table></section>`;
+  <section class="card">${calm ? '<details class="teacher-only"><summary>Rekod individu (untuk guru sahaja, jangan paparkan di projektor)</summary>' : '<h2>Kedudukan penuh</h2>'}<table class="board-table"><thead><tr><th>#</th><th>Pendaki</th><th>Altitud</th><th>Betul</th><th>Ketepatan</th><th>Skor</th><th>Status</th></tr></thead><tbody>${leaderboardRows(r)}</tbody></table>${calm ? '</details>' : ''}</section>`;
 }
 
 export function csvFor(r) {

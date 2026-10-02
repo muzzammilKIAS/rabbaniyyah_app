@@ -1,6 +1,7 @@
 import topics from '../content/topics.json' with { type: 'json' };
+import sets from '../content/sets.json' with { type: 'json' };
 
-export { topics };
+export { topics, sets };
 export const SUMMIT_METRES = 3000;
 export const QUESTION_COUNTS = [8, 12, 16];
 export const TIMER_OPTIONS = [0, 15, 20, 30, 45, 60];
@@ -101,6 +102,26 @@ export function questionsFor(level, count = 12, rng = Math.random) {
   return shuffle([...a, ...b], rng).map((q, i) => ({ ...q, id: `${q.id}#${i}`, level }));
 }
 
+/** Set guru: soalan tetap yang dibina khusus untuk satu pelajaran (mis. ulang kaji Unit 7–9). */
+export const findSet = id => sets.find(s => s.id === id) || null;
+export function questionsForSet(id, rng = Math.random) {
+  const set = findSet(id);
+  if (!set) throw new Error('Set soalan tidak ditemui.');
+  return set.questions.map((raw, i) => {
+    const base = { id: `${set.id}-${i}#${i}`, concept: `${set.id}-${i}`, setId: set.id, level: 0, type: raw.type, difficulty: 'medium',
+      prompt: raw.prompt, topicId: raw.topic, topicTitle: raw.topicTitle, explanation: raw.explanation };
+    for (const k of ['questionAr', 'questionMs', 'image', 'imageAlt', 'audio']) if (raw[k]) base[k] = raw[k];
+    if (raw.type === 'arrange') {
+      let tokens = shuffle(raw.sequence, rng);
+      for (let n = 0; tokens.every((t, j) => t === raw.sequence[j]) && n < 5; n++) tokens = shuffle(raw.sequence, rng);
+      return { ...base, tokens, answer: raw.sequence, correctText: raw.sequence.join(' ') };
+    }
+    const correct = raw.options[raw.answer];
+    const options = shuffle(raw.options, rng);
+    return { ...base, options, optionsDir: raw.optionsDir, answer: options.indexOf(correct), correctText: correct };
+  });
+}
+
 /** Versi soalan untuk klien: tanpa jawapan. */
 export function publicQuestion(q) {
   if (!q) return null;
@@ -135,7 +156,7 @@ export function newPlayer(extra = {}) {
 }
 
 /** Rekod jawapan secara autoritatif. Satu jawapan sah bagi setiap soalan. */
-export function recordAnswer(player, questions, id, answer, { elapsedMs = 0, limitSec = 0, now = Date.now() } = {}) {
+export function recordAnswer(player, questions, id, answer, { elapsedMs = 0, limitSec = 0, calm = false, now = Date.now() } = {}) {
   const q = questions[player.index];
   if (!q || q.id !== id) throw new Error('Jawapan sudah dihantar atau soalan telah berubah.');
   if (!validAnswer(q, answer)) throw new Error('Pilih jawapan yang sah.');
@@ -145,7 +166,8 @@ export function recordAnswer(player, questions, id, answer, { elapsedMs = 0, lim
   if (correct) {
     player.correct++; player.streak++;
     player.bestStreak = Math.max(player.bestStreak, player.streak);
-    earned = 1000 + timeBonus(elapsedMs, limitSec) + streakBonus(player.streak);
+    // Mod selamat: tiada bonus kelajuan, hanya ketepatan dan rentetan dikira.
+    earned = 1000 + (calm ? 0 : timeBonus(elapsedMs, limitSec)) + streakBonus(player.streak);
   } else { player.wrong++; player.streak = 0; }
   player.score += earned;
   player.answers.push({ questionId: q.id, index: player.index, topicId: q.topicId, answer, correct, timedOut: answer === null || !!late, responseMs: Math.round(elapsedMs), score: earned, altitude: correct ? altitudeStep(questions.length) : 0, at: now });
@@ -171,7 +193,7 @@ export function analytics(players, questions) {
     topics: topicIds.map(id => ({ id, title: questions.find(q => q.topicId === id).topicTitle, accuracy: pct(answered.filter(a => a.topicId === id)) })),
     questions: questions.map((q, i) => {
       const list = answered.filter(a => a.index === i);
-      return { n: i + 1, type: q.type, topicTitle: q.topicTitle, text: q.questionAr || q.questionMs || q.correctText, correctText: q.correctText, answered: list.length, accuracy: pct(list), needsReview: list.length > 0 && pct(list) < 60 };
+      return { n: i + 1, type: q.type, topicTitle: q.topicTitle, text: q.questionAr || (q.audio ? `🎧 Audio: ${q.correctText}` : q.questionMs) || q.correctText, correctText: q.correctText, answered: list.length, accuracy: pct(list), needsReview: list.length > 0 && pct(list) < 60 };
     }),
   };
 }

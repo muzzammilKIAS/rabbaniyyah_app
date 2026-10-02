@@ -1,15 +1,18 @@
 import '../styles/game.css';
 import { $, $$, esc, fmt, render, toast, storage, brand } from '../lib/dom.js';
 import { connect } from '../lib/net.js';
-import { levels, QUESTION_COUNTS, TIMER_OPTIONS } from '../../shared/game.js';
+import { levels, sets, QUESTION_COUNTS, TIMER_OPTIONS } from '../../shared/game.js';
 import { avatarSVG } from '../../shared/avatar.js';
 import { createMountain } from '../components/mountain.js';
 import { leaderboardRows, resultsView, csvFor } from '../components/results.js';
 
 const app = $('#app');
 const KEY = 'rmc-host';
-const state = { screen: 'setup', level: 1, settings: { count: 12, timer: 20, leaderboard: true, lateJoin: true, duplicateNames: false }, room: null, token: null, view: 'mountain', joinUrl: '', feed: [], prev: new Map(), map: null };
+const state = { screen: 'setup', level: 1, set: null, settings: { count: 12, timer: 20, leaderboard: true, lateJoin: true, duplicateNames: false, calm: false }, room: null, token: null, view: 'mountain', joinUrl: '', feed: [], prev: new Map(), map: null };
 const statusText = { lobby: 'Lobi', playing: 'Sedang mendaki', paused: 'Dijeda', ended: 'Tamat' };
+const labelOf = r => r.set ? 'Set Guru' : `Level ${r.level}`;
+const calm = () => !!state.room?.settings?.calm;
+const TARGET = 80;
 
 const { socket, request } = connect({ onStatus: s => { document.body.dataset.conn = s; if (s === 'online' && state.token && state.room) resume(state.room.code, state.token, true); } });
 socket.on('room', room => onRoom(room));
@@ -44,9 +47,10 @@ function trackFeed(room) {
   const total = room.total;
   for (const p of room.players) {
     const old = state.prev.get(p.id);
-    if (old && p.correct > old.correct) state.feed.unshift({ id: p.id, at: Date.now(), text: p.correct === total ? `${p.name} sampai ke puncak!` : `${p.name} mendaki ke ${fmt(p.altitude)} m`, tone: p.correct === total ? 'gold' : 'up' });
-    else if (old && p.finished && !old.finished) state.feed.unshift({ id: p.id, at: Date.now(), text: `${p.name} selesai menjawab (${p.accuracy}%)`, tone: 'done' });
-    else if (!old && state.room?.status !== 'lobby' && state.prev.size) state.feed.unshift({ id: p.id, at: Date.now(), text: `${p.name} menyertai pendakian`, tone: 'join' });
+    const who = room.settings?.calm ? 'Seorang pendaki' : p.name;
+    if (old && p.correct > old.correct) state.feed.unshift({ id: p.id, at: Date.now(), text: p.correct === total ? `${who} sampai ke puncak!` : `${who} mendaki ke ${fmt(p.altitude)} m`, tone: p.correct === total ? 'gold' : 'up' });
+    else if (old && p.finished && !old.finished) state.feed.unshift({ id: p.id, at: Date.now(), text: room.settings?.calm ? 'Seorang pendaki selesai menjawab' : `${p.name} selesai menjawab (${p.accuracy}%)`, tone: 'done' });
+    else if (!old && state.room?.status !== 'lobby' && state.prev.size) state.feed.unshift({ id: p.id, at: Date.now(), text: `${who} menyertai pendakian`, tone: 'join' });
   }
   state.feed = state.feed.slice(0, 8);
   state.prev = new Map(room.players.map(p => [p.id, { correct: p.correct, finished: p.finished }]));
@@ -81,8 +85,10 @@ function drawSetup() {
       <span class="eyebrow">MOD GURU · LANGKAH 1</span>
       <h1>Pilih laluan pendakian</h1>
       <p class="lead">Setiap level menggabungkan dua topik sebenar daripada modul Rabbaniyyah. Pelajar menjawab di telefon; kelas melihat semua pendaki bergerak di skrin anda.</p>
+      <div class="set-picks"><span class="field-label">Set guru · dibina untuk pelajaran tertentu</span>${sets.map(t => `
+        <button class="set-row" data-set="${t.id}" aria-pressed="${state.set === t.id}"><span class="set-badge">${t.round === 2 ? '↺' : '★'}</span><span class="level-info"><small>SET GURU · ${esc(t.subtitle.toUpperCase())}</small><strong>${esc(t.title)}</strong><span class="set-meta">${t.questions.length} soalan · audio, gambar & susun ayat</span></span><span class="level-check" aria-hidden="true">✓</span></button>`).join('')}</div>
       <ol class="level-path">${[...levels].reverse().map(l => `
-        <li><button class="level-row" data-level="${l.id}" aria-pressed="${l.id === state.level}" ${l.available ? '' : 'disabled'}>
+        <li><button class="level-row" data-level="${l.id}" aria-pressed="${!state.set && l.id === state.level}" ${l.available ? '' : 'disabled'}>
           <span class="level-num">${l.id === 7 ? '⚑' : String(l.id).padStart(2, '0')}</span>
           <span class="level-info"><small>LEVEL ${l.id} · ${esc(l.name.toUpperCase())}</small>
           ${l.available ? l.topics.map((t, i) => `<span class="ar" lang="ar" dir="rtl"><em>Topik ${l.topicIds[i]}</em>${esc(t.title)}</span>`).join('') : '<span class="muted">Kandungan Topik 13 & 14 belum tersedia dalam sumber Rabbaniyyah.</span>'}</span>
@@ -97,6 +103,7 @@ function drawSetup() {
       <div class="field"><span class="field-label">Bilangan soalan</span>${seg('count', QUESTION_COUNTS, s.count, o => `${o} soalan`)}<small class="hint">Separuh daripada setiap topik, pelbagai jenis soalan.</small></div>
       <div class="field"><span class="field-label">Pemasa setiap soalan</span>${seg('timer', TIMER_OPTIONS, s.timer, o => o ? `${o}s` : 'Tiada')}</div>
       <div class="field toggles">
+        ${toggle('calm', 'Mod selamat (kurangkan kebimbangan)', 'Tiada bonus kelajuan. Nama dan kedudukan disembunyikan di projektor dan telefon.')}
         ${toggle('leaderboard', 'Kedudukan pada telefon pelajar', 'Pelajar nampak ranking masing-masing.')}
         ${toggle('lateJoin', 'Benarkan sertai lewat', 'Pelajar boleh masuk selepas pendakian bermula.')}
         ${toggle('duplicateNames', 'Benarkan nama sama', 'Matikan untuk elak kekeliruan di skrin.')}
@@ -105,15 +112,25 @@ function drawSetup() {
       <button class="btn btn-gold btn-xl" id="create">Cipta sesi <span aria-hidden="true">→</span></button>
     </aside>
   </main>`);
-  const summary = () => { const l = levels[state.level - 1]; $('#summary').innerHTML = `<strong>Level ${l.id} · ${esc(l.name)}</strong><span>${s.count} soalan · ${s.timer ? `${s.timer}s setiap soalan` : 'tanpa pemasa'} · puncak 3,000 m</span>`; };
+  const summary = () => {
+    const t = sets.find(x => x.id === state.set), l = levels[state.level - 1];
+    $$('[data-seg="count"]').forEach(b => b.disabled = !!t);
+    $('#summary').innerHTML = `<strong>${t ? `Set Guru · ${esc(t.title)}` : `Level ${l.id} · ${esc(l.name)}`}</strong><span>${t ? t.questions.length : s.count} soalan · ${s.timer ? `${s.timer}s setiap soalan` : 'tanpa pemasa'}${s.calm ? ' · mod selamat' : ''} · puncak 3,000 m</span>`;
+  };
   summary();
-  $$('[data-level]').forEach(b => b.onclick = () => { state.level = +b.dataset.level; $$('[data-level]').forEach(x => x.setAttribute('aria-pressed', x === b)); summary(); });
+  const pick = (setId, level) => { state.set = setId; if (level) state.level = level; $$('[data-set]').forEach(x => x.setAttribute('aria-pressed', x.dataset.set === setId)); $$('[data-level]').forEach(x => x.setAttribute('aria-pressed', !setId && +x.dataset.level === state.level)); summary(); };
+  $$('[data-set]').forEach(b => b.onclick = () => pick(b.dataset.set));
+  $$('[data-level]').forEach(b => b.onclick = () => pick(null, +b.dataset.level));
   $$('[data-seg]').forEach(b => b.onclick = () => { s[b.dataset.seg] = +b.dataset.value; $$(`[data-seg="${b.dataset.seg}"]`).forEach(x => x.setAttribute('aria-checked', x === b)); summary(); });
-  $$('[data-toggle]').forEach(i => i.onchange = () => { s[i.dataset.toggle] = i.checked; });
+  $$('[data-toggle]').forEach(i => i.onchange = () => {
+    s[i.dataset.toggle] = i.checked;
+    if (i.dataset.toggle === 'calm' && i.checked) { s.leaderboard = false; $('[data-toggle="leaderboard"]').checked = false; }
+    summary();
+  });
   $('#create').onclick = async e => {
     e.currentTarget.disabled = true;
     try {
-      const res = await request('create', { level: state.level, settings: s });
+      const res = await request('create', state.set ? { set: state.set, settings: s } : { level: state.level, settings: s });
       state.token = res.token; storage.set(KEY, { code: res.room.code, token: res.token });
       history.replaceState(null, '', `?code=${res.room.code}`);
       await resolveJoinUrl(res.room.code); state.feed = []; state.prev = new Map(); onRoom(res.room, true);
@@ -131,7 +148,7 @@ function drawLobby() {
     <header class="lobby-top">${brand()}<div class="lobby-top-actions"><button class="btn btn-quiet" id="lock"></button><button class="btn btn-quiet" id="projector" title="Skrin penuh (P)">⛶ Skrin penuh</button><button class="btn btn-quiet" id="cancel">Batal sesi</button></div></header>
     <section class="lobby-main">
       <div class="lobby-info">
-        <span class="eyebrow light">LEVEL ${r.level} · ${esc(r.title.toUpperCase())}</span>
+        <span class="eyebrow light">${esc(r.label)} · ${esc(r.title.toUpperCase())}</span>
         <p class="lobby-arabic" lang="ar" dir="rtl">سِبَاقٌ إِلَى الْقِمَّةِ</p>
         <div class="lobby-topics">${r.topics.map((t, i) => `<span lang="ar" dir="rtl">${esc(t)}</span>${i === 0 ? '<b>+</b>' : ''}`).join('')}</div>
         <div class="join-steps">
@@ -177,13 +194,13 @@ function drawGame() {
   <div class="game-shell view-${state.view}">
     <header class="host-bar">
       ${brand()}
-      <div class="host-bar-mid"><span class="bar-level">Level ${r.level} · ${esc(r.title)}</span><span class="code-chip">Kod <strong>${codeFmt(r.code)}</strong></span><span class="status-pill" id="status"></span></div>
-      <div class="tabs" role="tablist" aria-label="Paparan">${[['mountain', 'Gunung'], ['split', 'Pisah'], ['board', 'Kedudukan']].map(([k, l]) => `<button role="tab" data-view="${k}" aria-selected="${state.view === k}">${l}</button>`).join('')}</div>
+      <div class="host-bar-mid"><span class="bar-level">${labelOf(r)} · ${esc(r.title)}</span><span class="code-chip">Kod <strong>${codeFmt(r.code)}</strong></span><span class="status-pill" id="status"></span></div>
+      <div class="tabs" role="tablist" aria-label="Paparan">${[['mountain', 'Gunung'], ['split', 'Pisah'], ...(r.settings.calm ? [] : [['board', 'Kedudukan']])].map(([k, l]) => `<button role="tab" data-view="${k}" aria-selected="${state.view === k}">${l}</button>`).join('')}</div>
       <div class="host-bar-actions"><button class="btn btn-quiet" id="pause"></button><button class="btn btn-quiet" id="lock"></button><button class="btn btn-quiet" id="projector" title="Mod projektor (P)">⛶ Projektor</button><button class="btn btn-danger" id="end">Tamatkan</button></div>
     </header>
     <main class="stage">
       <section class="stage-mountain" id="mountain"></section>
-      <div class="overlay ov-title"><span class="eyebrow light">LEVEL ${r.level} · ${esc(r.title.toUpperCase())}</span><div class="ov-topics">${r.topics.map(t => `<span lang="ar" dir="rtl">${esc(t)}</span>`).join('<b>+</b>')}</div></div>
+      <div class="overlay ov-title"><span class="eyebrow light">${esc(r.label)} · ${esc(r.title.toUpperCase())}</span><div class="ov-topics">${r.topics.map(t => `<span lang="ar" dir="rtl">${esc(t)}</span>`).join('<b>+</b>')}</div></div>
       <div class="overlay ov-top" id="ov-top"></div>
       <aside class="side-panel" id="side"></aside>
       <section class="board-view" id="board"></section>
@@ -192,7 +209,8 @@ function drawGame() {
       <button class="exit-projector" id="exit-proj">Keluar projektor</button>
     </main>
   </div>`);
-  state.map = createMountain($('#mountain'), { total: r.total });
+  if (r.settings.calm && state.view === 'board') state.view = 'mountain';
+  state.map = createMountain($('#mountain'), { total: r.total, hideNames: r.settings.calm });
   $$('[data-view]').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('#pause').onclick = () => control(state.room.status === 'paused' ? 'resume' : 'pause');
   $('#lock').onclick = () => control(state.room.locked ? 'unlock' : 'lock');
@@ -226,9 +244,13 @@ function updateGame() {
   $('#lock').textContent = r.locked ? '🔒 Dikunci' : '🔓 Terbuka';
   $('#veil').hidden = r.status !== 'paused';
   $('#done').hidden = !(r.players.length && st.finished === r.players.length);
-  $('#ov-top').innerHTML = `<h3>Pendahulu</h3><ol class="mini-board">${r.players.slice(0, 5).map(p => `<li><span class="rk r${p.rank}">${p.rank}</span><span class="mb-av">${avatarSVG(p.avatar, { crop: 'head', label: '' })}</span><span class="mb-name">${esc(p.name)}</span><span class="mb-alt">${fmt(p.altitude)} m</span></li>`).join('') || '<li class="muted">Belum ada pendaki.</li>'}</ol>
+  const goal = `<div class="class-goal"><div class="cg-head"><span>Ketepatan kelas</span><strong>${st.accuracy}%</strong></div><span class="cg-bar"><i style="width:${Math.min(100, st.accuracy)}%"></i><b style="left:${TARGET}%"></b></span><small>Sasaran kelas ${TARGET}% · ${st.accuracy >= TARGET ? 'sasaran dicapai! أَحْسَنْتُمْ' : 'bantu rakan, kita naik bersama'}</small></div>`;
+  if (calm()) $('#ov-top').innerHTML = `<h3>Kemajuan kelas</h3>${goal}<div class="side-stats">${statTiles(st)}</div>${st.offline ? `<p class="hint">⚠ ${st.offline} pendaki terputus sambungan</p>` : ''}`;
+  else $('#ov-top').innerHTML = `<h3>Pendahulu</h3><ol class="mini-board">${r.players.slice(0, 5).map(p => `<li><span class="rk r${p.rank}">${p.rank}</span><span class="mb-av">${avatarSVG(p.avatar, { crop: 'head', label: '' })}</span><span class="mb-name">${esc(p.name)}</span><span class="mb-alt">${fmt(p.altitude)} m</span></li>`).join('') || '<li class="muted">Belum ada pendaki.</li>'}</ol>
     <div class="side-stats">${statTiles(st)}</div>${st.offline ? `<p class="hint">⚠ ${st.offline} pendaki terputus sambungan</p>` : ''}`;
-  if (state.view === 'split') $('#side').innerHTML = `
+  if (state.view === 'split' && calm()) $('#side').innerHTML = `${goal}<div class="side-stats">${statTiles(st)}</div>
+    <h3>Aktiviti terkini</h3><ul class="feed">${state.feed.map(f => `<li class="${f.tone}">${esc(f.text)}</li>`).join('') || '<li class="muted">Menunggu jawapan pertama…</li>'}</ul>`;
+  else if (state.view === 'split') $('#side').innerHTML = `
     <div class="side-stats">${statTiles(st)}</div>
     <h3>10 teratas</h3><ol class="side-board">${r.players.slice(0, 10).map(p => `<li class="${p.finished ? 'done' : ''}"><span class="rk r${p.rank}">${p.rank}</span><span class="mb-av">${avatarSVG(p.avatar, { crop: 'head', label: '' })}</span><span class="sb-name">${esc(p.name)}<small>${p.correct}/${r.total} betul · ${p.accuracy}%</small></span><span class="sb-score">${fmt(p.score)}<small>${fmt(p.altitude)} m</small></span></li>`).join('')}</ol>
     <h3>Aktiviti terkini</h3><ul class="feed">${state.feed.map(f => `<li class="${f.tone}">${esc(f.text)}</li>`).join('') || '<li class="muted">Menunggu jawapan pertama…</li>'}</ul>`;
@@ -246,7 +268,7 @@ function drawResults() {
   <main class="results-page">${resultsView(r)}</main>`);
   $('#csv').onclick = () => {
     const blob = new Blob(['﻿' + csvFor(r)], { type: 'text/csv;charset=utf-8' });
-    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `rabbaniyyah-level${r.level}-${r.code}.csv` });
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `rabbaniyyah-${r.set || 'level' + r.level}-${r.code}.csv` });
     a.click(); URL.revokeObjectURL(a.href);
   };
   $('#again').onclick = () => { storage.remove(KEY); socket.emit('leave', {}, () => {}); history.replaceState(null, '', location.pathname); showSetup(); };

@@ -9,17 +9,22 @@ const letters = ['A', 'B', 'C', 'D', 'E'];
  */
 export function renderQuestion(el, q, { onSubmit, remaining = null }) {
   let sent = false, chosen = null, timerId = null;
-  const arabicMain = q.questionAr ? `<p class="q-main ar" lang="ar" dir="rtl">${esc(q.questionAr).replace('＿＿＿', '<span class="blank">＿＿＿</span>')}</p>` : `<p class="q-main ms">${esc(q.questionMs)}</p>`;
+  const arabicMain = q.questionAr ? `<p class="q-main ar" lang="ar" dir="rtl">${esc(q.questionAr).replace('＿＿＿', '<span class="blank">＿＿＿</span>')}</p>` : `<p class="q-main ms${(q.questionMs || '').length > 40 ? ' long' : ''}">${esc(q.questionMs)}</p>`;
   el.innerHTML = `
   <article class="q-card" data-type="${q.type}">
     <header class="q-head"><span class="q-type">${typeLabel[q.type] || 'Soalan'}</span><span class="q-count">Soalan ${q.index + 1} / ${q.total}</span></header>
     ${q.timer ? `<div class="q-timer" role="timer" aria-label="Masa berbaki"><i></i><span></span></div>` : ''}
     <p class="q-prompt">${esc(q.prompt)}</p>
+    ${q.image ? `<figure class="q-media"><img src="${esc(q.image)}" alt="${esc(q.imageAlt || '')}"></figure>` : ''}
+    ${q.audio ? `<button type="button" class="q-audio" data-audio aria-label="Dengar audio sebutan"><span aria-hidden="true">🔊</span> Dengar sebutan</button>` : ''}
     ${q.type === 'arrange' ? '' : arabicMain}
     <div class="q-body"></div>
     <p class="q-topic" lang="ar" dir="rtl">${esc(q.topicTitle)}</p>
   </article>`;
   const body = $('.q-body', el);
+  let clip = null;
+  const audioBtn = $('[data-audio]', el);
+  if (audioBtn) audioBtn.onclick = () => { clip ??= new Audio(q.audio); clip.currentTime = 0; audioBtn.classList.add('playing'); clip.onended = () => audioBtn.classList.remove('playing'); clip.play().catch(() => audioBtn.classList.remove('playing')); };
 
   const submit = answer => {
     if (sent) return; sent = true; chosen = answer; clearInterval(timerId);
@@ -61,7 +66,7 @@ export function renderQuestion(el, q, { onSubmit, remaining = null }) {
   }
   const onKey = e => { if (sent || q.type === 'arrange' || e.target.closest('input')) return; const i = letters.indexOf(e.key.toUpperCase()); const n = +e.key - 1; const k = i >= 0 ? i : n; if (k >= 0 && k < q.options.length) $$('.option', body)[k].click(); };
   document.addEventListener('keydown', onKey);
-  return { destroy() { clearInterval(timerId); document.removeEventListener('keydown', onKey); }, lastAnswer: () => chosen, question: q };
+  return { destroy() { clearInterval(timerId); clip?.pause(); document.removeEventListener('keydown', onKey); }, lastAnswer: () => chosen, question: q };
 }
 
 /** Tanda jawapan pada kad dan papar maklum balas. */
@@ -73,12 +78,14 @@ export function renderFeedback(el, fb, { onNext, answer, question, nextLabel }) 
       else if (i === answer) b.classList.add('wrong');
     });
   }
+  const explain = fb.explanation && fb.explanation !== fb.correctText
+    ? (/[A-Za-z]{3,}/.test(fb.explanation) ? `<p class="fb-explain ms" dir="ltr" lang="ms">${esc(fb.explanation)}</p>` : `<p class="fb-explain" lang="ar" dir="auto">${esc(fb.explanation)}</p>`) : '';
   const box = document.createElement('div');
   box.className = `feedback ${fb.correct ? 'is-correct' : 'is-wrong'}`;
   box.setAttribute('role', 'status');
   box.innerHTML = fb.correct
-    ? `<div class="fb-icon" aria-hidden="true">✓</div><p class="fb-ar" lang="ar" dir="rtl">أَحْسَنْتَ!</p><h3>Betul!</h3><div class="fb-gain"><span>+${fmt(fb.score)} mata</span><span>+${fmt(fb.metres)} m</span>${fb.streak >= 2 ? `<span>🔥 ${fb.streak} berturut</span>` : ''}</div>`
-    : `<div class="fb-icon" aria-hidden="true">${fb.timedOut ? '⌛' : '↺'}</div><p class="fb-ar" lang="ar" dir="rtl">حَاوِلْ مَرَّةً أُخْرَى</p><h3>${fb.timedOut ? 'Masa tamat' : 'Belum tepat'}</h3><p class="fb-answer">Jawapan betul: <strong lang="ar" dir="auto">${esc(fb.correctText)}</strong></p>${fb.explanation && fb.explanation !== fb.correctText ? `<p class="fb-explain" lang="ar" dir="auto">${esc(fb.explanation)}</p>` : ''}<p class="fb-note">Altitud kekal. Cuba lagi pada soalan seterusnya!</p>`;
+    ? `<div class="fb-icon" aria-hidden="true">✓</div><p class="fb-ar" lang="ar" dir="rtl">أَحْسَنْتَ!</p><h3>Betul!</h3><div class="fb-gain"><span>+${fmt(fb.score)} mata</span><span>+${fmt(fb.metres)} m</span>${fb.streak >= 2 ? `<span>🔥 ${fb.streak} berturut</span>` : ''}</div>${explain}`
+    : `<div class="fb-icon" aria-hidden="true">${fb.timedOut ? '⌛' : '↺'}</div><p class="fb-ar" lang="ar" dir="rtl">حَاوِلْ مَرَّةً أُخْرَى</p><h3>${fb.timedOut ? 'Masa tamat' : 'Belum tepat'}</h3><p class="fb-answer">Jawapan betul: <strong lang="ar" dir="auto">${esc(fb.correctText)}</strong></p>${explain}<p class="fb-note">Altitud kekal. Cuba lagi pada soalan seterusnya!</p>`;
   const btn = document.createElement('button');
   btn.className = 'btn btn-gold btn-xl'; btn.innerHTML = `${nextLabel || (fb.finished ? 'Lihat keputusan' : 'Teruskan mendaki')} <span aria-hidden="true">↑</span>`;
   btn.onclick = () => { btn.disabled = true; onNext(); };

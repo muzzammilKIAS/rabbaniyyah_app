@@ -1,0 +1,380 @@
+[
+ {
+  "id": "akhlak-7-9",
+  "title": "Ulang Kaji Akhlak",
+  "subtitle": "Pusingan 1 · Unit 7–9",
+  "round": 1,
+  "questions": [
+   {
+    "topic": 7,
+    "type": "vocabulary",
+    "prompt": "Tekan butang, dengar sebutan dengan teliti",
+    "options": [
+     "الْأَمَانَةُ",
+     "الْفَطَانَةُ",
+     "الْخِيَانَةُ",
+     "التَّبْلِيغُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "الْأَمَانَةُ = Dipercayai (amanah). Jangan keliru dengan الْخِيَانَةُ (khianat), iaitu lawannya.",
+    "questionMs": "Perkataan manakah yang anda dengar?",
+    "audio": "/media/akhlak/amanah.m4a",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "multiple-choice",
+    "prompt": "Lihat gambar, kemudian pilih sifat yang betul",
+    "options": [
+     "الصِّدْقُ",
+     "الْأَمَانَةُ",
+     "التَّبْلِيغُ",
+     "الْفَطَانَةُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 1,
+    "explanation": "Contoh dalam modul: أَرُدُّ مَا وَجَدْتُهُ إِلَى صَاحِبِهِ, iaitu memulangkan barang yang dijumpai kepada pemiliknya. Ini sifat الْأَمَانَةُ.",
+    "questionMs": "Ali memulangkan dompet yang dijumpainya kepada pemiliknya.",
+    "image": "/media/akhlak/dompet.svg",
+    "imageAlt": "Seorang pelajar menghulurkan dompet yang dijumpai kepada pemiliknya",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "vocabulary",
+    "prompt": "Apakah maksud perkataan ini?",
+    "options": [
+     "Cerdik",
+     "Menyampaikan",
+     "Dipercayai",
+     "Bercakap Benar"
+    ],
+    "optionsDir": "ltr",
+    "answer": 0,
+    "explanation": "الْفَطَانَةُ = Cerdik. Empat sifat wajib Rasul: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ.",
+    "questionAr": "الْفَطَانَةُ",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "multiple-choice",
+    "prompt": "Pilih jawapan yang betul",
+    "options": [
+     "الْكَذِبُ",
+     "الْخِيَانَةُ",
+     "الْكِتْمَانُ",
+     "الْبَلَادَةُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "Teks modul: ضِدُّ الصِّدْقِ الْكَذِبُ، وَضِدُّ الْأَمَانَةِ الْخِيَانَةُ.",
+    "questionAr": "مَا ضِدُّ الصِّدْقِ؟",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "multiple-choice",
+    "prompt": "Pilih jawapan yang betul",
+    "options": [
+     "الْكَذِبُ",
+     "الْخِيَانَةُ",
+     "الْكِتْمَانُ",
+     "الْبَلَادَةُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 1,
+    "explanation": "Lawan الْأَمَانَةُ ialah الْخِيَانَةُ (khianat). الْكَذِبُ pula lawan bagi الصِّدْقُ.",
+    "questionAr": "مَا ضِدُّ الْأَمَانَةِ؟",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "arrange",
+    "prompt": "Susun perkataan menjadi ayat",
+    "sequence": [
+     "مُحَمَّدٌ",
+     "صَادِقٌ",
+     "لَا",
+     "يَكْذِبُ"
+    ],
+    "explanation": "مُحَمَّدٌ صَادِقٌ لَا يَكْذِبُ: Muhammad seorang yang benar, tidak berdusta. لَا diletakkan terus sebelum فعل.",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "fill-blank",
+    "prompt": "Lengkapkan ayat",
+    "options": [
+     "يُبَلِّغُ",
+     "صَادِقٌ",
+     "أَمِينٌ",
+     "فَطِنٌ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "الرَّسُولُ يُبَلِّغُ رِسَالَةَ رَبِّهِ: Rasul menyampaikan risalah Tuhannya (sifat التَّبْلِيغُ).",
+    "questionAr": "الرَّسُولُ ＿＿＿ رِسَالَةَ رَبِّهِ.",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "multiple-choice",
+    "prompt": "Pilih jawapan yang betul",
+    "options": [
+     "نَبِيٌّ فَطِنٌ",
+     "نَبِيٌّ الْفَطِنُ",
+     "رَسُولٌ الْأَمِينُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "صفة mengikut موصوف dari segi ma'rifah/nakirah: نَبِيٌّ فَطِنٌ (kedua-duanya nakirah) dan الرَّسُولُ الأَمِينُ (kedua-duanya ma'rifah).",
+    "questionMs": "Frasa اسم + صفة manakah yang betul dari segi ma'rifah dan nakirah?",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 8,
+    "type": "vocabulary",
+    "prompt": "Tekan butang, dengar sebutan dengan teliti",
+    "options": [
+     "Berserah kepada Allah",
+     "Bersyukur",
+     "Ketaatan",
+     "Rasa Takut kepada Allah"
+    ],
+    "optionsDir": "ltr",
+    "answer": 0,
+    "explanation": "التَّوَكُّلُ = Berserah kepada Allah. Bersyukur = الشُّكْرُ, Ketaatan = الطَّاعَةُ, Rasa Takut kepada Allah = التَّقْوَى.",
+    "questionMs": "Apakah maksud perkataan yang anda dengar?",
+    "audio": "/media/akhlak/tawakkul.m4a",
+    "topicTitle": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ"
+   },
+   {
+    "topic": 8,
+    "type": "vocabulary",
+    "prompt": "Apakah maksud perkataan ini?",
+    "options": [
+     "Rasa Takut kepada Allah",
+     "Kecintaan / Kasih Sayang",
+     "Ketaatan",
+     "Bersyukur"
+    ],
+    "optionsDir": "ltr",
+    "answer": 0,
+    "explanation": "التَّقْوَى = Rasa Takut kepada Allah. الْمَحَبَّةُ = Kecintaan, الطَّاعَةُ = Ketaatan, الشُّكْرُ = Bersyukur.",
+    "questionAr": "التَّقْوَى",
+    "topicTitle": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ"
+   },
+   {
+    "topic": 8,
+    "type": "multiple-choice",
+    "prompt": "Pilih jawapan yang betul",
+    "options": [
+     "لَا أَعْصِي اللهَ.",
+     "أَنَا أُطِيعُ اللهَ.",
+     "أَنَا مُؤْمِنٌ.",
+     "أَتَوَكَّلُ عَلَى اللهِ."
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "Ayat nafi menggunakan لَا + فعل: لَا أَعْصِي اللهَ. Tiga ayat lain ialah ayat mutsbatah.",
+    "questionMs": "Ayat manakah ialah ayat nafi (اَلْمَنْفِيَّةُ)?",
+    "topicTitle": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ"
+   },
+   {
+    "topic": 8,
+    "type": "arrange",
+    "prompt": "Susun perkataan menjadi ayat",
+    "sequence": [
+     "لَا",
+     "أَعْصِي",
+     "اللهَ"
+    ],
+    "explanation": "لَا أَعْصِي اللهَ: Aku tidak menderhakai Allah. Pola nafi: لَا + فعل.",
+    "topicTitle": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ"
+   },
+   {
+    "topic": 9,
+    "type": "multiple-choice",
+    "prompt": "Lihat gambar, kemudian pilih perkataan yang betul",
+    "options": [
+     "الْجَدُّ",
+     "الْجَدَّةُ",
+     "الْعَمُّ",
+     "الْخَالُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "الْجَدُّ = Datuk, الْجَدَّةُ = Nenek.",
+    "questionMs": "Siapakah dalam gambar ini?",
+    "image": "/media/akhlak/datuk.svg",
+    "imageAlt": "Seorang datuk berjanggut putih memegang tongkat bersama cucunya",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   },
+   {
+    "topic": 9,
+    "type": "multiple-choice",
+    "prompt": "Lihat salasilah, kemudian pilih perkataan yang betul",
+    "options": [
+     "الْخَالُ",
+     "الْعَمُّ",
+     "الْجَدُّ",
+     "الْأَخُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "Saudara lelaki ibu = الْخَالُ (Pak Cik sebelah ibu). Saudara lelaki ayah = الْعَمُّ (Pak Cik sebelah ayah).",
+    "questionMs": "Siapakah yang bertanda « ? » dalam salasilah ini?",
+    "image": "/media/akhlak/salasilah.svg",
+    "imageAlt": "Rajah salasilah: saudara lelaki ibu ditanda dengan tanda soal",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   },
+   {
+    "topic": 9,
+    "type": "multiple-choice",
+    "prompt": "Frasa ini ialah …",
+    "options": [
+     "التركيب الإضافي",
+     "التركيب الإسنادي"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "رَسُولُ اللهِ = مضاف + مضاف إليه dan bukan ayat lengkap. Bandingkan مُحَمَّدٌ رَسُولُ اللهِ yang merupakan ayat lengkap (إسنادي).",
+    "questionAr": "رَسُولُ اللهِ",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   },
+   {
+    "topic": 9,
+    "type": "fill-blank",
+    "prompt": "Dengar hadis, kemudian lengkapkan",
+    "options": [
+     "جَارَهُ",
+     "صَدِيقَهُ",
+     "مُعَلِّمَهُ",
+     "أَبَاهُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "Hadis riwayat al-Bukhari dan Muslim (modul Unit 9): فَلْيُكْرِمْ جَارَهُ, iaitu hendaklah dia memuliakan jirannya.",
+    "questionAr": "مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ＿＿＿",
+    "audio": "/media/akhlak/hadis-jiran.m4a",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   }
+  ],
+  "topicIds": [
+   7,
+   8,
+   9
+  ],
+  "topics": [
+   "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ",
+   "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ",
+   "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+  ]
+ },
+ {
+  "id": "akhlak-7-9-tebus",
+  "title": "Pusingan Tebus",
+  "subtitle": "Pusingan 2 · Unit 7–9",
+  "round": 2,
+  "questions": [
+   {
+    "topic": 7,
+    "type": "fill-blank",
+    "prompt": "Lengkapkan frasa sifat (cerdik)",
+    "options": [
+     "فَطِنٌ",
+     "الْفَطِنُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "نَبِيٌّ ialah nakirah, maka صفة juga nakirah: نَبِيٌّ فَطِنٌ.",
+    "questionAr": "نَبِيٌّ ＿＿＿",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 7,
+    "type": "multiple-choice",
+    "prompt": "Pilih jawapan yang betul",
+    "options": [
+     "الْأَمَانَةُ",
+     "الصِّدْقُ",
+     "التَّبْلِيغُ",
+     "الْفَطَانَةُ"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "ضِدُّ الْأَمَانَةِ الْخِيَانَةُ.",
+    "questionMs": "الْخِيَانَةُ ialah lawan bagi …",
+    "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
+   },
+   {
+    "topic": 8,
+    "type": "multiple-choice",
+    "prompt": "Pilih jawapan yang betul",
+    "options": [
+     "أَنَا أُطِيعُ اللهَ.",
+     "لَا أَعْصِي اللهَ.",
+     "لَيْسَ النَّبِيُّ كَاذِبًا."
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "أَنَا أُطِيعُ اللهَ ialah ayat mutsbatah (اسم + فعل). Dua ayat lain ialah ayat nafi (لَا / لَيْسَ).",
+    "questionMs": "Ayat manakah ialah ayat mutsbatah (اَلْمُثْبَتَةُ)?",
+    "topicTitle": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ"
+   },
+   {
+    "topic": 9,
+    "type": "arrange",
+    "prompt": "Susun perkataan menjadi ayat",
+    "sequence": [
+     "أَبِي",
+     "رَجُلٌ",
+     "كَرِيمٌ"
+    ],
+    "explanation": "أَبِي رَجُلٌ كَرِيمٌ: Ayahku seorang lelaki yang pemurah (teks modul Unit 9).",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   },
+   {
+    "topic": 9,
+    "type": "multiple-choice",
+    "prompt": "Frasa ini ialah …",
+    "options": [
+     "التركيب الإسنادي",
+     "التركيب الإضافي"
+    ],
+    "optionsDir": "rtl",
+    "answer": 0,
+    "explanation": "أسرتي سعيدة ialah ayat lengkap (مبتدأ + خبر), maka ia إسنادي.",
+    "questionAr": "أسرتي سعيدة",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   },
+   {
+    "topic": 9,
+    "type": "vocabulary",
+    "prompt": "Apakah maksud perkataan ini?",
+    "options": [
+     "Pak Cik (sebelah ayah)",
+     "Pak Cik (sebelah ibu)",
+     "Datuk",
+     "Saudara lelaki"
+    ],
+    "optionsDir": "ltr",
+    "answer": 0,
+    "explanation": "الْعَمُّ = Pak Cik sebelah ayah; الْخَالُ = Pak Cik sebelah ibu.",
+    "questionAr": "الْعَمُّ",
+    "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+   }
+  ],
+  "topicIds": [
+   7,
+   8,
+   9
+  ],
+  "topics": [
+   "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ",
+   "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ",
+   "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
+  ]
+ }
+]

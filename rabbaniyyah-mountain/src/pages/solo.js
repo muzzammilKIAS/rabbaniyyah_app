@@ -1,6 +1,6 @@
 import '../styles/game.css';
 import { $, $$, esc, fmt, render, storage, brand } from '../lib/dom.js';
-import { levels, questionsFor, publicQuestion, recordAnswer, newPlayer, accuracy, altitude, stars } from '../../shared/game.js';
+import { levels, sets, findSet, questionsFor, questionsForSet, publicQuestion, recordAnswer, newPlayer, accuracy, altitude, stars } from '../../shared/game.js';
 import { avatarSVG, cleanAvatar } from '../../shared/avatar.js';
 import { avatarPicker } from '../components/avatar-picker.js';
 import { renderQuestion, renderFeedback } from '../components/question.js';
@@ -9,8 +9,8 @@ import { sfx, shake, flash, floatScore, confetti, banner, combo, crossedCheckpoi
 
 const app = $('#app');
 const PROGRESS = 'rmc-solo';
-const TOTAL = 12;
 let progress = storage.get(PROGRESS, { levels: {}, unlockAll: false });
+progress.sets ??= {};
 let avatar = cleanAvatar(storage.get('rmc-avatar'));
 const name = () => storage.get('rmc-name', '') || 'Saya';
 
@@ -31,6 +31,8 @@ function showMap() {
     <div><span class="eyebrow">PENDAKIAN SOLO</span><h1>Peta ekspedisi anda</h1><p class="lead">Ikut rentak sendiri. Capai ketepatan 60% untuk membuka level seterusnya.</p></div>
     <div class="solo-me"><div class="solo-me-av">${avatarSVG(avatar, { label: name() })}</div><div><strong>${esc(name())}</strong><span>${done} / ${levels.filter(l => l.available).length * 3} bintang</span><button class="btn btn-quiet btn-sm" id="edit">Tukar avatar</button></div></div>
   </section>
+  <section class="set-picks solo-sets"><span class="field-label">Set guru · ulang kaji pelajaran</span>${sets.map(t => { const rec = progress.sets[t.id]; return `
+    <button class="set-row" data-set="${t.id}"><span class="set-badge">${t.round === 2 ? '↺' : '★'}</span><span class="level-info"><small>SET GURU · ${esc(t.subtitle.toUpperCase())}</small><strong>${esc(t.title)}</strong><span class="set-meta">${t.questions.length} soalan · tanpa pemasa${rec ? ` · terbaik ${rec.bestAccuracy}%` : ''}</span></span><span class="jm-meta">${starRow(rec?.stars || 0)}</span></button>`; }).join('')}</section>
   <ol class="journey-map">${[...levels].reverse().map(l => {
     const rec = progress.levels[l.id], open = l.available && unlocked(l.id);
     return `<li class="jm-node ${l.id % 2 ? 'left' : 'right'} ${open ? 'open' : 'locked'} ${rec ? 'played' : ''}">
@@ -44,6 +46,7 @@ function showMap() {
   }).join('')}<li class="jm-base">⛺ BASE CAMP</li></ol>
   <label class="switch teacher"><input type="checkbox" id="unlock" ${progress.unlockAll ? 'checked' : ''}><span class="switch-ui" aria-hidden="true"></span><span><strong>Buka semua level</strong><small>Pilihan guru / demonstrasi.</small></span></label>`, 'screen-map');
   $$('[data-level]').forEach(b => b.onclick = () => play(+b.dataset.level));
+  $$('[data-set]').forEach(b => b.onclick = () => play(b.dataset.set));
   $('#unlock').onchange = e => { progress.unlockAll = e.target.checked; save(); showMap(); };
   $('#edit').onclick = () => {
     shell('<section class="panel wide" id="pick"></section>', 'screen-avatar');
@@ -53,14 +56,16 @@ function showMap() {
 
 /* ---------- MAIN ---------- */
 function play(levelId) {
-  const level = levels[levelId - 1];
-  const questions = questionsFor(levelId, TOTAL);
+  const set = typeof levelId === 'string' ? findSet(levelId) : null;
+  const level = set ? { name: set.title, topics: set.topics.map(title => ({ title })) } : levels[levelId - 1];
+  const questions = set ? questionsForSet(set.id) : questionsFor(levelId, 12);
+  const TOTAL = questions.length, tag = set ? 'Set Guru' : `Level ${levelId}`, store = set ? progress.sets : progress.levels;
   const me = newPlayer({ id: 'me', name: name(), avatar, online: true });
   const started = Date.now();
   shell(`<section class="solo-play">
     <div class="solo-side"><div class="solo-map" id="map"></div>
       <div class="solo-stats" id="stats"></div></div>
-    <div class="solo-q"><div class="hud-title"><span>Level ${levelId} · ${esc(level.name)}</span><span class="hud-topics" lang="ar" dir="rtl">${level.topics.map(t => esc(t.title)).join(' + ')}</span></div><section id="qwrap" class="q-wrap"></section></div>
+    <div class="solo-q"><div class="hud-title"><span>${tag} · ${esc(level.name)}</span><span class="hud-topics" lang="ar" dir="rtl">${level.topics.map(t => esc(t.title)).join(' + ')}</span></div><section id="qwrap" class="q-wrap"></section></div>
   </section>`, 'screen-play');
   const map = createMountain($('#map'), { total: TOTAL, compact: true, me: 'me' });
   let view;
@@ -75,7 +80,7 @@ function play(levelId) {
     view?.destroy();
     view = renderQuestion($('#qwrap'), q, { onSubmit: answer => {
       const before = me.correct;
-      const fb = recordAnswer(me, questions, q.id, answer, { elapsedMs: Date.now() - shownAt });
+      const fb = recordAnswer(me, questions, q.id, answer, { elapsedMs: Date.now() - shownAt, calm: !!set });
       updateSide();
       const card = $('#qwrap');
       if (fb.correct) {
@@ -91,13 +96,13 @@ function play(levelId) {
   };
   const finish = () => {
     view?.destroy();
-    const acc = accuracy(me), st = stars(acc), rec = progress.levels[levelId] || {};
+    const acc = accuracy(me), st = stars(acc), rec = store[levelId] || {};
     const isBest = !rec.best || me.score > rec.best;
-    progress.levels[levelId] = { best: Math.max(rec.best || 0, me.score), bestAccuracy: Math.max(rec.bestAccuracy || 0, acc), stars: Math.max(rec.stars || 0, st), plays: (rec.plays || 0) + 1 };
+    store[levelId] = { best: Math.max(rec.best || 0, me.score), bestAccuracy: Math.max(rec.bestAccuracy || 0, acc), stars: Math.max(rec.stars || 0, st), plays: (rec.plays || 0) + 1 };
     save();
-    const next = levels[levelId], secs = Math.round((Date.now() - started) / 1000), summit = me.correct === TOTAL;
+    const next = set ? null : levels[levelId], secs = Math.round((Date.now() - started) / 1000), summit = me.correct === TOTAL;
     shell(`<section class="panel center finish">
-      <span class="eyebrow">LEVEL ${levelId} · ${esc(level.name.toUpperCase())}</span>
+      <span class="eyebrow">${esc(tag.toUpperCase())} · ${esc(level.name.toUpperCase())}</span>
       <div class="finish-scene ${summit ? 'summit' : ''}">${avatarSVG(avatar, { label: name() })}</div>
       <p class="fb-ar" lang="ar" dir="rtl">${summit ? 'أَحْسَنْتَ! وَصَلْتَ إِلَى الْقِمَّةِ' : 'أَحْسَنْتَ!'}</p>
       <h1>${summit ? 'Puncak ditawan!' : `Anda mendaki ${fmt(altitude(me, TOTAL))} m`}</h1>
@@ -106,9 +111,9 @@ function play(levelId) {
       <div class="summary-grid">
         <div><small>Skor</small><strong>${fmt(me.score)}</strong></div><div><small>Ketepatan</small><strong>${acc}%</strong></div>
         <div><small>Betul / Salah</small><strong>${me.correct} / ${me.wrong}</strong></div><div><small>Rentetan terbaik</small><strong>${me.bestStreak}</strong></div>
-        <div><small>Masa</small><strong>${Math.floor(secs / 60)}m ${secs % 60}s</strong></div><div><small>Skor terbaik</small><strong>${fmt(progress.levels[levelId].best)}</strong></div>
+        <div><small>Masa</small><strong>${Math.floor(secs / 60)}m ${secs % 60}s</strong></div><div><small>Skor terbaik</small><strong>${fmt(store[levelId].best)}</strong></div>
       </div>
-      ${acc < 60 ? '<p class="hint">Capai 60% untuk membuka level seterusnya.</p>' : ''}
+      ${set ? `<p class="hint">${acc >= 80 ? 'Sasaran 80% dicapai. أَحْسَنْتَ!' : 'Sasaran ulang kaji ialah 80%. Baca semula penjelasan, kemudian cuba lagi.'}</p>` : acc < 60 ? '<p class="hint">Capai 60% untuk membuka level seterusnya.</p>' : ''}
       <div class="row-actions"><button class="btn btn-ghost" id="retry">↺ Ulang level</button>${next?.available && unlocked(next.id) ? `<button class="btn btn-gold" id="next">Level ${next.id} →</button>` : ''}<button class="btn btn-primary" id="map-btn">Peta ekspedisi</button></div>
     </section>`, 'screen-ended');
     if (summit) { sfx.summit(); shake(2); confetti(110); } else { sfx.milestone(); confetti(45); }
@@ -119,5 +124,6 @@ function play(levelId) {
   ask();
 }
 
-const qs = +new URLSearchParams(location.search).get('level');
-if (qs && levels[qs - 1]?.available && unlocked(qs)) play(qs); else showMap();
+const params = new URLSearchParams(location.search), qs = +params.get('level'), qset = params.get('set');
+if (qset && findSet(qset)) play(qset);
+else if (qs && levels[qs - 1]?.available && unlocked(qs)) play(qs); else showMap();
