@@ -25,6 +25,14 @@ jobs:
           channel: stable
       - run: flutter pub get
       - run: flutter build web --release --base-href /rabbaniyyah_app/
+      # Rabbaniyyah Mountain Challenge: mod Solo statik di /rabbaniyyah_app/mountain/ (tanpa pelayan, terus dibuka)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+        working-directory: rabbaniyyah-mountain
+      - run: npx vite build --outDir ../build/web/mountain --emptyOutDir
+        working-directory: rabbaniyyah-mountain
       - uses: actions/upload-pages-artifact@v4
         with:
           path: build/web

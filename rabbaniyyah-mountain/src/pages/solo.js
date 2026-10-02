@@ -20,7 +20,7 @@ const starRow = (n, max = 3) => `<span class="stars" aria-label="${n} daripada $
 
 function shell(inner, cls) {
   document.body.className = `solo ${cls}`;
-  render(app, `<header class="topbar">${brand()}<div class="topbar-actions"><a class="ghost-link" href="/solo.html">Peta solo</a><a class="ghost-link" href="/">Laman utama</a></div></header><main class="solo-main">${inner}</main>`);
+  render(app, `<header class="topbar">${brand()}<div class="topbar-actions"><a class="ghost-link" href="solo.html">Peta solo</a><a class="ghost-link" href="./">Laman utama</a></div></header><main class="solo-main">${inner}</main>`);
 }
 
 /* ---------- PETA ---------- */

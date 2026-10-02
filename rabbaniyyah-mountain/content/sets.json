@@ -19,7 +19,7 @@
     "answer": 0,
     "explanation": "الْأَمَانَةُ = Dipercayai (amanah). Jangan keliru dengan الْخِيَانَةُ (khianat), iaitu lawannya.",
     "questionMs": "Perkataan manakah yang anda dengar?",
-    "audio": "/media/akhlak/amanah.m4a",
+    "audio": "media/akhlak/amanah.m4a",
     "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
    },
    {
@@ -36,7 +36,7 @@
     "answer": 1,
     "explanation": "Contoh dalam modul: أَرُدُّ مَا وَجَدْتُهُ إِلَى صَاحِبِهِ, iaitu memulangkan barang yang dijumpai kepada pemiliknya. Ini sifat الْأَمَانَةُ.",
     "questionMs": "Ali memulangkan dompet yang dijumpainya kepada pemiliknya.",
-    "image": "/media/akhlak/dompet.svg",
+    "image": "media/akhlak/dompet.svg",
     "imageAlt": "Seorang pelajar menghulurkan dompet yang dijumpai kepada pemiliknya",
     "topicTitle": "صِفَاتُ الرَّسُولِ: الصِّدْقُ، الْأَمَانَةُ، التَّبْلِيغُ، الْفَطَانَةُ"
    },
@@ -146,7 +146,7 @@
     "answer": 0,
     "explanation": "التَّوَكُّلُ = Berserah kepada Allah. Bersyukur = الشُّكْرُ, Ketaatan = الطَّاعَةُ, Rasa Takut kepada Allah = التَّقْوَى.",
     "questionMs": "Apakah maksud perkataan yang anda dengar?",
-    "audio": "/media/akhlak/tawakkul.m4a",
+    "audio": "media/akhlak/tawakkul.m4a",
     "topicTitle": "الأَخْلَاقُ مَعَ اللهِ وَرَسُولِهِ"
    },
    {
@@ -207,7 +207,7 @@
     "answer": 0,
     "explanation": "الْجَدُّ = Datuk, الْجَدَّةُ = Nenek.",
     "questionMs": "Siapakah dalam gambar ini?",
-    "image": "/media/akhlak/datuk.svg",
+    "image": "media/akhlak/datuk.svg",
     "imageAlt": "Seorang datuk berjanggut putih memegang tongkat bersama cucunya",
     "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
    },
@@ -225,7 +225,7 @@
     "answer": 0,
     "explanation": "Saudara lelaki ibu = الْخَالُ (Pak Cik sebelah ibu). Saudara lelaki ayah = الْعَمُّ (Pak Cik sebelah ayah).",
     "questionMs": "Siapakah yang bertanda « ? » dalam salasilah ini?",
-    "image": "/media/akhlak/salasilah.svg",
+    "image": "media/akhlak/salasilah.svg",
     "imageAlt": "Rajah salasilah: saudara lelaki ibu ditanda dengan tanda soal",
     "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
    },
@@ -257,7 +257,7 @@
     "answer": 0,
     "explanation": "Hadis riwayat al-Bukhari dan Muslim (modul Unit 9): فَلْيُكْرِمْ جَارَهُ, iaitu hendaklah dia memuliakan jirannya.",
     "questionAr": "مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ＿＿＿",
-    "audio": "/media/akhlak/hadis-jiran.m4a",
+    "audio": "media/akhlak/hadis-jiran.m4a",
     "topicTitle": "الأَخْلَاقُ فِي الأُسْرَةِ وَالمُجْتَمَعِ"
    }
   ],

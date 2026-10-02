@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 topics = {t["id"]: t["title"] for t in json.loads((ROOT / "content/topics.json").read_text(encoding="utf-8"))}
-M = "/media/akhlak/"
+M = "media/akhlak/"
 
 
 def mc(topic, prompt, options, answer, explanation, *, ar=None, ms=None, rtl=True, image=None, alt=None, audio=None, qtype="multiple-choice"):

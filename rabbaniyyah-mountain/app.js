@@ -5,7 +5,7 @@ const esc = s => String(s).replace(/[&<>"']/g, c => `&#${c.charCodeAt(0)};`);
 function selectLevel(index) {
   trail.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
   const l = levels[index];
-  document.querySelector('#level-detail').innerHTML = `<span class="detail-number">0${l.id}</span><div><strong>${l.name}</strong><p>${l.tagline}</p>${l.available ? `<p class="detail-topics" lang="ar" dir="rtl">${l.topics.map(t => esc(t.title)).join(' <b>+</b> ')}</p>` : ''}</div>${l.available ? `<a href="/solo.html?level=${l.id}">Topik ${l.topicIds.join(' + ')} · Cuba solo ↗</a>` : '<span>Akan datang</span>'}`;
+  document.querySelector('#level-detail').innerHTML = `<span class="detail-number">0${l.id}</span><div><strong>${l.name}</strong><p>${l.tagline}</p>${l.available ? `<p class="detail-topics" lang="ar" dir="rtl">${l.topics.map(t => esc(t.title)).join(' <b>+</b> ')}</p>` : ''}</div>${l.available ? `<a href="solo.html?level=${l.id}">Topik ${l.topicIds.join(' + ')} · Cuba solo ↗</a>` : '<span>Akan datang</span>'}`;
 }
 levels.forEach((l, i) => {
   const button = document.createElement('button');
